@@ -11,7 +11,10 @@
   "dependencies": {
     "react": "^18",
     "react-dom": "^18",
-    "next": "13.5.5"
+    "next": "13.5.5",
+    "video-react": "^0.16.0",
+    "axios": "1.2.6",
+    "moment": "^2.29.4"
   },
   "devDependencies": {
     "typescript": "^5",
