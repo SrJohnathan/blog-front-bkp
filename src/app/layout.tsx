@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "../styles/beer.min.css";
-import "./globals.css"; //verificar caminho, importar as libs
+import "./globals.css";
 import "../extension/libs/cdn/beer.min";
 import "../extension/libs/cdn/material-dynamic-colors.min";
-import { Settings } from "@/context/Settings";
+import { ThemeModeProvider } from "@/context/ThemeModeContext";
 import { Header } from "@/components/Header/Header";
+import { Footer } from "@/components/Footer/Footer";
 
-const inter = Inter({ subsets: ["latin"] });
+// const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Blog STW",
@@ -20,11 +20,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <Settings>
+    <ThemeModeProvider>
+      <div>
         <Header />
         {children}
-      </Settings>
-    </html>
+        <Footer />
+      </div>
+    </ThemeModeProvider>
   );
 }

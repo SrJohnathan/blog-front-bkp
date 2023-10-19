@@ -4,15 +4,6 @@ import { MenuDesktop } from "./MenuDesktop/MenuDesktop";
 // import { Ex } from "@/extension/ex";
 
 export const Header = () => {
-  //   const [them, setTheme] = useState<{ t: string; b: boolean }>({
-  //     t: "light",
-  //     b: false,
-  //   });
-
-  //   useEffect(() => {
-  //     setTheme(Ex.isThemeBackInit());
-  //   }, []);
-
   return (
     <>
       <MenuMobile />
