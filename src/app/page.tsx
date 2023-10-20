@@ -1,9 +1,11 @@
 import { Articles } from "@/components/Articles/Articles";
 import MoreNews from "@/components/MoreNews/MoreNews";
+import { TopAdsContainer } from "@/components/TopAdsContainer/TopAdsContainer";
 
 export default function Home() {
   return (
     <main className={"responsive"}>
+      <TopAdsContainer></TopAdsContainer>
       <div className={"grid large-space"}>
         <div className={"s12 m8"}>
           <MoreNews></MoreNews>

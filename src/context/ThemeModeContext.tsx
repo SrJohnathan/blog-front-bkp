@@ -19,21 +19,17 @@ interface Props {
 }
 
 export const ThemeModeProvider = ({ children }: Props) => {
-
   const [theme, setTheme] = useState<"light" | "dark">("light");
   const [isDark, setIsDark] = useState<boolean>(false);
 
   const toggleTheme = () => {
-
-
-
     setTheme((prevTheme) => {
       const newTheme = prevTheme === "light" ? "dark" : "light";
       setIsDark(newTheme === "dark");
       // @ts-ignore
       ui("mode", newTheme);
-      localStorage.setItem("theme",newTheme)
-      setClassTheme(newTheme)
+      localStorage.setItem("theme", newTheme);
+      setClassTheme(newTheme);
       return newTheme;
     });
   };
@@ -42,25 +38,21 @@ export const ThemeModeProvider = ({ children }: Props) => {
     const savedTheme = localStorage.getItem("theme") || "light";
     setTheme(savedTheme as "light" | "dark");
     setIsDark(savedTheme === "dark");
-    setClassTheme(savedTheme)
+    setClassTheme(savedTheme);
 
     // @ts-ignore
     ui("mode", savedTheme as "light" | "dark");
   }, []);
 
-  const setClassTheme = (str:string) => {
-
+  const setClassTheme = (str: string) => {
     if (str === "dark") {
-      document.body.classList.add("dark-body")
-      document.body.classList.remove("light-body")
+      document.body.classList.add("dark-body");
+      document.body.classList.remove("light-body");
     } else {
-      document.body.classList.remove("dark-body")
-      document.body.classList.add("light-body")
+      document.body.classList.remove("dark-body");
+      document.body.classList.add("light-body");
     }
-
-
-  }
-
+  };
 
   return (
     <ThemeModeContext.Provider value={{ theme, toggleTheme, isDark }}>
