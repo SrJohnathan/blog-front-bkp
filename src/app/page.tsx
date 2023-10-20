@@ -4,6 +4,8 @@ import { TopAdsContainer } from "@/components/Ads/TopAdsContainer/TopAdsContaine
 import { MainAdsContainer } from "@/components/Ads/MainAdsContainer/MainAdsContainer";
 import { PodCasts } from "@/components/Podcasts/Podcasts";
 import { ReadAndRecomNewsContainer } from "@/components/ReadAndRecomNewsContainer/ReadAndRecomNewsContainer";
+import { Suspense } from "react";
+import MoreNewsSkeleton from "@/components/MoreNews/MoreNewsSkeleton";
 
 export default function Home() {
   return (
@@ -12,7 +14,9 @@ export default function Home() {
       <div className={"grid large-space"}>
         {/* Coluna principal */}
         <div className={"s12 m8"}>
-          <MoreNews></MoreNews>
+          <Suspense fallback={<MoreNewsSkeleton />}>
+            <MoreNews />
+          </Suspense>
           <div className={"space"}></div>
           <ReadAndRecomNewsContainer></ReadAndRecomNewsContainer>
           <div className={"space"}></div>

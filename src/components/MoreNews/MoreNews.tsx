@@ -1,14 +1,23 @@
 import { MedSqCard } from "../Cards/MedSqCard/MedSqCard";
 import { box, divider } from "./styles";
 
-// const loadNews = 60 * 60 * 8; // Atualiza a cada 8h
-// const revalidate = loadNews;
+const loadNews = 60 * 60 * 8; // Atualiza a cada 8h
+const revalidate = loadNews;
 
-export default function MoreNews() {
+function mockapi(): Promise<number[]> {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(Array.from({ length: 9 }).map((_, i) => i));
+    }, 5000);
+  });
+}
+
+export default async function MoreNews() {
   //   const dataNews = await fetch(`${process.env.API}/post`, {
   //     next: { revalidate: loadNews },
   //   });
   //   console.log(dataNews.json());
+  const array = await mockapi();
 
   return (
     <div className={"grid"}>
@@ -22,15 +31,9 @@ export default function MoreNews() {
       </div>
       <article className={"s12 m12 large-padding no-elevate"}>
         <div className={"grid "}>
-          <MedSqCard></MedSqCard>
-          <MedSqCard></MedSqCard>
-          <MedSqCard></MedSqCard>
-          <MedSqCard></MedSqCard>
-          <MedSqCard></MedSqCard>
-          <MedSqCard></MedSqCard>
-          <MedSqCard></MedSqCard>
-          <MedSqCard></MedSqCard>
-          <MedSqCard></MedSqCard>
+          {array.map((i) => {
+            return <MedSqCard key={i}></MedSqCard>;
+          })}
         </div>
         <a href={"/articles?=full"} className={"primary-title margin"}>
           Ver Mais <i>expand_more</i>{" "}

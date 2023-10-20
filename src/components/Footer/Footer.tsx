@@ -1,40 +1,11 @@
-import { CSSProperties } from "react";
-
-const boxRow: CSSProperties = {
-  display: "flex",
-  flexDirection: "row",
-  alignItems: "center",
-};
-
-const boxColunm: CSSProperties = {
-  display: "flex",
-  flexDirection: "column",
-  justifyContent: "space-between",
-};
-
-const boxColunmAlt: CSSProperties = {
-  display: "flex",
-  flexDirection: "column",
-  justifyContent: "start",
-};
-
-const marginContainer: CSSProperties = {
-  padding: "100px 100px  0  100px ",
-  display: "flex",
-  flexDirection: "row",
-  alignItems: "end",
-  justifyContent: "space-between",
-  width: "100%",
-};
-
-const marginContainerAlt: CSSProperties = {
-  padding: "0 100px  100px  100px",
-  display: "flex",
-  flexDirection: "row",
-  alignItems: "end",
-  justifyContent: "space-between",
-  width: "100%",
-};
+import Image from "next/image";
+import {
+  boxColunm,
+  boxColunmAlt,
+  boxRow,
+  marginContainer,
+  marginContainerAlt,
+} from "./styles";
 
 export const Footer = () => {
   return (
@@ -42,7 +13,7 @@ export const Footer = () => {
       <div className={"grid s12 m12"} style={marginContainer}>
         <div className={"s12 m6"} style={boxColunm}>
           <div style={boxRow}>
-            <img src={"stw.svg"} alt={""} />
+            <Image src={"/stw.svg"} width={194} height={63} alt={""} />
             <label>Últimas notícias</label>
           </div>
           <div className={"small-space"}></div>

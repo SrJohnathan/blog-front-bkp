@@ -11,3 +11,7 @@ export const description: CSSProperties = {
   fontWeight: "600",
   fontFamily: "Open Sans",
 };
+
+export const container: CSSProperties = {
+  height: "212px",
+};

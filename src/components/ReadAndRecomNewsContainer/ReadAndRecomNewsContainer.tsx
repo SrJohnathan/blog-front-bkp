@@ -38,10 +38,14 @@ export const ReadAndRecomNewsContainer = () => {
       </div>
       {changeMostSearchedSection.section === "most read" ? (
         <MostReadNewsContainer></MostReadNewsContainer>
-      ) : null}
+      ) : (
+        ""
+      )}
       {changeMostSearchedSection.section === "most recommended" ? (
         <MostRecomNewsContainer></MostRecomNewsContainer>
-      ) : null}
+      ) : (
+        ""
+      )}
     </div>
   );
 };
