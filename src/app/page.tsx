@@ -1,6 +1,7 @@
 import { Articles } from "@/components/Articles/Articles";
 import MoreNews from "@/components/MoreNews/MoreNews";
-import { TopAdsContainer } from "@/components/TopAdsContainer/TopAdsContainer";
+import { TopAdsContainer } from "@/components/Ads/TopAdsContainer/TopAdsContainer";
+import { MainAdsContainer } from "@/components/Ads/MainAdsContainer/MainAdsContainer";
 
 export default function Home() {
   return (
@@ -9,10 +10,12 @@ export default function Home() {
       <div className={"grid large-space"}>
         <div className={"s12 m8"}>
           <MoreNews></MoreNews>
+          <MainAdsContainer></MainAdsContainer>
         </div>
         <div className={"s12 m4"}>
           <Articles title={"Oportunidades"}></Articles>
           <div className={"space"}></div>
+          <MainAdsContainer></MainAdsContainer>
           <Articles title={"Top Estudantes"} />
           <div className={"space"}></div>
           <Articles title={"Eventos"} />
