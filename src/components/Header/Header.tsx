@@ -1,7 +1,5 @@
 import { MenuMobile } from "./MenuMobile/MenuMobile";
 import { MenuDesktop } from "./MenuDesktop/MenuDesktop";
-// import { useEffect, useState } from "react";
-// import { Ex } from "@/extension/ex";
 
 export const Header = () => {
   return (

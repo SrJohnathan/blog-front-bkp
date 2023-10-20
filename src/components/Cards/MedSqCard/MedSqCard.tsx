@@ -27,6 +27,9 @@ export const MedSqCard = () => {
           </div>
         </div>
       </article>
+      <article className="transparent">
+        <p>Teste</p>
+      </article>
     </Link>
   );
 };

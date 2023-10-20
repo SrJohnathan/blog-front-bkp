@@ -15,17 +15,6 @@ const a: CSSProperties = {
 
 export const MenuDesktop = () => {
   const { toggleTheme, isDark } = useContext(ThemeModeContext);
-  // const { isThemeBlackInit, modeTheme } = Ex;
-  // const [themeObject, setThemeObject] = useState<{ t: string; b: boolean }>({
-  //   t: "light",
-  //   b: false,
-  // });
-
-  // useEffect(() => {
-  //   setThemeObject(isThemeBlackInit());
-
-  //   eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, []);
 
   return (
     <>
