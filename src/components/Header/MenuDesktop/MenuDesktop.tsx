@@ -224,14 +224,17 @@ export const MenuDesktop = () => {
               </div>
 
               <Languages />
+
               <button
-                onClick={(event) => {
+                onClick={function () {
+
                   toggleTheme();
                 }}
                 className="circle transparent"
               >
                 {isDark ? <i>dark_mode</i> : <i>light_mode</i>}
               </button>
+
             </nav>
             <div className={"small-space"}></div>
           </div>

@@ -19,48 +19,48 @@ interface Props {
 }
 
 export const ThemeModeProvider = ({ children }: Props) => {
+
   const [theme, setTheme] = useState<"light" | "dark">("light");
   const [isDark, setIsDark] = useState<boolean>(false);
 
   const toggleTheme = () => {
-    console.log("toggleTheme chamado");
+
+
+
     setTheme((prevTheme) => {
       const newTheme = prevTheme === "light" ? "dark" : "light";
       setIsDark(newTheme === "dark");
-
       // @ts-ignore
       ui("mode", newTheme);
-
+      localStorage.setItem("theme",newTheme)
+      setClassTheme(newTheme)
       return newTheme;
     });
   };
 
   useEffect(() => {
-    console.log("entrou no useEffect 1");
-    console.log("RootLayout montado");
-
     const savedTheme = localStorage.getItem("theme") || "light";
-    console.log("Recuperando tema do localStorage:", savedTheme);
     setTheme(savedTheme as "light" | "dark");
     setIsDark(savedTheme === "dark");
+    setClassTheme(savedTheme)
 
     // @ts-ignore
-    ui("mode", savedTheme);
+    ui("mode", savedTheme as "light" | "dark");
   }, []);
 
-  useEffect(() => {
-    console.log("entrou no useEffect 2");
-    if (theme === "dark") {
-      document.body.classList.add("dark-body");
-      document.body.classList.remove("light-body");
+  const setClassTheme = (str:string) => {
+
+    if (str === "dark") {
+      document.body.classList.add("dark-body")
+      document.body.classList.remove("light-body")
     } else {
-      document.body.classList.remove("dark-body");
-      document.body.classList.add("light-body");
+      document.body.classList.remove("dark-body")
+      document.body.classList.add("light-body")
     }
-    console.log("Definindo tema no localStorage:", theme);
-    localStorage.setItem("theme", theme);
-    console.log("rodando novamente");
-  }, []);
+
+
+  }
+
 
   return (
     <ThemeModeContext.Provider value={{ theme, toggleTheme, isDark }}>
