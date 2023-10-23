@@ -18,7 +18,7 @@ export const boxColunmAlt: CSSProperties = {
   justifyContent: "start",
 };
 
-export const marginContainer: CSSProperties = {
+export const footerStyleTopPad: CSSProperties = {
   padding: "100px 100px  0  100px ",
   display: "flex",
   flexDirection: "row",
@@ -27,7 +27,7 @@ export const marginContainer: CSSProperties = {
   width: "100%",
 };
 
-export const marginContainerAlt: CSSProperties = {
+export const footerStyleBottomPad: CSSProperties = {
   padding: "0 100px  100px  100px",
   display: "flex",
   flexDirection: "row",

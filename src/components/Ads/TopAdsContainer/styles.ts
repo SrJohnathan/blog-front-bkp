@@ -1,6 +1,6 @@
 import { CSSProperties } from "react";
 
-export const st: CSSProperties = {
+export const marginStyles: CSSProperties = {
   marginTop: "64px",
   marginBottom: "64px",
   marginRight: "15%",

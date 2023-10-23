@@ -4,7 +4,7 @@ export const container: CSSProperties = {
   height: "380px",
 };
 
-export const title: CSSProperties = {
+export const fontStyleTitle: CSSProperties = {
   fontStyle: "normal",
   fontWeight: "700",
   fontFamily: "Open Sans",

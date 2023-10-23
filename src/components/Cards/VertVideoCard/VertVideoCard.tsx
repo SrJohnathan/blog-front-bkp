@@ -1,21 +1,30 @@
-import { container, title } from "./styles";
+import Image from "next/image";
+import { container, fontStyleTitle } from "./styles";
 
 export const VertVideoCard = () => {
   return (
     <div className={"s12 m3"}>
       <article style={container} className="no-padding no-elevate">
-        <img
+        <Image
           style={container}
           className="responsive large"
+          width={264}
+          height={515}
           src="/Component_5.png"
+          alt=""
         />
         <div className="absolute bottom left right padding bottom-shadow white-text">
           <div>
             <div className={"row center-align"}>
-              <img width={"110"} src={"/gridicons_play.svg"} alt={""} />
+              <Image
+                width={"110"}
+                height={240}
+                src={"/gridicons_play.svg"}
+                alt={""}
+              />
             </div>
             <div className={"row"}>
-              <p style={title} className="max">
+              <p style={fontStyleTitle} className="max">
                 Lorem Ipsum é simplesmente um texto fictício da indústria de.
               </p>
             </div>

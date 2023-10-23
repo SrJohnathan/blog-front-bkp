@@ -3,14 +3,14 @@ import {
   boxColunm,
   boxColunmAlt,
   boxRow,
-  marginContainer,
-  marginContainerAlt,
+  footerStyleTopPad,
+  footerStyleBottomPad,
 } from "./styles";
 
 export const Footer = () => {
   return (
     <div className={"primary grid"}>
-      <div className={"grid s12 m12"} style={marginContainer}>
+      <div className={"grid s12 m12"} style={footerStyleTopPad}>
         <div className={"s12 m6"} style={boxColunm}>
           <div style={boxRow}>
             <Image src={"/stw.svg"} width={194} height={63} alt={""} />
@@ -32,7 +32,7 @@ export const Footer = () => {
         </div>
       </div>
 
-      <div className={"s12 m12 right"} style={marginContainerAlt}>
+      <div className={"s12 m12 right"} style={footerStyleBottomPad}>
         <div style={boxColunm}></div>
         <div style={boxColunm}>
           <div style={boxRow}>

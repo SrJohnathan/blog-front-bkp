@@ -1,5 +1,5 @@
 import { CSSProperties } from "react";
 
-export const small: CSSProperties = {
+export const fontSizeSmall: CSSProperties = {
   fontSize: "8pt",
 };

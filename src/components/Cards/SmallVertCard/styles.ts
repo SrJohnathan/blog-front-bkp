@@ -4,6 +4,6 @@ export const container: CSSProperties = {
   height: "150px",
 };
 
-export const small: CSSProperties = {
+export const fontSizeSmall: CSSProperties = {
   fontSize: "8pt",
 };
