@@ -11,8 +11,8 @@ export const Articles = ({ title }: { title: string }) => {
         className={"max"}
       ></div>
       <div className={"small-space"}></div>
-      <HorzNewsSqCard></HorzNewsSqCard>
-      <HorzNewsSqCard></HorzNewsSqCard>
+      <HorzNewsSqCard />
+      <HorzNewsSqCard />
       <a className={"primary-title margin"}>
         Ver Mais <i>expand_more</i>{" "}
       </a>

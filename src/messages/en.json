@@ -1,0 +1,17 @@
+{
+  "Layout": {
+    "lang": "en",
+    "metaLang": "en-US",
+    "title": "STW Blog",
+    "ogTitle": "STW Blog",
+    "ogType": "website",
+    "ogUrl": "https://blog.stwipis.com/",
+    "ogImage": "https://blog.stwipis.com/Component_5.png",
+    "ogDescription": "Achieve Your Journey"
+  },
+  "home": {
+    "oportunidades": "Opportunities",
+    "topEstudantes": "Top Students",
+    "eventos": "Events"
+  }
+}

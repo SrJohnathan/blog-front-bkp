@@ -1,0 +1,17 @@
+{
+  "Layout": {
+    "lang": "fr",
+    "metaLang": "fr-FR",
+    "title": "Blog STW",
+    "ogTitle": "Blog STW",
+    "ogType": "site web",
+    "ogUrl": "https://blog.stwipis.com/",
+    "ogImage": "https://blog.stwipis.com/Component_5.png",
+    "ogDescription": "Réalisez Votre Voyage"
+  },
+  "home": {
+    "oportunidades": "Opportunités",
+    "topEstudantes": "Top Étudiants",
+    "eventos": "Événements"
+  }
+}

@@ -1,3 +1,5 @@
+"use client";
+
 import { Articles } from "@/components/Articles/Articles";
 import MoreNews from "@/components/MoreNews/MoreNews";
 import { TopAdsContainer } from "@/components/Ads/TopAdsContainer/TopAdsContainer";
@@ -6,11 +8,14 @@ import { PodCasts } from "@/components/Podcasts/Podcasts";
 import { ReadAndRecomNewsContainer } from "@/components/ReadAndRecomNewsContainer/ReadAndRecomNewsContainer";
 import { Suspense } from "react";
 import MoreNewsSkeleton from "@/components/MoreNews/MoreNewsSkeleton";
+import { useTranslations } from "next-intl";
 
 export default function Home() {
+  const t = useTranslations();
+
   return (
     <main className={"responsive"}>
-      <TopAdsContainer></TopAdsContainer>
+      <TopAdsContainer />
       <div className={"grid large-space"}>
         {/* Coluna principal */}
         <div className={"s12 m8"}>
@@ -18,20 +23,20 @@ export default function Home() {
             <MoreNews />
           </Suspense>
           <div className={"space"}></div>
-          <ReadAndRecomNewsContainer></ReadAndRecomNewsContainer>
+          <ReadAndRecomNewsContainer />
           <div className={"space"}></div>
-          <MainAdsContainer></MainAdsContainer>
+          <MainAdsContainer />
           <div className={"space"}></div>
-          <PodCasts></PodCasts>
+          <PodCasts />
         </div>
         {/* Coluna lateral */}
         <div className={"s12 m4"}>
-          <Articles title={"Oportunidades"}></Articles>
+          <Articles title={t("home.Oportunidades")} />
           <div className={"space"}></div>
-          <MainAdsContainer></MainAdsContainer>
-          <Articles title={"Top Estudantes"} />
+          <MainAdsContainer />
+          <Articles title={t("home.Top Estudantes")} />
           <div className={"space"}></div>
-          <Articles title={"Eventos"} />
+          <Articles title={t("home.Eventos")} />
           <div className={"space"}></div>
         </div>
       </div>

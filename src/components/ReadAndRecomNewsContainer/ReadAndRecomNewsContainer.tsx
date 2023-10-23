@@ -37,12 +37,12 @@ export const ReadAndRecomNewsContainer = () => {
         </nav>
       </div>
       {changeMostSearchedSection.section === "most read" ? (
-        <MostReadNewsContainer></MostReadNewsContainer>
+        <MostReadNewsContainer />
       ) : (
         ""
       )}
       {changeMostSearchedSection.section === "most recommended" ? (
-        <MostRecomNewsContainer></MostRecomNewsContainer>
+        <MostRecomNewsContainer />
       ) : (
         ""
       )}
