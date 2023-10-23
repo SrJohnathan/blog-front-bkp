@@ -39,5 +39,9 @@
   "MostReadAndRecomNewsContainer": {
     "Mais Lidas": "Mais Lidas",
     "Mais Recomendadas": "Mais Recomendadas"
+  },
+  "MoreNewsSkeleton": {
+    "Carregando Mais Notícias": "Carregando Mais Notícias",
+    "Carregando Ver Mais": "Carregando Ver Mais"
   }
 }
