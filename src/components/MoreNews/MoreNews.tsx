@@ -1,43 +1,42 @@
+"use client";
+
 import Link from "next/link";
 import { MedSqCard } from "../Cards/MedSqCard/MedSqCard";
 import { box, divider } from "./styles";
+import { useTranslations } from "next-intl";
+import { useEffect, useState } from "react";
 
-// const loadNews = 60 * 60 * 8; // Atualiza a cada 8h
-// const revalidate = loadNews;
+export default function MoreNews() {
+  const [showCards, setShowCards] = useState(false);
 
-function mockapi(): Promise<number[]> {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve(Array.from({ length: 9 }).map((_, i) => i));
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowCards(true);
     }, 3000);
-  });
-}
+    return () => clearTimeout(timer);
+  }, []);
 
-export default async function MoreNews() {
-  //   const dataNews = await fetch(`${process.env.API}/post`, {
-  //     next: { revalidate: loadNews },
-  //   });
-  //   console.log(dataNews.json());
-  const array = await mockapi();
+  const t = useTranslations("MoreNews");
 
   return (
     <div className={"grid"}>
       <div className={"s12 m12"}>
         <div style={box}>
           <h6 className={"primary-title"}>
-            <strong>Mais Notícias</strong>
+            <strong>{t("Mais Notícias")}</strong>
           </h6>
           <div className={"primary-title-container"} style={divider}></div>
         </div>
       </div>
       <article className={"s12 m12 large-padding no-elevate"}>
         <div className={"grid "}>
-          {array.map((i) => {
-            return <MedSqCard key={i}></MedSqCard>;
-          })}
+          {showCards &&
+            Array(9)
+              .fill(0)
+              .map((_, index) => <MedSqCard key={index} />)}
         </div>
         <Link href={"/articles?=full"} className={"primary-title margin"}>
-          Ver Mais <i>expand_more</i>{" "}
+          {t("Ver Mais")} <i>expand_more</i>{" "}
         </Link>
       </article>
     </div>

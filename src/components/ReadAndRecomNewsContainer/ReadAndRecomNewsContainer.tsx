@@ -1,13 +1,17 @@
 "use client";
 
 import { useState } from "react";
-import { MostReadNewsContainer } from "./MostReadNewsContainer/MostVReadNewsContainer";
+import { MostReadNewsContainer } from "./MostReadNewsContainer/MostReadNewsContainer";
 import { MostRecomNewsContainer } from "./MostRecomNewsContainer/MostRecomNewsContainer";
+import { useTranslations } from "next-intl";
 
 export const ReadAndRecomNewsContainer = () => {
   const [changeMostSearchedSection, setChangeMostSearchedSection] = useState({
     section: "most read",
   });
+
+  const t = useTranslations("MostReadAndRecomNewsContainer");
+
   return (
     <div className={"grid"}>
       <div className={"s12 m12"}>
@@ -20,7 +24,7 @@ export const ReadAndRecomNewsContainer = () => {
               setChangeMostSearchedSection({ section: "most read" });
             }}
           >
-            <span>Mais Lidas</span>
+            <span>{t("Mais Lidas")}</span>
           </button>
           <button
             className={`border max right-round ${
@@ -32,7 +36,7 @@ export const ReadAndRecomNewsContainer = () => {
               setChangeMostSearchedSection({ section: "most recommended" });
             }}
           >
-            <span>Mais Recomendas</span>
+            <span>{t("Mais Recomendas")}</span>
           </button>
         </nav>
       </div>

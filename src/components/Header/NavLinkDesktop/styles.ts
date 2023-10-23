@@ -1,6 +1,6 @@
 import { CSSProperties } from "react";
 
-export const desktopNavLinkStyle: CSSProperties = {
+export const titleStyle: CSSProperties = {
   fontStyle: "normal",
   fontWeight: "700",
   fontSize: "12pt",

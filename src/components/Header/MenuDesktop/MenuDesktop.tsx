@@ -1,17 +1,11 @@
 "use client";
 
-import React, { CSSProperties, useContext } from "react";
+import React, { useContext } from "react";
 import { ThemeModeContext } from "@/context/ThemeModeContext";
 import { Languages } from "./Languages/Languages";
 import { SocialMediaIcons } from "./SocialMediaIcons/SocialMediaIcons";
 import Image from "next/image";
-
-const a: CSSProperties = {
-  fontStyle: "normal",
-  fontWeight: "700",
-  fontSize: "12pt",
-  fontFamily: "Inter,sans-serif",
-};
+import { NavLinkDesktop } from "../NavLinkDesktop/NavLinkDesktop";
 
 export const MenuDesktop = () => {
   const { toggleTheme, isDark } = useContext(ThemeModeContext);
@@ -39,179 +33,8 @@ export const MenuDesktop = () => {
                 }}
               >
                 <div className={"grid no-space center-align"}>
-                  <div className={"m3"}>
-                    <button
-                      style={a}
-                      className=" transparent no-padding no-wave"
-                    >
-                      STW
-                    </button>
-                  </div>
-
-                  <div className={"m3"}>
-                    <button
-                      style={a}
-                      className=" transparent no-padding no-wave"
-                    >
-                      ESTRANGEIRO
-                    </button>
-                  </div>
-
-                  <div className={"m3"}>
-                    <button
-                      style={a}
-                      className=" transparent no-padding no-wave"
-                    >
-                      PROJETOS
-                    </button>
-                  </div>
-                  <div className={"m3"}>
-                    <button
-                      style={a}
-                      className="  transparent no-padding no-wave"
-                    >
-                      TÓPICOS
-                    </button>
-                  </div>
+                  <NavLinkDesktop />
                 </div>
-
-                {/* <Collapse isOpen={isOpen}>
-                  <div className={"grid left-align"}>
-                    <div className={"m3"}>
-                      <button
-                        style={a}
-                        className=" transparent no-padding no-wave"
-                      >
-                        NO ESTRANGEIRO
-                      </button>
-                    </div>
-                    <div className={"m3"}>
-                      <button
-                        style={a}
-                        className=" transparent no-padding no-wave"
-                      >
-                        STW
-                      </button>
-                    </div>
-                    <div className={"m3"}>
-                      <button
-                        style={a}
-                        className=" transparent no-padding no-wave"
-                      >
-                        PROJETOS
-                      </button>
-                    </div>
-                    <div className={"m3"}>
-                      <button
-                        style={a}
-                        className="  transparent no-padding no-wave"
-                      >
-                        OUTROS TÓPICOS
-                      </button>
-                    </div>
-                    <div className={"m3"}>
-                      <button
-                        style={a}
-                        className=" transparent no-padding no-wave"
-                      >
-                        NO ESTRANGEIRO
-                      </button>
-                    </div>
-                    <div className={"m3"}>
-                      <button
-                        style={a}
-                        className=" transparent no-padding no-wave"
-                      >
-                        STW
-                      </button>
-                    </div>
-                    <div className={"m3"}>
-                      <button
-                        style={a}
-                        className=" transparent no-padding no-wave"
-                      >
-                        PROJETOS
-                      </button>
-                    </div>
-                    <div className={"m3"}>
-                      <button
-                        style={a}
-                        className="  transparent no-padding no-wave"
-                      >
-                        OUTROS TÓPICOS
-                      </button>
-                    </div>
-                    <div className={"m3"}>
-                      <button
-                        style={a}
-                        className=" transparent no-padding no-wave"
-                      >
-                        NO ESTRANGEIRO
-                      </button>
-                    </div>
-                    <div className={"m3"}>
-                      <button
-                        style={a}
-                        className=" transparent no-padding no-wave"
-                      >
-                        STW
-                      </button>
-                    </div>
-                    <div className={"m3"}>
-                      <button
-                        style={a}
-                        className=" transparent no-padding no-wave"
-                      >
-                        PROJETOS
-                      </button>
-                    </div>
-                    <div className={"m3"}>
-                      <button
-                        style={a}
-                        className="  transparent no-padding no-wave"
-                      >
-                        OUTROS TÓPICOS
-                      </button>
-                    </div>
-                    <div className={"m3"}>
-                      <button
-                        style={a}
-                        className=" transparent no-padding no-wave"
-                      >
-                        NO ESTRANGEIRO
-                      </button>
-                    </div>
-                    <div className={"m3"}>
-                      <button
-                        style={a}
-                        className=" transparent no-padding no-wave"
-                      >
-                        STW
-                      </button>
-                    </div>
-                    <div className={"m3"}>
-                      <button
-                        style={a}
-                        className=" transparent no-padding no-wave"
-                      >
-                        PROJETOS
-                      </button>
-                    </div>
-                    <div
-                      onClick={(event) => {
-                        alert("ai");
-                      }}
-                      className={"m3"}
-                    >
-                      <button
-                        style={a}
-                        className="  transparent no-padding no-wave"
-                      >
-                        OUTROS TÓPICOS
-                      </button>
-                    </div>
-                  </div>
-                </Collapse> */}
               </div>
 
               <div className={"max"}></div>
@@ -227,14 +50,12 @@ export const MenuDesktop = () => {
 
               <button
                 onClick={function () {
-
                   toggleTheme();
                 }}
                 className="circle transparent"
               >
                 {isDark ? <i>dark_mode</i> : <i>light_mode</i>}
               </button>
-
             </nav>
             <div className={"small-space"}></div>
           </div>

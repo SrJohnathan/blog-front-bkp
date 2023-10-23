@@ -5,7 +5,7 @@ import { MiniCardViews } from "../MiniCardViews/MiniCardViews";
 
 export const MedSqCard = () => {
   return (
-    <Link href={"/post"} className={"s12 m4"}>
+    <Link href={"/more-news"} className={"s12 m4"}>
       <article className="no-padding transparent no-elevate">
         <Image
           className="responsive small"

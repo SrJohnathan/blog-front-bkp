@@ -22,7 +22,7 @@ export const HorzNewsSqCard = () => {
             <label className={"primary-description"}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit
             </label>
-            <MiniCardViews></MiniCardViews>
+            <MiniCardViews />
           </div>
         </div>
       </div>

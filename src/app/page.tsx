@@ -11,7 +11,7 @@ import MoreNewsSkeleton from "@/components/MoreNews/MoreNewsSkeleton";
 import { useTranslations } from "next-intl";
 
 export default function Home() {
-  const t = useTranslations();
+  const t = useTranslations("Home");
 
   return (
     <main className={"responsive"}>
@@ -31,12 +31,12 @@ export default function Home() {
         </div>
         {/* Coluna lateral */}
         <div className={"s12 m4"}>
-          <Articles title={t("home.Oportunidades")} />
+          <Articles title={t("Oportunidades")} />
           <div className={"space"}></div>
           <MainAdsContainer />
-          <Articles title={t("home.Top Estudantes")} />
+          <Articles title={t("Top Estudantes")} />
           <div className={"space"}></div>
-          <Articles title={t("home.Eventos")} />
+          <Articles title={t("Eventos")} />
           <div className={"space"}></div>
         </div>
       </div>

@@ -9,9 +9,35 @@
     "ogImage": "https://blog.stwipis.com/Component_5.png",
     "ogDescription": "Conquiste Sua Viagem"
   },
-  "home": {
+  "Home": {
     "oportunidades": "Oportunidades",
     "topEstudantes": "Top Estudantes",
     "eventos": "Eventos"
+  },
+  "Articles": {
+    "Ver Mais": "Ver Mais"
+  },
+  "Footer": {
+    "Últimas notícias": "Últimas notícias",
+    "copyrightText": "Todos os direitos reservados © Desde Janeiro de 2022 Study Travel Work – STW | NIPC 516747428"
+  },
+  "NavLinkDesktop": {
+    "ESTRANGEIRO": "ESTRANGEIRO",
+    "PROJETOS": "PROJETOS",
+    "TÓPICOS": "TÓPICOS"
+  },
+  "MoreNews": {
+    "Mais Notícias": "Mais Notícias",
+    "Ver Mais": "Ver Mais"
+  },
+  "MostReadNewsContainer": {
+    "Ver Mais": "Ver Mais"
+  },
+  "MostRecomNewsContainer": {
+    "Ver Mais": "Ver Mais"
+  },
+  "MostReadAndRecomNewsContainer": {
+    "Mais Lidas": "Mais Lidas",
+    "Mais Recomendadas": "Mais Recomendadas"
   }
 }

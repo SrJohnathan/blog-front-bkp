@@ -9,9 +9,35 @@
     "ogImage": "https://blog.stwipis.com/Component_5.png",
     "ogDescription": "Logra Tu Viaje"
   },
-  "home": {
+  "Home": {
     "oportunidades": "Oportunidades",
     "topEstudantes": "Top Estudiantes",
     "eventos": "Eventos"
+  },
+  "Articles": {
+    "Ver Mais": "Ver Más"
+  },
+  "Footer": {
+    "Últimas notícias": "Últimas noticias",
+    "copyrightText": "Todos los derechos reservados © Desde enero de 2022 Study Travel Work – STW | NIPC 516747428"
+  },
+  "NavLinkDesktop": {
+    "ESTRANGEIRO": "EXTRANJERO",
+    "PROJETOS": "PROYECTOS",
+    "TÓPICOS": "TEMAS"
+  },
+  "MoreNews": {
+    "Mais Notícias": "Más Noticias",
+    "Ver Mais": "Ver Más"
+  },
+  "MostReadNewsContainer": {
+    "Ver Mais": "Ver Más"
+  },
+  "MostRecomNewsContainer": {
+    "Ver Mais": "Ver Más"
+  },
+  "MostReadAndRecomNewsContainer": {
+    "Mais Lidas": "Más Leídas",
+    "Mais Recomendadas": "Más Recomendadas"
   }
 }
