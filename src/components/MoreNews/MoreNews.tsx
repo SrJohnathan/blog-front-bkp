@@ -1,14 +1,15 @@
+import Link from "next/link";
 import { MedSqCard } from "../Cards/MedSqCard/MedSqCard";
 import { box, divider } from "./styles";
 
-const loadNews = 60 * 60 * 8; // Atualiza a cada 8h
-const revalidate = loadNews;
+// const loadNews = 60 * 60 * 8; // Atualiza a cada 8h
+// const revalidate = loadNews;
 
 function mockapi(): Promise<number[]> {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve(Array.from({ length: 9 }).map((_, i) => i));
-    }, 5000);
+    }, 3000);
   });
 }
 
@@ -35,9 +36,9 @@ export default async function MoreNews() {
             return <MedSqCard key={i}></MedSqCard>;
           })}
         </div>
-        <a href={"/articles?=full"} className={"primary-title margin"}>
+        <Link href={"/articles?=full"} className={"primary-title margin"}>
           Ver Mais <i>expand_more</i>{" "}
-        </a>
+        </Link>
       </article>
     </div>
   );

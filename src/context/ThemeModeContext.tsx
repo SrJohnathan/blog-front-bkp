@@ -20,12 +20,11 @@ interface Props {
 
 export const ThemeModeProvider = ({ children }: Props) => {
   const [theme, setTheme] = useState<"light" | "dark">("light");
-  const [isDark, setIsDark] = useState<boolean>(false);
+  const isDark = theme === "dark";
 
   const toggleTheme = () => {
     setTheme((prevTheme) => {
       const newTheme = prevTheme === "light" ? "dark" : "light";
-      setIsDark(newTheme === "dark");
       // @ts-ignore
       ui("mode", newTheme);
       localStorage.setItem("theme", newTheme);
@@ -37,15 +36,13 @@ export const ThemeModeProvider = ({ children }: Props) => {
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme") || "light";
     setTheme(savedTheme as "light" | "dark");
-    setIsDark(savedTheme === "dark");
-    setClassTheme(savedTheme);
-
     // @ts-ignore
     ui("mode", savedTheme as "light" | "dark");
+    setClassTheme(savedTheme as "light" | "dark");
   }, []);
 
-  const setClassTheme = (str: string) => {
-    if (str === "dark") {
+  const setClassTheme = (currentTheme: string) => {
+    if (currentTheme === "dark") {
       document.body.classList.add("dark-body");
       document.body.classList.remove("light-body");
     } else {
