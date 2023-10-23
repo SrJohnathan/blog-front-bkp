@@ -4,11 +4,11 @@ export const Languages = () => {
   return (
     <button className="circle transparent">
       <i>translate</i>
-      {/* <menu className="no-wrap left">
+      <menu className="no-wrap left">
         <a className="row">
           <Image
             className="circle tiny"
-            src="/band/eua.svg"
+            src="/band/usa.svg"
             alt="Change to English language"
           />
           <span>English</span>
@@ -24,7 +24,7 @@ export const Languages = () => {
         <a className="row">
           <Image
             className="circle tiny"
-            src="/band/span.svg"
+            src="/band/spain.svg"
             alt="Cambiar para idioma Español"
           />
           <span>Español</span>
@@ -32,12 +32,12 @@ export const Languages = () => {
         <a className="row">
           <Image
             className="circle tiny"
-            src="/band/portu.svg"
+            src="/band/portugal.svg"
             alt="Mudar para o idioma Português"
           />
           <span>Portuguese</span>
         </a>
-      </menu> */}
+      </menu>
     </button>
   );
 };
