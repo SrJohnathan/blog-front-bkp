@@ -24,18 +24,7 @@ export const MenuDesktop = () => {
           <div className={"m11"}>
             <div className={"small-padding"}></div>
             <nav>
-              <div
-                className={"max"}
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "end",
-                }}
-              >
-                <div className={"grid no-space center-align"}>
-                  <NavLinkDesktop />
-                </div>
-              </div>
+              <NavLinkDesktop />
 
               <div className={"max"}></div>
 
