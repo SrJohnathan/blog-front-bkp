@@ -1,13 +1,16 @@
 "use client";
 
-import { Articles } from "@/components/Articles/Articles";
-import MoreNews from "@/components/MoreNews/MoreNews";
 import { TopAdsContainer } from "@/components/Ads/TopAdsContainer/TopAdsContainer";
+import { VertRectTopCard } from "@/components/Cards/VertRectTopCard/VertRectTopCard";
+import { TopMedRectCard } from "@/components/Cards/TopMedRectCard/TopMedRectCard";
+import MoreNews from "@/components/MoreNews/MoreNews";
+import MoreNewsSkeleton from "@/components/MoreNews/MoreNewsSkeleton";
+import { ReadAndRecomNewsContainer } from "@/components/ReadAndRecomNewsContainer/ReadAndRecomNewsContainer";
 import { MainAdsContainer } from "@/components/Ads/MainAdsContainer/MainAdsContainer";
 import { PodCasts } from "@/components/Podcasts/Podcasts";
-import { ReadAndRecomNewsContainer } from "@/components/ReadAndRecomNewsContainer/ReadAndRecomNewsContainer";
+import { Articles } from "@/components/Articles/Articles";
+
 import { Suspense } from "react";
-import MoreNewsSkeleton from "@/components/MoreNews/MoreNewsSkeleton";
 import { useTranslations } from "next-intl";
 
 export default function Home() {
@@ -16,6 +19,14 @@ export default function Home() {
   return (
     <main className={"responsive"}>
       <TopAdsContainer />
+      <div className={"grid"}>
+        <VertRectTopCard />
+        <div className={"s12 m6"}>
+          <TopMedRectCard />
+          <TopMedRectCard />V
+        </div>
+      </div>
+
       <div className={"grid large-space"}>
         {/* Coluna principal */}
         <div className={"s12 m8"}>
@@ -37,6 +48,8 @@ export default function Home() {
           <Articles title={t("Top Estudantes")} />
           <div className={"space"}></div>
           <Articles title={t("Eventos")} />
+          <div className={"space"}></div>
+          <MainAdsContainer />
           <div className={"space"}></div>
         </div>
       </div>

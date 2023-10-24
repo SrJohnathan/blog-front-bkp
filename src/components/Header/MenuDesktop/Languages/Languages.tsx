@@ -9,7 +9,7 @@ export const Languages = () => {
         <Link className="row">
           <Image
             className="circle tiny"
-            src="/band/usa.svg"
+            src="/flags/usa.svg"
             alt="Change to English language"
           />
           <span>English</span>
@@ -17,7 +17,7 @@ export const Languages = () => {
         <Link className="row">
           <Image
             className="circle tiny"
-            src="/band/france.svg"
+            src="/flags/france.svg"
             alt="Changer en langue française"
           />
           <span>Français</span>
@@ -25,7 +25,7 @@ export const Languages = () => {
         <Link className="row">
           <Image
             className="circle tiny"
-            src="/band/spain.svg"
+            src="/flags/spain.svg"
             alt="Cambiar para idioma Español"
           />
           <span>Español</span>
@@ -33,7 +33,7 @@ export const Languages = () => {
         <Link className="row">
           <Image
             className="circle tiny"
-            src="/band/portugal.svg"
+            src="/flags/portugal.svg"
             alt="Mudar para o idioma Português"
           />
           <span>Portuguese</span>
