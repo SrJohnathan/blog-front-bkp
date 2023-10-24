@@ -8,8 +8,8 @@ export const SmallVertCard = () => {
         <Image
           style={container}
           className="responsive small "
-          width={248}
-          height={238}
+          width={224}
+          height={112}
           src="/Component_5.png"
           alt={""}
         />

@@ -16,10 +16,10 @@ export const Footer = () => {
 
   return (
     <>
-      <NavLinkDesktop />
       <div className={"primary grid"}>
         <div className={"grid s12 m12"} style={footerStyleTopPad}>
           <div className={"s12 m6"} style={boxColunm}>
+            <NavLinkDesktop />
             <div style={boxRow}>
               <Image src={"/stw.svg"} width={194} height={63} alt={""} />
               <label>{t("Últimas notícias")}</label>

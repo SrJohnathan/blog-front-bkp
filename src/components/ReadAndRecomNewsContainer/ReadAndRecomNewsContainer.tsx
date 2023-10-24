@@ -36,7 +36,7 @@ export const ReadAndRecomNewsContainer = () => {
               setChangeMostSearchedSection({ section: "most recommended" });
             }}
           >
-            <span>{t("Mais Recomendas")}</span>
+            <span>{t("Mais Recomendadas")}</span>
           </button>
         </nav>
       </div>

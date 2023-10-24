@@ -1,5 +1,5 @@
 {
-  "Layout": {
+  "CustomHead": {
     "lang": "en",
     "metaLang": "en-US",
     "title": "STW Blog",
@@ -10,9 +10,9 @@
     "ogDescription": "Achieve Your Journey"
   },
   "Home": {
-    "oportunidades": "Opportunities",
-    "topEstudantes": "Top Students",
-    "eventos": "Events"
+    "Oportunidades": "Opportunities",
+    "Top Estudantes": "Top Students",
+    "Eventos": "Events"
   },
   "Articles": {
     "Ver Mais": "View More"

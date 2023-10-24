@@ -8,29 +8,42 @@ export const NavLinkDesktop = () => {
 
   return (
     <>
-      <div className={"m3"}>
-        <button style={titleStyle} className=" transparent no-padding no-wave">
-          STW
-        </button>
-      </div>
+      <div className={"grid no-space center-align"}>
+        <div className={"m3"}>
+          <button
+            style={titleStyle}
+            className=" transparent no-padding no-wave"
+          >
+            STW
+          </button>
+        </div>
 
-      <div className={"m3"}>
-        <button style={titleStyle} className=" transparent no-padding no-wave">
-          {t("ESTRANGEIRO")}
-        </button>
-      </div>
+        <div className={"m3"}>
+          <button
+            style={titleStyle}
+            className=" transparent no-padding no-wave"
+          >
+            {t("ESTRANGEIRO")}
+          </button>
+        </div>
 
-      <div className={"m3"}>
-        <button style={titleStyle} className=" transparent no-padding no-wave">
-          {t("PROJETOS")}
-        </button>
-      </div>
-      <div className={"m3"}>
-        <button style={titleStyle} className="  transparent no-padding no-wave">
-          {t("TÓPICOS")}
-        </button>
-      </div>
-      {/* <Collapse isOpen={isOpen}>
+        <div className={"m3"}>
+          <button
+            style={titleStyle}
+            className=" transparent no-padding no-wave"
+          >
+            {t("PROJETOS")}
+          </button>
+        </div>
+        <div className={"m3"}>
+          <button
+            style={titleStyle}
+            className="  transparent no-padding no-wave"
+          >
+            {t("TÓPICOS")}
+          </button>
+        </div>
+        {/* <Collapse isOpen={isOpen}>
         <div className={"grid left-align"}>
           <div className={"m3"}>
             <button
@@ -167,6 +180,7 @@ export const NavLinkDesktop = () => {
           </div>
         </div>
       </Collapse> */}
+      </div>
     </>
   );
 };

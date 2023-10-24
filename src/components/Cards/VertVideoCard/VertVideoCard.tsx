@@ -8,8 +8,8 @@ export const VertVideoCard = () => {
         <Image
           style={container}
           className="responsive large"
-          width={264}
-          height={515}
+          width={110}
+          height={240}
           src="/Component_5.png"
           alt=""
         />

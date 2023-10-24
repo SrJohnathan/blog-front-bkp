@@ -1,5 +1,5 @@
 {
-  "Layout": {
+  "CustomHead": {
     "lang": "pt",
     "metaLang": "pt-PT",
     "title": "Blog STW",
@@ -10,9 +10,9 @@
     "ogDescription": "Conquiste Sua Viagem"
   },
   "Home": {
-    "oportunidades": "Oportunidades",
-    "topEstudantes": "Top Estudantes",
-    "eventos": "Eventos"
+    "Oportunidades": "Oportunidades",
+    "Top Estudantes": "Top Estudantes",
+    "Eventos": "Eventos"
   },
   "Articles": {
     "Ver Mais": "Ver Mais"
