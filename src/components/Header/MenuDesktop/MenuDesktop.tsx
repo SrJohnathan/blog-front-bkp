@@ -25,14 +25,10 @@ export const MenuDesktop = () => {
             <div className={"small-padding"}></div>
             <nav>
               <NavLinkDesktop />
-
-              <div className={"max"}></div>
-
               <SocialMediaIcons />
 
               <div className="field label prefix center-align small fill">
                 <input type="text" name="" />
-
                 <i>search</i>
               </div>
 
@@ -47,7 +43,7 @@ export const MenuDesktop = () => {
                 {isDark ? <i>dark_mode</i> : <i>light_mode</i>}
               </button>
             </nav>
-            <div className={"small-space"}></div>
+            <div className={"small-padding"}></div>
           </div>
         </div>
       </header>

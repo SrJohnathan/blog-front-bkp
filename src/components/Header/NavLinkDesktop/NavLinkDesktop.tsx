@@ -39,12 +39,10 @@ export const NavLinkDesktop = () => {
           flexDirection: "column",
           justifyContent: "end",
         }}
+        onMouseEnter={() => setIsOpen(true)}
+        onMouseLeave={() => setIsOpen(false)}
       >
-        <div
-          onMouseEnter={() => setIsOpen(true)}
-          onMouseLeave={() => setIsOpen(false)}
-          className={"grid no-space center-align"}
-        >
+        <div className={"grid no-space left-align"}>
           <div className={"m3"}>
             <button
               style={titleStyle}
@@ -77,31 +75,31 @@ export const NavLinkDesktop = () => {
               {t("TÓPICOS")}
             </button>
           </div>
-
-          {/* Submenu */}
-          <Collapse isOpen={isOpen}>
-            <div className={"grid left-align"}>
-              {Object.entries(subMenuItems).map(([key, items]) =>
-                items.map((item, index) => (
-                  <div key={`${key}-${index}`} className={"m3"}>
-                    <Link
-                      href={`/${key.toLowerCase()}/${item
-                        .replace(" ", "-")
-                        .toLowerCase()}`}
-                    >
-                      <button
-                        style={titleStyle}
-                        className="transparent no-padding no-wave"
-                      >
-                        {item}
-                      </button>
-                    </Link>
-                  </div>
-                ))
-              )}
-            </div>
-          </Collapse>
         </div>
+
+        {/* Submenu */}
+        <Collapse isOpen={isOpen}>
+          <div className={"grid no-space left-align"}>
+            {Object.entries(subMenuItems).map(([key, items]) =>
+              items.map((item, index) => (
+                <div key={`${key}-${index}`} className={"m3"}>
+                  <Link
+                    href={`/${key.toLowerCase()}/${item
+                      .replace(" ", "-")
+                      .toLowerCase()}`}
+                  >
+                    <button
+                      style={titleStyle}
+                      className="transparent no-padding no-wave left-align"
+                    >
+                      {item}
+                    </button>
+                  </Link>
+                </div>
+              ))
+            )}
+          </div>
+        </Collapse>
       </div>
     </>
   );
