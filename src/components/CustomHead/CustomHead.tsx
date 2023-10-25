@@ -20,6 +20,8 @@ export default function CustomHead() {
       <meta property="og:image" content={t("ogImage")} />
       <meta property="og:description" content={t("ogDescription")} />
 
+      <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/open-sans" />
+
       {/* Font preconnects */}
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" />
