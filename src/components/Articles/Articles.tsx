@@ -20,7 +20,7 @@ export const Articles = ({ title }: { title: string }) => {
       <HorzNewsSqCard />
       <HorzNewsSqCard />
       <Link href={"/articles"} className={"primary-title margin"}>
-        {t("Ver Mais")} <i>expand_more</i>{" "}
+        {t("Ver Mais")} <i>expand_more</i>
       </Link>
     </article>
   );

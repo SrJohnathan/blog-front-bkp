@@ -10,7 +10,7 @@ export const MedSqCard = () => {
         <Image
           className="responsive small"
           width={"200"}
-          height={"300"}
+          height={"200"}
           src="/Component_2.avif"
           alt=""
         />
