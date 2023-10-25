@@ -9,8 +9,8 @@ export const MedSqCard = () => {
       <article className="no-padding transparent no-elevate">
         <Image
           className="responsive small"
-          width={200}
-          height={300}
+          width={"200"}
+          height={"300"}
           src="/Component_5.png"
           alt=""
         />

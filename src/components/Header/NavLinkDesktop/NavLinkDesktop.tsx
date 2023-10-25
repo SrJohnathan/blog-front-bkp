@@ -12,7 +12,7 @@ export const NavLinkDesktop = () => {
 
   const subMenuItems = {
     STW: ["Notícias", "Serviços", "Eventos", "Estudar", "Bolsas", "Trabalho"],
-    "NO ESTRANGEIRO": [
+    ESTRANGEIRO: [
       "Destinos",
       "Universidades",
       "Acadêmicos",
@@ -27,12 +27,7 @@ export const NavLinkDesktop = () => {
       "Podcast",
       "Top Students",
     ],
-    "OUTROS TÓPICOS": [
-      "Oportunidades",
-      "Tempo",
-      "Notícias",
-      "Ciência e Inovação",
-    ],
+    TÓPICOS: ["Oportunidades", "Tempo", "Notícias", "Ciência e Inovação"],
   };
 
   return (

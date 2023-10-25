@@ -7,14 +7,14 @@ import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 
 export default function MoreNews() {
-  const [showCards, setShowCards] = useState(false);
+  // const [showCards, setShowCards] = useState(false);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowCards(true);
-    }, 3000);
-    return () => clearTimeout(timer);
-  }, []);
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     setShowCards(true);
+  //   }, 3000);
+  //   return () => clearTimeout(timer);
+  // }, []);
 
   const t = useTranslations("MoreNews");
 
@@ -30,10 +30,14 @@ export default function MoreNews() {
       </div>
       <article className={"s12 m12 large-padding no-elevate"}>
         <div className={"grid "}>
-          {showCards &&
+          {
+            // showCards &&
             Array(9)
               .fill(0)
-              .map((_, index) => <MedSqCard key={index} />)}
+              .map((_, index) => (
+                <MedSqCard key={index} />
+              ))
+          }
         </div>
         <Link href={"/articles?=full"} className={"primary-title margin"}>
           {t("Ver Mais")} <i>expand_more</i>{" "}

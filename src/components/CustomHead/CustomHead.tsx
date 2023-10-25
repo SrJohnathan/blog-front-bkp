@@ -19,6 +19,13 @@ export default function CustomHead() {
       <meta property="og:url" content={t("ogUrl")} />
       <meta property="og:image" content={t("ogImage")} />
       <meta property="og:description" content={t("ogDescription")} />
+
+      {/* Font preconnects */}
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" />
+
+      {/* Favicon */}
+      <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
     </>
   );
 }

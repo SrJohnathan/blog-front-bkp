@@ -4,41 +4,49 @@ import Link from "next/link";
 export const Languages = () => {
   return (
     <button className="circle transparent">
-      {/* <i>translate</i>
+      <i>translate</i>
       <menu className="no-wrap left">
-        <Link className="row">
+        <Link href={"/en"} className="row">
           <Image
             className="circle tiny"
+            width={26}
+            height={26}
             src="/flags/usa.svg"
             alt="Change to English language"
           />
           <span>English</span>
         </Link>
-        <Link className="row">
+        <Link href={"/fr"} className="row">
           <Image
             className="circle tiny"
+            width={26}
+            height={26}
             src="/flags/france.svg"
             alt="Changer en langue française"
           />
           <span>Français</span>
         </Link>
-        <Link className="row">
+        <Link href={"/es"} className="row">
           <Image
             className="circle tiny"
+            width={26}
+            height={26}
             src="/flags/spain.svg"
             alt="Cambiar para idioma Español"
           />
           <span>Español</span>
         </Link>
-        <Link className="row">
+        <Link href={"/pt"} className="row">
           <Image
             className="circle tiny"
+            width={26}
+            height={26}
             src="/flags/portugal.svg"
             alt="Mudar para o idioma Português"
           />
           <span>Portuguese</span>
         </Link>
-      </menu> */}
+      </menu>
     </button>
   );
 };

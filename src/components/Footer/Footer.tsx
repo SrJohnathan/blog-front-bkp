@@ -7,9 +7,10 @@ import {
   boxRow,
   footerStyleTopPad,
   footerStyleBottomPad,
+  NavLinkStyleTopPad,
 } from "./styles";
 import { useTranslations } from "next-intl";
-import { NavLinkDesktop } from "../Header/NavLinkDesktop/NavLinkDesktop";
+import { NavLinkFooter } from "./NavLinkFooter/NavLinkFooter";
 
 export const Footer = () => {
   const t = useTranslations("Footer");
@@ -17,9 +18,11 @@ export const Footer = () => {
   return (
     <>
       <div className={"primary grid"}>
+        <div className={"grid s12 m12"} style={NavLinkStyleTopPad}>
+          <NavLinkFooter />
+        </div>
         <div className={"grid s12 m12"} style={footerStyleTopPad}>
           <div className={"s12 m6"} style={boxColunm}>
-            <NavLinkDesktop />
             <div style={boxRow}>
               <Image src={"/stw.svg"} width={194} height={63} alt={""} />
               <label>{t("Últimas notícias")}</label>
@@ -29,11 +32,10 @@ export const Footer = () => {
           </div>
           <div className={"s12 m6"} style={boxColunm}>
             <div style={boxColunmAlt}>
-              <label>{t("copyrightText")}</label>
+              <label>{t("info")}</label>
             </div>
           </div>
         </div>
-
         <div className={"s12 m12 right"} style={footerStyleBottomPad}>
           <div style={boxColunm}></div>
           <div style={boxColunm}>
