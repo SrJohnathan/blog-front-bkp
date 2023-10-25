@@ -10,7 +10,7 @@ export const SmallVertCard = () => {
           className="responsive small "
           width={224}
           height={112}
-          src="/Component_5.png"
+          src="/Component_1.avif"
           alt={""}
         />
         <div className="padding">

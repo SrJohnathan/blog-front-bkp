@@ -11,7 +11,7 @@ export const MedSqCard = () => {
           className="responsive small"
           width={"200"}
           height={"300"}
-          src="/Component_5.png"
+          src="/Component_2.avif"
           alt=""
         />
         <div className="padding">

@@ -8,7 +8,7 @@ export const TopMedRectCard = () => {
         <Image
           style={{ height: "358px" }}
           className="responsive small"
-          width={879}
+          width={377}
           height={358}
           src="/Component_5.png"
           alt=""

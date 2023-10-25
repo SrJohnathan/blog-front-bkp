@@ -10,7 +10,7 @@ export const VertVideoCard = () => {
           className="responsive large"
           width={110}
           height={240}
-          src="/Component_5.png"
+          src="/Component_4.jpeg"
           alt=""
         />
         <div className="absolute bottom left right padding bottom-shadow white-text">

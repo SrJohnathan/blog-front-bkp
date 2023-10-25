@@ -9,7 +9,7 @@ export const SocialMediaIcons = () => {
           viewBox="0 0 26 27"
           fill="none"
         >
-          <g clip-path="url(#clip0_392_4307)">
+          <g clipPath="url(#clip0_392_4307)">
             <path
               d="M0.554805 12.9447C0.554195 15.1463 1.12945 17.296 2.22327 19.1907L0.450195 25.6645L7.07532 23.9274C8.90774 24.925 10.9608 25.4477 13.0472 25.4478H13.0527C19.9401 25.4478 25.5467 19.8433 25.5496 12.9546C25.551 9.61654 24.2522 6.47765 21.8925 4.11612C19.5332 1.75479 16.3954 0.453672 13.0522 0.452148C6.1639 0.452148 0.55775 6.05637 0.554906 12.9447"
               fill="url(#paint0_linear_392_4307)"
@@ -32,8 +32,8 @@ export const SocialMediaIcons = () => {
               y2="0.452148"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stop-color="#1FAF38" />
-              <stop offset="1" stop-color="#60D669" />
+              <stop stopColor="#1FAF38" />
+              <stop offset="1" stopColor="#60D669" />
             </linearGradient>
             <linearGradient
               id="paint1_linear_392_4307"
@@ -43,8 +43,8 @@ export const SocialMediaIcons = () => {
               y2="0"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stop-color="#F9F9F9" />
-              <stop offset="1" stop-color="white" />
+              <stop stopColor="#F9F9F9" />
+              <stop offset="1" stopColor="white" />
             </linearGradient>
             <clipPath id="clip0_392_4307">
               <rect width="26" height="26.2031" fill="white" />
@@ -60,7 +60,7 @@ export const SocialMediaIcons = () => {
           viewBox="0 0 26 26"
           fill="none"
         >
-          <g clip-path="url(#clip0_392_4311)">
+          <g clipPath="url(#clip0_392_4311)">
             <path
               d="M19.9062 0H6.09375C2.72826 0 0 2.72826 0 6.09375V19.9062C0 23.2717 2.72826 26 6.09375 26H19.9062C23.2717 26 26 23.2717 26 19.9062V6.09375C26 2.72826 23.2717 0 19.9062 0Z"
               fill="url(#paint0_radial_392_4311)"
@@ -83,10 +83,10 @@ export const SocialMediaIcons = () => {
               gradientUnits="userSpaceOnUse"
               gradientTransform="translate(6.90625 28.0025) rotate(-90) scale(25.7679 23.9662)"
             >
-              <stop stop-color="#FFDD55" />
-              <stop offset="0.1" stop-color="#FFDD55" />
-              <stop offset="0.5" stop-color="#FF543E" />
-              <stop offset="1" stop-color="#C837AB" />
+              <stop stopColor="#FFDD55" />
+              <stop offset="0.1" stopColor="#FFDD55" />
+              <stop offset="0.5" stopColor="#FF543E" />
+              <stop offset="1" stopColor="#C837AB" />
             </radialGradient>
             <radialGradient
               id="paint1_radial_392_4311"
@@ -96,9 +96,9 @@ export const SocialMediaIcons = () => {
               gradientUnits="userSpaceOnUse"
               gradientTransform="translate(-4.3551 1.87291) rotate(78.681) scale(11.5184 47.4792)"
             >
-              <stop stop-color="#3771C8" />
-              <stop offset="0.128" stop-color="#3771C8" />
-              <stop offset="1" stop-color="#6600FF" stop-opacity="0" />
+              <stop stopColor="#3771C8" />
+              <stop offset="0.128" stopColor="#3771C8" />
+              <stop offset="1" stopColor="#6600FF" stopOpacity="0" />
             </radialGradient>
             <clipPath id="clip0_392_4311">
               <rect width="26" height="26" fill="white" />
@@ -114,7 +114,7 @@ export const SocialMediaIcons = () => {
           viewBox="0 0 26 26"
           fill="none"
         >
-          <g clip-path="url(#clip0_392_4316)">
+          <g clipPath="url(#clip0_392_4316)">
             <path
               d="M22.1531 22.1536H18.3007V16.1205C18.3007 14.6818 18.275 12.8298 16.2971 12.8298C14.2906 12.8298 13.9836 14.3974 13.9836 16.0158V22.1532H10.1313V9.74671H13.8295V11.4422H13.8813C14.2514 10.8094 14.7863 10.2888 15.4288 9.93584C16.0714 9.58291 16.7977 9.41088 17.5303 9.43806C21.4348 9.43806 22.1547 12.0064 22.1547 15.3476L22.1531 22.1536ZM5.78447 8.05092C4.54978 8.05113 3.54867 7.05033 3.54847 5.81563C3.54827 4.58094 4.54896 3.57984 5.78366 3.57963C7.01835 3.57933 8.01946 4.58013 8.01966 5.81482C8.01977 6.40775 7.78434 6.97643 7.36516 7.39578C6.94599 7.81513 6.3774 8.05079 5.78447 8.05092ZM7.71071 22.1537H3.85428V9.74671H7.7106V22.1536L7.71071 22.1537ZM24.0736 0.0018923H1.91849C0.871386 -0.00988895 0.0126748 0.828916 -0.00012207 1.87602V24.1236C0.0122686 25.1712 0.870878 26.0108 1.91839 25.9999H24.0736C25.1234 26.0129 25.9854 25.1732 25.9999 24.1236V1.8743C25.9849 0.825158 25.1229 -0.0135452 24.0736 0.000165739"
               fill="#0A66C2"

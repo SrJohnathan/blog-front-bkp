@@ -31,7 +31,8 @@ export const MenuDesktop = () => {
               <SocialMediaIcons />
 
               <div className="field label prefix center-align small fill">
-                <input type="text" />
+                <input type="text" name="" />
+
                 <i>search</i>
               </div>
 

@@ -9,7 +9,7 @@ export const VertRectTopCard = () => {
           <Image
             style={{ height: "734px" }}
             className="responsive large"
-            width={777}
+            width={377}
             height={734}
             src="/Component_5.png"
             alt=""

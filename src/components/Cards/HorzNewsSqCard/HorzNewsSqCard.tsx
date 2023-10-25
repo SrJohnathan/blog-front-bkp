@@ -10,7 +10,7 @@ export const HorzNewsSqCard = () => {
             className="responsive"
             width={201}
             height={191}
-            src="/Component_5.png"
+            src="/Component_3.avif"
             alt={""}
           />
         </div>
