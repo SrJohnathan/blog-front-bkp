@@ -18,15 +18,14 @@ export const HorzNewsSqCard = () => {
               />
             </div>
             <div className="padding s6">
-              <h6>
-                <strong>What is Lorem Ipsum?</strong>
-              </h6>
+              <h6 className="small bold">What is Lorem Ipsum?</h6>
               <p className="tiny-line">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit
               </p>
               <MiniCardViews />
             </div>
           </div>
+          <div className="medium-divider"></div>
         </article>
       </Link>
 

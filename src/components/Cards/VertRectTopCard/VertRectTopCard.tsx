@@ -5,10 +5,10 @@ export const VertRectTopCard = () => {
   return (
     <>
       <div className={"s12 m6"}>
-        <article style={{ height: "734px" }} className="no-padding no-round">
+        <article className="no-padding smaill-round">
           <Image
-            style={{ height: "734px" }}
-            className="responsive large"
+            // style={{ height: "734px" }}
+            className="responsive extra large-height"
             width={377}
             height={734}
             src="/Component_5.png"

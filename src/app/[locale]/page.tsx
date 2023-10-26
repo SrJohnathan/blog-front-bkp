@@ -23,7 +23,7 @@ export default function Home() {
         <VertRectTopCard />
         <div className={"s12 m6"}>
           <TopMedRectCard />
-          <TopMedRectCard />V
+          <TopMedRectCard />
         </div>
       </div>
 

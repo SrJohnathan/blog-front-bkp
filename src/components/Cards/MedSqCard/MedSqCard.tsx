@@ -8,15 +8,13 @@ export const MedSqCard = () => {
       <article className="no-padding transparent no-elevate">
         <Image
           className="responsive medium"
-          width={"200"}
-          height={"200"}
+          width="200"
+          height="200"
           src="/Component_2.avif"
           alt=""
         />
         <div className="padding">
-          <h6>
-            <strong>What is Lorem Ipsum?</strong>
-          </h6>
+          <h6 className="small bold">What is Lorem Ipsum?</h6>
           <p className="small-line">
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry
