@@ -1,33 +1,29 @@
 import Image from "next/image";
 import Link from "next/link";
-import { description, title } from "./styles";
 import { MiniCardViews } from "../MiniCardViews/MiniCardViews";
 
 export const MedSqCard = () => {
   return (
-    <Link href={"/more-news"} className={"s12 m4"}>
+    <Link href={"/more-news"} className={"s6 m4"}>
       <article className="no-padding transparent no-elevate">
         <Image
-          className="responsive small"
+          className="responsive medium"
           width={"200"}
           height={"200"}
           src="/Component_2.avif"
           alt=""
         />
         <div className="padding">
-          <div>
-            <p className={"primary-title"} style={title}>
-              What is Lorem Ipsum?
-            </p>
-            <label style={description} className="max primary-title ">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry
-            </label>
-            <MiniCardViews />
-          </div>
+          <h6>
+            <strong>What is Lorem Ipsum?</strong>
+          </h6>
+          <p className="small-line">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry
+          </p>
+          <MiniCardViews />
         </div>
       </article>
-      <article className="transparent"></article>
     </Link>
   );
 };
