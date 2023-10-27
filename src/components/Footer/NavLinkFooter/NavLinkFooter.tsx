@@ -6,15 +6,15 @@ import { useTranslations } from "next-intl";
 import { NavLinkStyleTop, titleStyle } from "./styles";
 
 export const NavLinkFooter = () => {
-  const t = useTranslations("NavLinkFooter");
+  const t = useTranslations("NavLinkDesktopFooter");
 
   const STWLinks = [
     { label: "Notícias", route: "news" },
     { label: "Serviços", route: "services" },
     { label: "Eventos", route: "events" },
-    { label: "Estudar", route: "study" },
+    { label: "Estude", route: "study" },
     { label: "Bolsas", route: "becas" },
-    { label: "Trabalho", route: "work" },
+    { label: "Trabalhe", route: "work" },
   ];
 
   const estrangeiroLinks = [
@@ -22,8 +22,9 @@ export const NavLinkFooter = () => {
     { label: "Universidades", route: "universities" },
     { label: "Acadêmicos", route: "academics" },
     { label: "Cursos", route: "courses" },
-    { label: "Estudar", route: "study" },
+    { label: "Estude", route: "study" },
     { label: "Bolsas", route: "becas" },
+    { label: "Trabalhe", route: "work" },
   ];
 
   const projetosLinks = [
@@ -37,7 +38,7 @@ export const NavLinkFooter = () => {
     { label: "Oportunidades", route: "oportunities" },
     { label: "Tempo", route: "weather" },
     { label: "Notícias", route: "news" },
-    { label: "Inovação", route: "innovation" },
+    { label: "Ciência e Inovação", route: "innovation" },
   ];
   return (
     <>

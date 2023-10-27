@@ -7,24 +7,24 @@ import { Collapse } from "./Collapse";
 import Link from "next/link";
 
 export const NavLinkDesktop = () => {
-  const t = useTranslations("NavLinkDesktop");
+  const t = useTranslations("NavLinkDesktopFooter");
   const [isOpen, setIsOpen] = useState(false);
 
   const subMenuItems = {
-    STW: ["Notícias", "Serviços", "Eventos", "Estudar", "Bolsas", "Trabalho"],
+    STW: ["Notícias", "Serviços", "Eventos", "Estude", "Bolsas", "Trabalhe"],
     ESTRANGEIRO: [
       "Destinos",
       "Universidades",
       "Acadêmicos",
       "Cursos",
-      "Estudar",
+      "Estude",
       "Bolsas",
-      "Trabalho",
+      "Trabalhe",
     ],
     PROJETOS: [
       "Programa de Integração",
       "Universidades pelo Mundo",
-      "Podcast",
+      "Podcasts",
       "Top Students",
     ],
     TÓPICOS: ["Oportunidades", "Tempo", "Notícias", "Ciência e Inovação"],
@@ -92,7 +92,7 @@ export const NavLinkDesktop = () => {
                       style={titleStyle}
                       className="transparent no-padding no-wave left-align"
                     >
-                      {item}
+                      {t(item)}
                     </button>
                   </Link>
                 </div>

@@ -22,12 +22,7 @@
     "copyrightText": "Todos los derechos reservados © Desde enero de 2022 Study Travel Work – STW | NIPC 516747428",
     "info": "Calle de la Magdalena, nº 51, 4750-315, Unión de Parroquias de Barcelos, Vila Boa y Vila Frescainha, Municipio de Barcelos."
   },
-  "NavLinkDesktop": {
-    "ESTRANGEIRO": "EN EL EXTRANJERO",
-    "PROJETOS": "PROYECTOS",
-    "TÓPICOS": "OTROS TEMAS"
-  },
-  "NavLinkFooter": {
+  "NavLinkDesktopFooter": {
     "STW": "STW",
     "ESTRANGEIRO": "En el Extranjero",
     "PROJETOS": "Proyectos",
@@ -35,9 +30,9 @@
     "Notícias": "Noticias",
     "Serviços": "Servicios",
     "Eventos": "Eventos",
-    "Estudar": "Estudiar",
+    "Estude": "Estudiar",
     "Bolsas": "Becas",
-    "Trabalho": "Trabajo",
+    "Trabalhe": "Trabajo",
     "Destinos": "Destinos",
     "Universidades": "Universidades",
     "Acadêmicos": "Académicos",
@@ -48,7 +43,7 @@
     "Top Students": "Estudiantes Destacados",
     "Oportunidades": "Oportunidades",
     "Tempo": "Tiempo",
-    "Inovação": "Innovación"
+    "Ciência e Inovação": "Innovación"
   },
   "MoreNews": {
     "Mais Notícias": "Más Noticias",
