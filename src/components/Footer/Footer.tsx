@@ -41,7 +41,39 @@ export const Footer = () => {
           <div style={boxColunm}>
             <div style={boxRow}>
               <div style={{ marginRight: "30px" }}>
-                <svg
+                <Image
+                  src={"/white-facebook.svg"}
+                  width={26}
+                  height={26}
+                  alt=""
+                />
+              </div>
+              <div style={{ marginRight: "30px" }}>
+                <Image
+                  src={"/white-instagram.svg"}
+                  width={26}
+                  height={26}
+                  alt=""
+                />
+              </div>
+              <div style={{ marginRight: "30px" }}>
+                <Image
+                  src={"/white-linkedin.svg"}
+                  width={26}
+                  height={26}
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+
+{
+  /* <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="26"
                   height="27"
@@ -90,8 +122,7 @@ export const Footer = () => {
                     </clipPath>
                   </defs>
                 </svg>
-              </div>
-              <div style={{ marginRight: "30px" }}>
+                <div style={{ marginRight: "30px" }}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="26"
@@ -165,11 +196,5 @@ export const Footer = () => {
                     </clipPath>
                   </defs>
                 </svg>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </>
-  );
-};
+              </div> */
+}
