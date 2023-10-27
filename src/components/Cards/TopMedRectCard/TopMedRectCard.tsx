@@ -4,11 +4,9 @@ import Link from "next/link";
 
 export const TopMedRectCard = () => {
   return (
-    <>
-      {/* <Link href={"/"}> */}
+    <div className="padding">
       <article className="no-padding small-round">
         <Image
-          // style={{ height: "358px" }}
           className="responsive large"
           width={377}
           height={358}
@@ -16,17 +14,18 @@ export const TopMedRectCard = () => {
           alt=""
         />
         <div className="absolute bottom left right padding bottom-shadow white-text">
-          <h5 className="bottom-padding">What is Lorem Ipsum?</h5>
-
-          <span>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry
-          </span>
-
+          <Link href={"/news/:id"}>
+            <div>
+              <h5 className="bottom-padding">What is Lorem Ipsum?</h5>
+              <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry
+              </p>
+            </div>
+          </Link>
           <MiniCardViews />
         </div>
       </article>
-      {/* </Link> */}
-    </>
+    </div>
   );
 };

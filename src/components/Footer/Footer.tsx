@@ -17,8 +17,8 @@ export const Footer = () => {
 
   return (
     <>
-      <div className={"primary grid"}>
-        <div className={"grid s12 m12"} style={NavLinkStyleTopPad}>
+      <div className={"responsive primary grid"}>
+        <div style={NavLinkStyleTopPad}>
           <NavLinkFooter />
         </div>
         <div className={"grid s12 m12"} style={footerStyleTopPad}>

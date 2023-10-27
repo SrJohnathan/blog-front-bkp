@@ -3,7 +3,6 @@
 import React from "react";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
-import { NavLinkStyleTop, titleStyle } from "./styles";
 
 export const NavLinkFooter = () => {
   const t = useTranslations("NavLinkDesktopFooter");
@@ -42,45 +41,55 @@ export const NavLinkFooter = () => {
   ];
   return (
     <>
-      <div style={NavLinkStyleTop}>
-        <div className={"m3 left-align"}>
-          <h1 style={titleStyle}>STW</h1>
-          {STWLinks.map((link, index) => (
-            <React.Fragment key={index}>
-              <Link href={`/stw/${link.route}`}>{t(link.label)}</Link>
-              <br />
-            </React.Fragment>
-          ))}
-        </div>
+      <div className="border center middle large-width border">
+        <div className="grid">
+          <div className={"m3 left-align left-margin right-margin"}>
+            <h6 className="bold small">STW</h6>
+            {STWLinks.map((link, index) => (
+              <React.Fragment key={index}>
+                <Link className="medium-line" href={`/stw/${link.route}`}>
+                  {t(link.label)}
+                </Link>
+                <br />
+              </React.Fragment>
+            ))}
+          </div>
 
-        <div className={"m3 left-align"}>
-          <h1 style={titleStyle}>{t("ESTRANGEIRO")}</h1>
-          {estrangeiroLinks.map((link, index) => (
-            <React.Fragment key={index}>
-              <Link href={`/abroad/${link.route}`}>{t(link.label)}</Link>
-              <br />
-            </React.Fragment>
-          ))}
-        </div>
+          <div className={"m3 left-align"}>
+            <h6 className="bold small">{t("ESTRANGEIRO")}</h6>
+            {estrangeiroLinks.map((link, index) => (
+              <React.Fragment key={index}>
+                <Link className="medium-line" href={`/abroad/${link.route}`}>
+                  {t(link.label)}
+                </Link>
+                <br />
+              </React.Fragment>
+            ))}
+          </div>
 
-        <div className={"m3 left-align"}>
-          <h1 style={titleStyle}>{t("PROJETOS")}</h1>
-          {projetosLinks.map((link, index) => (
-            <React.Fragment key={index}>
-              <Link href={`/projects/${link.route}`}>{t(link.label)}</Link>
-              <br />
-            </React.Fragment>
-          ))}
-        </div>
+          <div className={"m3 left-align"}>
+            <h6 className="bold small">{t("PROJETOS")}</h6>
+            {projetosLinks.map((link, index) => (
+              <React.Fragment key={index}>
+                <Link className="medium-line" href={`/projects/${link.route}`}>
+                  {t(link.label)}
+                </Link>
+                <br />
+              </React.Fragment>
+            ))}
+          </div>
 
-        <div className={"m3 left-align"}>
-          <h1 style={titleStyle}>{t("TÓPICOS")}</h1>
-          {topicosLinks.map((link, index) => (
-            <React.Fragment key={index}>
-              <Link href={`/topics/${link.route}`}>{t(link.label)}</Link>
-              <br />
-            </React.Fragment>
-          ))}
+          <div className={"m3 left-align"}>
+            <h6 className="bold small">{t("TÓPICOS")}</h6>
+            {topicosLinks.map((link, index) => (
+              <React.Fragment key={index}>
+                <Link className="medium-line" href={`/topics/${link.route}`}>
+                  {t(link.label)}
+                </Link>
+                <br />
+              </React.Fragment>
+            ))}
+          </div>
         </div>
       </div>
     </>
