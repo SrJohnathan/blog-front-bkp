@@ -41,7 +41,7 @@ export const NavLinkFooter = () => {
   ];
   return (
     <>
-      <div className="border center middle large-width border">
+      <div className="center middle large-width">
         <div className="grid">
           <div className={"m3 left-align left-margin right-margin"}>
             <h6 className="bold small">STW</h6>

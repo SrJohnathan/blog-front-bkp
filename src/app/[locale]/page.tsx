@@ -14,6 +14,7 @@ import { Suspense } from "react";
 import { useTranslations } from "next-intl";
 import { Footer } from "@/components/Footer/Footer";
 import { Header } from "@/components/Header/Header";
+import { StudentGuidePanel } from "@/components/StudentGuidePanel/StudentGuidePanel";
 
 export default function Home() {
   const t = useTranslations("Home");
@@ -46,6 +47,10 @@ export default function Home() {
             <MainAdsContainer />
             <div className={"space"}></div>
             <PodCasts />
+            <div className={"space"}></div>
+            <MainAdsContainer />
+            <div className={"space"}></div>
+            <StudentGuidePanel />
           </div>
           {/* Coluna lateral */}
           <div className={"s12 m4"}>

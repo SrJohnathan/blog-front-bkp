@@ -1,48 +1,64 @@
-import { CSSProperties } from "react";
-import { AbsoluteLayout } from "./AbsoluteLayout";
+"use client";
 
-const container: CSSProperties = {
-  height: "700px",
-  borderRadius: "1rem",
-};
+import React, { useState } from "react";
 
-export const ListDescription = () => {
+export const StudentGuidePanel = () => {
+  const [activeContent, setActiveContent] = useState("default");
+
+  const renderContent = () => {
+    switch (activeContent) {
+      case "Estudantes":
+        return {
+          title: "Título para Estudantes",
+          text: "Texto referente aos Estudantes",
+        };
+      case "Integração":
+        return {
+          title: "Título para Integração",
+          text: "Texto referente à Integração",
+        };
+      case "Universidades":
+        return {
+          title: "Título para Universidades",
+          text: "Texto referente às Universidades",
+        };
+      default:
+        return { title: "Título padrão", text: "Texto padrão" };
+    }
+  };
+
+  const { title, text } = renderContent();
+
   return (
-    <article className={"no-margin no-padding no-elevate"} style={container}>
+    <article className={"no-margin no-padding no-elevate"}>
       <div className={"grid"}>
         <div
           className={
-            "s12 m4 primary no-round  border-bottom-left-radius border-top-left-radius"
+            "s6 m3 primary no-round border-bottom-left-radius border-top-left-radius responsive padding"
           }
         >
-          <AbsoluteLayout isPadding={false} h={"700px"}>
-            <div className={"responsive"}>
-              <button
-                className={
-                  "max no-round border-top-left-radius responsive no-margin"
-                }
-              >
-                <strong>Estudantes</strong>
-              </button>
-              <button className={"max no-round responsive no-margin"}>
-                <strong>Estudantes</strong>
-              </button>
-              <button className={"max no-round responsive no-margin"}>
-                <strong>Estudantes</strong>
-              </button>
-            </div>
-          </AbsoluteLayout>
+          <button
+            className={"no-round small-round responsive"}
+            onClick={() => setActiveContent("Estudantes")}
+          >
+            <h6 className="bold small">Estudantes</h6>
+          </button>
+          <button
+            className={"no-round small-round responsive"}
+            onClick={() => setActiveContent("Integração")}
+          >
+            <h6 className="bold small">Integração</h6>
+          </button>
+          <button
+            className={"no-round small-round responsive"}
+            onClick={() => setActiveContent("Universidades")}
+          >
+            <h6 className="bold small">Universidades</h6>
+          </button>
         </div>
-        <div className={"s12 m8"}>
-          <AbsoluteLayout isPadding={true} h={"700px"}>
-            <h6 className={"primary-title"}>
-              What is Lorem Ipsum? Why do we use it?
-            </h6>
-            <label className={"primary-description"}>
-              {"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.AWhy do we use it?\n" +
-                "                            It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like)."}
-            </label>
-          </AbsoluteLayout>
+        <div className={"s12 m8 padding"}>
+          <h5 className={"small primary-title"}>{title}</h5>
+          <p className={"primary-description"}>{text}</p>
         </div>
       </div>
     </article>
