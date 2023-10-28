@@ -42,8 +42,8 @@ export const NavLinkFooter = () => {
   return (
     <>
       <div className="center middle large-width">
-        <div className="grid">
-          <div className={"m3 left-align left-margin right-margin"}>
+        <div className="grid m12">
+          <div className={"m3 left-align"}>
             <h6 className="bold small">STW</h6>
             {STWLinks.map((link, index) => (
               <React.Fragment key={index}>

@@ -4,7 +4,7 @@ import Link from "next/link";
 import { MedSqCard } from "../Cards/MedSqCard/MedSqCard";
 import { box, divider } from "./styles";
 import { useTranslations } from "next-intl";
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 
 export default function MoreNews() {
   // const [showCards, setShowCards] = useState(false);

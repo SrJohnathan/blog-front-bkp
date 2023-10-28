@@ -30,48 +30,46 @@ export const NavLinkDesktop = () => {
   };
 
   return (
-    <nav>
-      <div
-        className="max"
-        onMouseEnter={() => setIsOpen(true)}
-        onMouseLeave={() => setIsOpen(false)}
-      >
-        <div className={"grid no-space center-align"}>
-          <div className={"m3"}>
-            <h6 className="small bold">STW</h6>
-          </div>
-          <div className={"m3"}>
-            <h6 className="small bold">{t("ESTRANGEIRO")}</h6>
-          </div>
-          <div className={"m3"}>
-            <h6 className="small bold">{t("PROJETOS")}</h6>
-          </div>
-          <div className={"m3"}>
-            <h6 className="small bold">{t("TÓPICOS")}</h6>
-          </div>
+    <div
+      className="max"
+      onMouseEnter={() => setIsOpen(true)}
+      onMouseLeave={() => setIsOpen(false)}
+    >
+      <div className={"grid no-space center-align"}>
+        <div className={"m3"}>
+          <h6 className="small bold">STW</h6>
         </div>
-
-        {/* Submenu */}
-        <Collapse isOpen={isOpen}>
-          <div className={"grid no-space left-align"}>
-            {Object.entries(subMenuItems).map(([key, items]) =>
-              items.map((item, index) => (
-                <div key={`${key}-${index}`} className={"m3"}>
-                  <Link
-                    href={`/${key.toLowerCase()}/${item
-                      .replace(" ", "-")
-                      .toLowerCase()}`}
-                  >
-                    <button className="transparent no-padding no-wave  left-align">
-                      <h6 className="small">{t(item)}</h6>
-                    </button>
-                  </Link>
-                </div>
-              ))
-            )}
-          </div>
-        </Collapse>
+        <div className={"m3"}>
+          <h6 className="small bold">{t("ESTRANGEIRO")}</h6>
+        </div>
+        <div className={"m3"}>
+          <h6 className="small bold">{t("PROJETOS")}</h6>
+        </div>
+        <div className={"m3"}>
+          <h6 className="small bold">{t("TÓPICOS")}</h6>
+        </div>
       </div>
-    </nav>
+
+      {/* Submenu */}
+      <Collapse isOpen={isOpen}>
+        <div className={"grid left-align"}>
+          {Object.entries(subMenuItems).map(([key, items]) =>
+            items.map((item, index) => (
+              <div key={`${key}-${index}`} className={"m3"}>
+                <Link
+                  href={`/${key.toLowerCase()}/${item
+                    .replace(" ", "-")
+                    .toLowerCase()}`}
+                >
+                  <button className="transparent no-padding no-wave  left-align">
+                    <h6 className="small">{t(item)}</h6>
+                  </button>
+                </Link>
+              </div>
+            ))
+          )}
+        </div>
+      </Collapse>
+    </div>
   );
 };

@@ -31,8 +31,7 @@ export const Collapse: React.FunctionComponent<CollapseProps> = ({
       style={{ maxHeight: isOpen ? childHeight : "0" }}
     >
       <div ref={contentRef}>
-        {" "}
-        <div className="sample-content max">{children}</div>{" "}
+        <div className="sample-content max">{children}</div>
       </div>
     </div>
   );

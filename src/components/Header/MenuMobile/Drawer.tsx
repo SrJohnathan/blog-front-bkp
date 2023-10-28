@@ -1,5 +1,3 @@
-"use client";
-
 import React, { CSSProperties, ReactNode } from "react";
 
 interface Props {
