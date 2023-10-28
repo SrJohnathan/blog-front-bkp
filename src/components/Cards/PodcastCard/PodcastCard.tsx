@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const PodcastCard = () => {
   return (
-    <Link href={"/podcats"} className={"s6 m3"}>
+    <div className={"s6 m3"}>
       <article className="no-padding transparent no-elevate">
         <Image
           className="responsive large"
@@ -14,19 +14,21 @@ export const PodcastCard = () => {
         />
         <div className="absolute bottom left right padding bottom-shadow white-text">
           <div className="center-align">
-            <Image
-              className="round"
-              width="110"
-              height="240"
-              src={"/gridicons_play.svg"}
-              alt=""
-            />
+            <Link href={"/podcasts"}>
+              <Image
+                className="round"
+                width="110"
+                height="240"
+                src={"/gridicons_play.svg"}
+                alt=""
+              />
+            </Link>
           </div>
           <p className="max">
             Lorem Ipsum é simplesmente um texto fictício da indústria de.
           </p>
         </div>
       </article>
-    </Link>
+    </div>
   );
 };

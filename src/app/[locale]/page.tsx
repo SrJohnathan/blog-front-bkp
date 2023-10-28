@@ -12,8 +12,6 @@ import { Articles } from "@/components/Articles/Articles";
 
 import { Suspense } from "react";
 import { useTranslations } from "next-intl";
-import { Footer } from "@/components/Footer/Footer";
-import { Header } from "@/components/Header/Header";
 import { StudentGuidePanel } from "@/components/StudentGuidePanel/StudentGuidePanel";
 
 export default function Home() {
@@ -21,10 +19,9 @@ export default function Home() {
 
   return (
     <>
-      <Header />
       <main className={"responsive"}>
         <div>
-          <TopAdsContainer />
+          {/* <TopAdsContainer /> */}
           <div className={"grid"}>
             <VertRectTopCard />
             <div className={"s12 m6"}>
@@ -67,7 +64,6 @@ export default function Home() {
           </div>
         </div>
       </main>
-      <Footer />
     </>
   );
 }

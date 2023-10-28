@@ -42,7 +42,11 @@ export default async function RootLayout({
         </head>
         <body>
           <BeerComponent />
-          <ThemeModeProvider>{children}</ThemeModeProvider>
+          <ThemeModeProvider>
+            <Header />
+            {children}
+            <Footer />
+          </ThemeModeProvider>
         </body>
       </html>
     </NextIntlClientProvider>

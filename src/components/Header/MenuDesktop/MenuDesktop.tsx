@@ -12,33 +12,40 @@ export const MenuDesktop = () => {
   const { toggleTheme, isDark } = useContext(ThemeModeContext);
 
   return (
-    <header
-      className={`responsive m l ${isDark ? "small-blur" : "primary"} fixed`}
-    >
-      <div className={"grid"}>
-        <div className={"m1"}>
-          <Link href={"/home"} className="left-align transparent">
-            <Image width={80} height={80} src="/stw_1.png" alt={"STW icon"} />
-          </Link>
-        </div>
-        <div className={"space"}></div>
-        <nav>
-          <NavLinkDesktop />
-          <SocialMediaIcons />
-
-          <div className="field label prefix center-align small fill small-round">
-            <input type="text" name="" />
-            <i>search</i>
+    <>
+      <header
+        className={`responsive m l ${isDark ? "small-blur" : "primary"} fixed`}
+      >
+        <div className={"grid"}>
+          <div className={"m1"}>
+            <Link href={"/home"} className="left-align transparent">
+              <Image width={80} height={80} src="/stw_1.png" alt={"STW icon"} />
+            </Link>
           </div>
+          <div className="m11">
+            <div className={"small-padding"}></div>
+            <nav>
+              <NavLinkDesktop />
+              <SocialMediaIcons />
 
-          <Languages />
+              <div className="field label prefix center-align small fill small-round">
+                <input type="text" name="" />
+                <i>search</i>
+              </div>
 
-          <button className="circle transparent" onClick={() => toggleTheme()}>
-            {isDark ? <i>dark_mode</i> : <i>light_mode</i>}
-          </button>
-        </nav>
-        <div className={"space"}></div>
-      </div>
-    </header>
+              <Languages />
+
+              <button
+                className="circle transparent"
+                onClick={() => toggleTheme()}
+              >
+                {isDark ? <i>dark_mode</i> : <i>light_mode</i>}
+              </button>
+            </nav>
+            <div className={"small-padding"}></div>
+          </div>
+        </div>
+      </header>
+    </>
   );
 };

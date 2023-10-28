@@ -44,7 +44,7 @@ export const Languages = () => {
             src="/flags/portugal.svg"
             alt="Mudar para o idioma Português"
           />
-          <span>Portuguese</span>
+          <span>Português</span>
         </Link>
       </menu>
     </button>
