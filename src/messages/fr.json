@@ -11,11 +11,11 @@
   },
   "Home": {
     "Oportunidades": "Opportunités",
-    "Top Estudantes": "Top Étudiants",
+    "Top_Estudantes": "Top Étudiants",
     "Eventos": "Événements"
   },
   "Articles": {
-    "Ver Mais": "Voir Plus"
+    "Ver_Mais": "Voir Plus"
   },
   "Footer": {
     "Últimas notícias": "Dernières nouvelles",
@@ -26,24 +26,24 @@
     "STW": "STW",
     "ESTRANGEIRO": "À L'ÉTRANGER",
     "PROJETOS": "PROJETS",
-    "TÓPICOS": "AUTRES SUJETS",
-    "Notícias": "Nouvelles",
-    "Serviços": "Services",
+    "TOPICOS": "AUTRES SUJETS",
+    "Noticias": "Nouvelles",
+    "Servicos": "Services",
     "Eventos": "Événements",
     "Estude": "Étudiez",
     "Bolsas": "Bourses",
     "Trabalhe": "Travaillez",
     "Destinos": "Destinations",
     "Universidades": "Universités",
-    "Acadêmicos": "Universitaires",
+    "Academicos": "Universitaires",
     "Cursos": "Cours",
-    "Programa de Integração": "Programme d'Intégration",
-    "Universidades pelo Mundo": "Universités du Monde",
+    "Programa_de_Integração": "Programme d'Intégration",
+    "Universidades_pelo_Mundo": "Universités du Monde",
     "Podcasts": "Podcasts",
-    "Top Students": "Meilleurs Étudiants",
+    "Top_Students": "Meilleurs Étudiants",
     "Oportunidades": "Opportunités",
     "Tempo": "Temps",
-    "Ciência e Inovação": "Innovation"
+    "Ciencia_e_Inovacao": "Innovation"
   },
   "MoreNews": {
     "Mais Notícias": "Plus de Nouvelles",

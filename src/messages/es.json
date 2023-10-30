@@ -11,11 +11,11 @@
   },
   "Home": {
     "Oportunidades": "Oportunidades",
-    "Top Estudantes": "Top Estudiantes",
+    "Top_Estudantes": "Top Estudiantes",
     "Eventos": "Eventos"
   },
   "Articles": {
-    "Ver Mais": "Ver Más"
+    "Ver_Mais": "Ver Más"
   },
   "Footer": {
     "Últimas notícias": "Últimas noticias",
@@ -26,24 +26,24 @@
     "STW": "STW",
     "ESTRANGEIRO": "EN EL EXTRANJERO",
     "PROJETOS": "PROYECTOS",
-    "TÓPICOS": "OTROS TEMAS",
-    "Notícias": "Noticias",
-    "Serviços": "Servicios",
+    "TOPICOS": "OTROS TEMAS",
+    "Noticias": "Noticias",
+    "Servicos": "Servicios",
     "Eventos": "Eventos",
     "Estude": "Estudie",
     "Bolsas": "Becas",
     "Trabalhe": "Trabaje",
     "Destinos": "Destinos",
     "Universidades": "Universidades",
-    "Acadêmicos": "Académicos",
+    "Academicos": "Académicos",
     "Cursos": "Cursos",
-    "Programa de Integração": "Programa de Integración",
-    "Universidades pelo Mundo": "Universidades del Mundo",
+    "Programa_de_Integracao": "Programa de Integración",
+    "Universidades_pelo_Mundo": "Universidades del Mundo",
     "Podcasts": "Podcasts",
-    "Top Students": "Estudiantes Destacados",
+    "Top_Students": "Estudiantes Destacados",
     "Oportunidades": "Oportunidades",
     "Tempo": "Tiempo",
-    "Ciência e Inovação": "Innovación"
+    "Ciencia_e_Inovacao": "Innovación"
   },
   "MoreNews": {
     "Mais Notícias": "Más Noticias",

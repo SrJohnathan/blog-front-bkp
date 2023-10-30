@@ -15,8 +15,8 @@ export const FooterMobile = () => {
     {
       name: "STW",
       links: [
-        { label: "Notícias", route: "news" },
-        { label: "Serviços", route: "services" },
+        { label: "Noticias", route: "news" },
+        { label: "Servicos", route: "services" },
         { label: "Eventos", route: "events" },
         { label: "Estude", route: "study" },
         { label: "Bolsas", route: "becas" },
@@ -28,7 +28,7 @@ export const FooterMobile = () => {
       links: [
         { label: "Destinos", route: "destinations" },
         { label: "Universidades", route: "universities" },
-        { label: "Acadêmicos", route: "academics" },
+        { label: "Academicos", route: "academics" },
         { label: "Cursos", route: "courses" },
         { label: "Estude", route: "study" },
         { label: "Bolsas", route: "becas" },
@@ -38,19 +38,19 @@ export const FooterMobile = () => {
     {
       name: "PROJETOS",
       links: [
-        { label: "Programa de Integração", route: "integration-program" },
-        { label: "Universidades pelo Mundo", route: "world-universities" },
+        { label: "Programa_de_Integracao", route: "integration-program" },
+        { label: "Universidades_pelo_Mundo", route: "world-universities" },
         { label: "Podcasts", route: "podcasts" },
-        { label: "Top Students", route: "top-students" },
+        { label: "Top_Students", route: "top-students" },
       ],
     },
     {
-      name: "TÓPICOS",
+      name: "TOPICOS",
       links: [
         { label: "Oportunidades", route: "oportunities" },
         { label: "Tempo", route: "weather" },
-        { label: "Notícias", route: "news" },
-        { label: "Ciência e Inovação", route: "innovation" },
+        { label: "Noticias", route: "news" },
+        { label: "Ciencia_e_Inovacao", route: "innovation" },
       ],
     },
   ];
