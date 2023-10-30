@@ -1,6 +1,7 @@
 export const TopAdsContainer = () => {
   return (
-    <div>
+    <>
+      <div className="large-space"></div>
       <div className="large-space"></div>
       <div className="large-space"></div>
 
@@ -9,6 +10,6 @@ export const TopAdsContainer = () => {
           <h5>PUBLICIDADE</h5>
         </div>
       </article>
-    </div>
+    </>
   );
 };

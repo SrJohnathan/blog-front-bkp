@@ -20,17 +20,15 @@ export default function Home() {
   return (
     <>
       <main className={"responsive"}>
-        <div>
-          {/* <TopAdsContainer /> */}
-          <div className={"grid"}>
-            <VertRectTopCard />
-            <div className={"s12 m6"}>
-              <TopMedRectCard />
-              <TopMedRectCard />
-            </div>
+        <TopAdsContainer />
+        <div className={"grid"}>
+          <VertRectTopCard />
+          <div className={"s12 m6"}>
+            <TopMedRectCard />
+            <TopMedRectCard />
           </div>
-          <div className="space"></div>
         </div>
+        <div className="space"></div>
 
         <div className={"grid small-space"}>
           {/* Coluna principal */}
