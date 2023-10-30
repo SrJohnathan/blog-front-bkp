@@ -10,23 +10,23 @@ export const NavLinkDesktop = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const subMenuItems = {
-    STW: ["Notícias", "Serviços", "Eventos", "Estude", "Bolsas", "Trabalhe"],
+    STW: ["Noticias", "Servicos", "Eventos", "Estude", "Bolsas", "Trabalhe"],
     ESTRANGEIRO: [
       "Destinos",
       "Universidades",
-      "Acadêmicos",
+      "Academicos",
       "Cursos",
       "Estude",
       "Bolsas",
       "Trabalhe",
     ],
     PROJETOS: [
-      "Programa de Integração",
-      "Universidades pelo Mundo",
+      "Programa_de_Integracao",
+      "Universidades_pelo_Mundo",
       "Podcasts",
-      "Top Students",
+      "Top_Students",
     ],
-    TÓPICOS: ["Oportunidades", "Tempo", "Notícias", "Ciência e Inovação"],
+    TOPICOS: ["Oportunidades", "Tempo", "Noticias", "Ciencia_e_Inovacao"],
   };
 
   return (
@@ -46,7 +46,7 @@ export const NavLinkDesktop = () => {
           <h6 className="small bold">{t("PROJETOS")}</h6>
         </div>
         <div className={"m3"}>
-          <h6 className="small bold">{t("TÓPICOS")}</h6>
+          <h6 className="small bold">{t("TOPICOS")}</h6>
         </div>
       </div>
 

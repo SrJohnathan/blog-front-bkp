@@ -8,8 +8,8 @@ export const NavLinkFooter = () => {
   const t = useTranslations("NavLinkDesktopFooter");
 
   const STWLinks = [
-    { label: "Notícias", route: "news" },
-    { label: "Serviços", route: "services" },
+    { label: "Noticias", route: "news" },
+    { label: "Servicos", route: "services" },
     { label: "Eventos", route: "events" },
     { label: "Estude", route: "study" },
     { label: "Bolsas", route: "becas" },
@@ -19,7 +19,7 @@ export const NavLinkFooter = () => {
   const estrangeiroLinks = [
     { label: "Destinos", route: "destinations" },
     { label: "Universidades", route: "universities" },
-    { label: "Acadêmicos", route: "academics" },
+    { label: "Academicos", route: "academics" },
     { label: "Cursos", route: "courses" },
     { label: "Estude", route: "study" },
     { label: "Bolsas", route: "becas" },
@@ -27,17 +27,17 @@ export const NavLinkFooter = () => {
   ];
 
   const projetosLinks = [
-    { label: "Programa de Integração", route: "integration-program" },
-    { label: "Universidades pelo Mundo", route: "world-universities" },
+    { label: "Programa_de_Integracao", route: "integration-program" },
+    { label: "Universidades_pelo_Mundo", route: "world-universities" },
     { label: "Podcasts", route: "podcasts" },
-    { label: "Top Students", route: "top-students" },
+    { label: "Top_Students", route: "top-students" },
   ];
 
   const topicosLinks = [
     { label: "Oportunidades", route: "oportunities" },
     { label: "Tempo", route: "weather" },
-    { label: "Notícias", route: "news" },
-    { label: "Ciência e Inovação", route: "innovation" },
+    { label: "Noticias", route: "news" },
+    { label: "Ciencia_e_Inovacao", route: "innovation" },
   ];
   return (
     <>
@@ -80,7 +80,7 @@ export const NavLinkFooter = () => {
           </div>
 
           <div className={"m3 left-align"}>
-            <h6 className="bold small">{t("TÓPICOS")}</h6>
+            <h6 className="bold small">{t("TOPICOS")}</h6>
             {topicosLinks.map((link, index) => (
               <React.Fragment key={index}>
                 <Link className="medium-line" href={`/topics/${link.route}`}>

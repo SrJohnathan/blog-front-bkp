@@ -53,7 +53,7 @@ export default function Home() {
             <div className={"space"}></div>
             <MainAdsContainer />
             <div className={"space"}></div>
-            <Articles title={t("Top Estudantes")} />
+            <Articles title={t("Top_Estudantes")} />
             <div className={"space"}></div>
             <Articles title={t("Eventos")} />
             <div className={"space"}></div>

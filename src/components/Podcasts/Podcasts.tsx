@@ -1,12 +1,14 @@
 import { PodcastCard } from "../Cards/PodcastCard/PodcastCard";
+import { divider } from "./styles";
 
 export const PodCasts = () => {
   return (
     <div>
       <div className="space"></div>
-      <h4 className="small bold">Podcasts</h4>
-      <div className="large-divider"></div>
-
+      <div className="row">
+        <h4 className="small bold primary-title">Podcasts</h4>
+        <div className={"primary-title-container"} style={divider}></div>
+      </div>
       <div className={"s6 m12 padding"}>
         <div className={"grid"}>
           <PodcastCard />
