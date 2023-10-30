@@ -1,6 +1,6 @@
 "use client";
 
-import { box, divider } from "./styles";
+import { divider } from "./styles";
 import MedSqCardSkeleton from "../Cards/MedSqCard/MedSqCardSkeleton";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
@@ -12,10 +12,10 @@ export default function MoreNewsSkeleton() {
   return (
     <div className={"grid"}>
       <div className={"s12 m12"}>
-        <div style={box}>
-          <h6 className={"primary-title"}>
-            <strong>{t("Carregando Mais Notícias")}</strong>
-          </h6>
+        <div className="row">
+          <h4 className={"small bold primary-title"}>
+            {t("Carregando Mais Notícias")}
+          </h4>
           <div className={"primary-title-container"} style={divider}></div>
         </div>
       </div>
