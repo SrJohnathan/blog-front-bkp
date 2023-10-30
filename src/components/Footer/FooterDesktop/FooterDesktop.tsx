@@ -17,7 +17,7 @@ export const FooterDesktop = () => {
   const t = useTranslations("Footer");
 
   return (
-    <footer className="responsive m l">
+    <footer className="responsive m l primary">
       <div className={"primary grid"}>
         <div style={NavLinkStyleTopPad}>
           <NavLinkFooter />

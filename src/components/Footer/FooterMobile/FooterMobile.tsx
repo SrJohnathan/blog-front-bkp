@@ -56,54 +56,63 @@ export const FooterMobile = () => {
   ];
 
   return (
-    <>
-      <footer className="responsive s primary ">
-        <div className="grid center">
-          <div className="">
-            {topics.map((topic) => (
-              <button
-                className="bold row"
-                key={topic.name}
-                onClick={() => setSelectedTopic(topic.name)}
-              >
-                {t(topic.name)}
-              </button>
-            ))}
+    <footer className="responsive s primary">
+      <div className="row center-align">
+        {topics.map((topic) => (
+          <button
+            className="bold small-padding small-round"
+            key={topic.name}
+            onClick={() => {
+              if (selectedTopic === topic.name) {
+                setSelectedTopic(null);
+              } else {
+                setSelectedTopic(topic.name);
+              }
+            }}
+          >
+            {t(topic.name)}
+          </button>
+        ))}
+      </div>
+      <div>
+        {selectedTopic && (
+          <menu
+            key={selectedTopic}
+            className={`min ${
+              selectedTopic ? "active" : ""
+            } small-round primary`}
+          >
+            {topics
+              .find((topic) => topic.name === selectedTopic)
+              ?.links.map((link) => (
+                <Link key={link.route} href={`/${link.route}`}>
+                  {t(link.label)}
+                </Link>
+              ))}
+          </menu>
+        )}
+      </div>
+      <div className={"grid"}>
+        <div className={"grid s12"}>
+          <div className={"s6"}>
+            <Image
+              className=""
+              src={"/stw.svg"}
+              width={194}
+              height={63}
+              alt={""}
+            />
+            <SocialMediaIcons />
           </div>
-          <div className="right">
-            {selectedTopic &&
-              topics
-                .find((topic) => topic.name === selectedTopic)
-                ?.links.map((link) => (
-                  <Link key={link.route} href={`/${link.route}`}>
-                    {t(link.label)}
-                  </Link>
-                ))}
+          <div className={"s3"}>
+            <small>{secT("copyrightText")}</small>
+          </div>
+          <div className={"s3"}>
+            <small>{secT("info")}</small>
           </div>
         </div>
-
-        <div className={"grid"}>
-          <div className={"grid s12"}>
-            <div className={"s6"}>
-              <Image
-                className=""
-                src={"/stw.svg"}
-                width={194}
-                height={63}
-                alt={""}
-              />
-              <SocialMediaIcons />
-            </div>
-            <div className={"s3"}>
-              <small>{secT("copyrightText")}</small>
-            </div>
-            <div className={"s3"}>
-              <small>{secT("info")}</small>
-            </div>
-          </div>
-          <div className={"space"}></div>
-        </div>
-      </footer>
-    </>
+        <div className={"space"}></div>
+      </div>
+    </footer>
   );
 };
