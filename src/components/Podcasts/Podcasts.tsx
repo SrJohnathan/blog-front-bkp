@@ -1,5 +1,5 @@
+import { divider } from "@/styles/styles";
 import { PodcastCard } from "../Cards/PodcastCard/PodcastCard";
-import { divider } from "./styles";
 
 export const PodCasts = () => {
   return (

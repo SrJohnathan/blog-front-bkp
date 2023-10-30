@@ -1,6 +1,6 @@
 "use client";
 
-import { divider } from "./styles";
+import { divider } from "@/styles/styles";
 import MedSqCardSkeleton from "../Cards/MedSqCard/MedSqCardSkeleton";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
