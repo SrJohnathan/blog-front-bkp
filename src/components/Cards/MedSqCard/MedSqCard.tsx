@@ -17,12 +17,12 @@ export const MedSqCard = ({value}:{value:GetNew}) => {
           alt=""
         />
         <div className="padding">
-          <h6 className="small bold">What is Lorem Ipsum?</h6>
+          <h6 className="small bold">{value.titulo}</h6>
           <p className="small-line">
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry
           </p>
-          <MiniCardViews />
+          <MiniCardViews views={value.total_views || 0} category={"Categoria"} date={value.data_criacao}  />
         </div>
       </article>
     </Link>

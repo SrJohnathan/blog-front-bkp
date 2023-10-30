@@ -1,12 +1,15 @@
-export const MiniCardViews = () => {
+import moment from "moment";
+
+
+export const MiniCardViews = ({views,category,date}:{date:string,views:number,category:string}) => {
   return (
     <nav className={"responsive space wrap"}>
-      <small>18.08.2023</small>
+      <small>{moment(date).format("DD.MM.yyyy")}</small>
       <small>
         <i className={"fill primary-icon"}>visibility</i>
-        105
+          {" "+ views}
       </small>
-      <small>Categoria</small>
+      <small>{category}</small>
     </nav>
   );
 };

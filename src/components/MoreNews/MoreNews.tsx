@@ -3,18 +3,22 @@
 import Link from "next/link";
 import { MedSqCard } from "../Cards/MedSqCard/MedSqCard";
 import { divider } from "./styles";
-import { useTranslations } from "next-intl";
+import { useTranslations,useLocale} from "next-intl";
 import { useEffect, useState } from "react";
 import { GetNew } from "@/dtos/News";
 import { Ex } from "@/extension/ex";
 import MedSqCardSkeleton from "@/components/Cards/MedSqCard/MedSqCardSkeleton";
 
+
 export default function MoreNews() {
   const [news, setNews] = useState<GetNew[]>([]);
 
+    const locale = useLocale();
+
+
   useEffect(() => {
-    Ex.apiClient()
-      .get(`/pt/post/list/8/desc/all`)
+      Ex.apiClient()
+      .get(`/api/${locale}/post/list/8/desc/all`)
       .then((r) => setNews(r.data))
       .catch((reason) => {});
   }, []);
