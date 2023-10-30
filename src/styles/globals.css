@@ -1,3 +1,5 @@
+
+
 dialog::backdrop {
   display: block;
   background-color: rgba(0, 0, 0, 0.5);
@@ -135,7 +137,7 @@ body {
   color: var(--primary-title);
   font-style: normal;
   font-weight: 700;
-  font-family: "Open Sans";
+  font-family: "Open Sans", serif;
 }
 
 .primary-title-container {

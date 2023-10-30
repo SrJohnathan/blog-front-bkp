@@ -1,8 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { MiniCardViews } from "../MiniCardViews/MiniCardViews";
+import {GetNew} from "@/dtos/News";
 
-export const MedSqCard = () => {
+
+
+export const MedSqCard = ({value}:{value:GetNew}) => {
   return (
     <Link href={"/more-news"} className={"s6 m4"}>
       <article className="no-padding transparent no-elevate">
