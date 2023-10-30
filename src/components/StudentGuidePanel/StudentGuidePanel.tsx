@@ -3,9 +3,14 @@
 import React, { useState } from "react";
 
 export const StudentGuidePanel = () => {
-  const [activeContent, setActiveContent] = useState("default");
+  const [activeContent, setActiveContent] = useState("Estudantes");
 
-  const renderContent = () => {
+  type Content = {
+    title: string | undefined;
+    text: string | undefined;
+  };
+
+  const renderContent = (): Content => {
     switch (activeContent) {
       case "Estudantes":
         return {

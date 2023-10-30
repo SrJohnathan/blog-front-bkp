@@ -5,11 +5,12 @@ import { ThemeModeContext } from "@/context/ThemeModeContext";
 import Image from "next/image";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
+import { Languages } from "../MenuDesktop/Languages/Languages";
 
 export const MenuMobile = () => {
   const t = useTranslations("NavLinkDesktopFooter");
   const { theme, toggleTheme } = useContext(ThemeModeContext);
-  const [drawer, setDrawer] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const [selectedTopic, setSelectedTopic] = useState<string | null>(null);
 
   const topics = [
@@ -62,7 +63,7 @@ export const MenuMobile = () => {
         <nav>
           <div className={"absolute left-align"}>
             <button
-              onClick={() => setDrawer(true)}
+              onClick={() => setIsOpen(true)}
               className="circle transparent"
             >
               <i>menu</i>
@@ -77,56 +78,51 @@ export const MenuMobile = () => {
         </nav>
       </header>
 
-      <div
-        onClick={() => setDrawer(false)}
-        className={"overlay " + (drawer ? " active" : "")}
-      ></div>
-      <dialog open={drawer} className="">
-        <header className="fixed">
-          <nav>
-            <button
-              onClick={() => setDrawer(false)}
-              className="transparent circle large"
+      <dialog className="left primary" open={isOpen}>
+        {topics.map((topic) => (
+          <button
+            className="row bold small-padding small-round"
+            key={topic.name}
+            onClick={() => {
+              if (selectedTopic === topic.name) {
+                setSelectedTopic(null);
+              } else {
+                setSelectedTopic(topic.name);
+              }
+            }}
+          >
+            {t(topic.name)}
+          </button>
+        ))}
+
+        <div>
+          {selectedTopic && (
+            <menu
+              key={selectedTopic}
+              className={`min ${
+                selectedTopic ? "active" : ""
+              } small-round primary`}
             >
-              <i>close</i>
-            </button>
-            <div className="max padding left-align">
-              {topics.map((topic) => (
-                <button
-                  className="bold small-padding small-round"
-                  key={topic.name}
-                  onClick={() => {
-                    if (selectedTopic === topic.name) {
-                      setSelectedTopic(null);
-                    } else {
-                      setSelectedTopic(topic.name);
-                    }
-                  }}
-                >
-                  {t(topic.name)}
-                </button>
-              ))}
-            </div>
-            <div>
-              {selectedTopic && (
-                <menu
-                  key={selectedTopic}
-                  className={`min ${
-                    selectedTopic ? "active" : ""
-                  } small-round primary`}
-                >
-                  {topics
-                    .find((topic) => topic.name === selectedTopic)
-                    ?.links.map((link) => (
-                      <Link key={link.route} href={`/${link.route}`}>
-                        {t(link.label)}
-                      </Link>
-                    ))}
-                </menu>
-              )}
-            </div>
-          </nav>
-        </header>
+              {topics
+                .find((topic) => topic.name === selectedTopic)
+                ?.links.map((link) => (
+                  <Link key={link.route} href={`/${link.route}`}>
+                    {t(link.label)}
+                  </Link>
+                ))}
+            </menu>
+          )}
+        </div>
+
+        <div className="right-align">
+          <Languages />
+          <button
+            className="transparent circle large"
+            onClick={() => setIsOpen(false)}
+          >
+            <i>close</i>
+          </button>
+        </div>
       </dialog>
     </>
   );

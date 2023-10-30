@@ -8,16 +8,10 @@ import { useEffect, useState } from "react";
 import { GetNew } from "@/dtos/News";
 import { Ex } from "@/extension/ex";
 import MedSqCardSkeleton from "@/components/Cards/MedSqCard/MedSqCardSkeleton";
+import { useRouter } from "next/navigation";
 
 export default function MoreNews() {
   const [news, setNews] = useState<GetNew[]>([]);
-
-  useEffect(() => {
-    Ex.apiClient()
-      .get(`/pt/post/list/8/desc/all`)
-      .then((r) => setNews(r.data))
-      .catch((reason) => {});
-  }, []);
 
   // const [showCards, setShowCards] = useState(false);
 
