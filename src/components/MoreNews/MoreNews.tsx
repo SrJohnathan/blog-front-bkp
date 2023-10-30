@@ -13,8 +13,6 @@ export default function MoreNews() {
 
     const [news,setNews] = useState<GetNew[]>([])
 
-
-
     useEffect(() => {
         Ex.apiClient()
             .get(`/pt/post/list/8/desc/all`)
@@ -35,7 +33,7 @@ export default function MoreNews() {
   const t = useTranslations("MoreNews");
 
   return (
-    <div  className={"grid"}>
+    <div className={"grid"}>
       <div className={"s12 m12"}>
         <div style={box}>
           <h6 className={"primary-title"}>
