@@ -2,20 +2,19 @@
 
 import Link from "next/link";
 import { MedSqCard } from "../Cards/MedSqCard/MedSqCard";
-import { divider } from "./styles";
 import { useTranslations,useLocale} from "next-intl";
 import { useEffect, useState } from "react";
 import { GetNew } from "@/dtos/News";
 import { Ex } from "@/extension/ex";
+
 import MedSqCardSkeleton from "@/components/Cards/MedSqCard/MedSqCardSkeleton";
+import {divider} from "@/styles/styles";
 
 
 export default function MoreNews() {
   const [news, setNews] = useState<GetNew[]>([]);
 
     const locale = useLocale();
-
-
   useEffect(() => {
       Ex.apiClient()
       .get(`/api/${locale}/post/list/0/8/desc/all`)
@@ -38,8 +37,8 @@ export default function MoreNews() {
     <div className={"grid"}>
       <div className={"s12 m12"}>
         <div className="row">
-          <h4 className={"small bold primary-title"}>{t("Mais Notícias")}</h4>
-          <div className={"primary-title-container"} style={divider}></div>
+          <h4 className={"small bold primary-title"}>{t("Mais_Noticias")}</h4>
+         <div className={"primary-title-container"} style={divider}></div>
         </div>
       </div>
       <article className={"s12 m12 large-padding no-elevate"}>
@@ -53,7 +52,7 @@ export default function MoreNews() {
                 .map((_, index) => <MedSqCardSkeleton key={index} />)}
         </div>
         <Link href={"/articles?=full"} className={"primary-title margin"}>
-          {t("Ver Mais")} <i>expand_more</i>{" "}
+          {t("Ver_Mais")} <i>expand_more</i>{" "}
         </Link>
       </article>
     </div>
