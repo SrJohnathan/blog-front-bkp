@@ -14,7 +14,7 @@ export default function MoreNewsSkeleton() {
       <div className={"s12 m12"}>
         <div className="row">
           <h4 className={"small bold primary-title"}>
-            {t("Carregando Mais Notícias")}
+            {t("Carregando_Mais_Noticias")}
           </h4>
           <div className={"primary-title-container"} style={divider}></div>
         </div>
@@ -26,7 +26,7 @@ export default function MoreNewsSkeleton() {
           ))}
         </div>
         <Link href={"/articles?=full"} className={"primary-title margin"}>
-          {t("Carregando Ver Mais")} <i>expand_more</i>{" "}
+          {t("Carregando_Ver_Mais")} <i>expand_more</i>{" "}
         </Link>
       </article>
     </div>

@@ -14,11 +14,7 @@
     "Top_Estudantes": "Top Estudantes",
     "Eventos": "Eventos"
   },
-  "Articles": {
-    "Ver_Mais": "Ver Mais"
-  },
   "Footer": {
-    "Últimas notícias": "Últimas notícias",
     "copyrightText": "Todos os direitos reservados © Desde Janeiro de 2022 Study Travel Work – STW | NIPC 516747428",
     "info": "Rua da Madalena, nº 51, 4750-315, União de Freguesias de Barcelos, Vila Boa e Vila Frescainha, Concelho Barcelos."
   },
@@ -46,21 +42,22 @@
     "Ciencia_e_Inovacao": "Inovação"
   },
   "MoreNews": {
-    "Mais_Noticias": "Mais Notícias",
-    "Ver_Mais": "Ver Mais"
+    "Mais_Noticias": "Mais Notícias"
   },
-  "MostReadNewsContainer": {
-    "Ver Mais": "Ver Mais"
-  },
-  "MostRecomNewsContainer": {
-    "Ver Mais": "Ver Mais"
-  },
-  "MostReadAndRecomNewsContainer": {
-    "Mais Lidas": "Mais Lidas",
-    "Mais Recomendadas": "Mais Recomendadas"
+  "MostSearchedNewsContainer": {
+    "Mais_Lidas": "Mais Lidas",
+    "Mais_Recomendadas": "Mais Recomendadas"
   },
   "MoreNewsSkeleton": {
-    "Carregando Mais Notícias": "Carregando Mais Notícias",
-    "Carregando Ver Mais": "Carregando Ver Mais"
+    "Carregando_Mais_Noticias": "Carregando Mais Notícias",
+    "Carregando_Ver_Mais": "Carregando Ver Mais"
+  },
+  "FullNews": {
+    "Mais_Noticias": "Mais Notícias",
+    "Mais_Vistas": "Mais Vistas",
+    "Videos_Relacionados": "Vídeos Relacionados"
+  },
+  "Ver_Mais": {
+    "Ver_Mais": "Ver Mais"
   }
 }

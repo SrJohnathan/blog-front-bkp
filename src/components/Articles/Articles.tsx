@@ -5,7 +5,7 @@ import { HorzNewsSqCard } from "../Cards/HorzNewsSqCard/HorzNewsSqCard";
 import Link from "next/link";
 
 export const Articles = ({ title }: { title: string }) => {
-  const t = useTranslations("Articles");
+  const t = useTranslations("Ver_Mais");
 
   return (
     <article className={"padding background no-elevate "}>

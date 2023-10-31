@@ -17,8 +17,8 @@ export const PodcastCard = () => {
             <Link href={"/podcasts"}>
               <Image
                 className="round"
-                width="110"
-                height="240"
+                width="80"
+                height="80"
                 src={"/gridicons_play.svg"}
                 alt=""
               />

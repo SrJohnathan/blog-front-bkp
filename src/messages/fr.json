@@ -14,11 +14,7 @@
     "Top_Estudantes": "Top Étudiants",
     "Eventos": "Événements"
   },
-  "Articles": {
-    "Ver_Mais": "Voir Plus"
-  },
   "Footer": {
-    "Últimas notícias": "Dernières nouvelles",
     "copyrightText": "Tous droits réservés © Depuis janvier 2022 Study Travel Work – STW | NIPC 516747428",
     "info": "Rue de la Madeleine, nº 51, 4750-315, Union des Paroisses de Barcelos, Vila Boa et Vila Frescainha, Municipalité de Barcelos."
   },
@@ -46,21 +42,22 @@
     "Ciencia_e_Inovacao": "Innovation"
   },
   "MoreNews": {
-    "Mais_Noticias": "Plus de Nouvelles",
-    "Ver_Mais": "Voir Plus"
+    "Mais_Noticias": "Plus de Nouvelles"
   },
-  "MostReadNewsContainer": {
-    "Ver Mais": "Voir Plus"
-  },
-  "MostRecomNewsContainer": {
-    "Ver Mais": "Voir Plus"
-  },
-  "MostReadAndRecomNewsContainer": {
-    "Mais Lidas": "Les Plus Lues",
-    "Mais Recomendadas": "Les Plus Recommandées"
+  "MostSearchedNewsContainer": {
+    "Mais_Lidas": "Les Plus Lues",
+    "Mais_Recomendadas": "Les Plus Recommandées"
   },
   "MoreNewsSkeleton": {
-    "Carregando Mais Notícias": "Chargement de Plus de Nouvelles",
-    "Carregando Ver Mais": "Chargement Voir Plus"
+    "Carregando_Mais_Noticias": "Chargement de Plus de Nouvelles",
+    "Carregando_Ver_Mais": "Chargement Voir Plus"
+  },
+  "FullNews": {
+    "Mais_Noticias": "Plus de Nouvelles",
+    "Mais_Vistas": "Les Plus Vues",
+    "Videos_Relacionados": "Vidéos Associées"
+  },
+  "Ver_Mais": {
+    "Ver_Mais": "Voir Plus"
   }
 }

@@ -1,7 +1,12 @@
+"use client";
+
 import { divider } from "@/styles/styles";
 import { PodcastCard } from "../Cards/PodcastCard/PodcastCard";
+import { useTranslations } from "next-intl";
 
 export const PodCasts = () => {
+  const t = useTranslations("Ver_Mais");
+
   return (
     <div>
       <div className="space"></div>
@@ -18,7 +23,7 @@ export const PodCasts = () => {
         </div>
       </div>
       <a className={"primary-title margin"}>
-        Ver Mais <i>expand_more</i>
+        {t("Ver_Mais")} <i>expand_more</i>
       </a>
     </div>
   );

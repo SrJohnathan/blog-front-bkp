@@ -5,11 +5,10 @@ import { VertRectTopCard } from "@/components/Cards/VertRectTopCard/VertRectTopC
 import { TopMedRectCard } from "@/components/Cards/TopMedRectCard/TopMedRectCard";
 import MoreNews from "@/components/MoreNews/MoreNews";
 import MoreNewsSkeleton from "@/components/MoreNews/MoreNewsSkeleton";
-import { ReadAndRecomNewsContainer } from "@/components/ReadAndRecomNewsContainer/ReadAndRecomNewsContainer";
+import { MostSearchedNewsContainer } from "@/components/MostSearchedNewsContainer/MostSearchedNewsContainer";
 import { MainAdsContainer } from "@/components/Ads/MainAdsContainer/MainAdsContainer";
 import { PodCasts } from "@/components/Podcasts/Podcasts";
 import { Articles } from "@/components/Articles/Articles";
-
 import { Suspense } from "react";
 import { useTranslations } from "next-intl";
 import { StudentGuidePanel } from "@/components/StudentGuidePanel/StudentGuidePanel";
@@ -37,7 +36,7 @@ export default function Home() {
               <MoreNews />
             </Suspense>
             <div className={"space"}></div>
-            <ReadAndRecomNewsContainer />
+            <MostSearchedNewsContainer />
             <div className={"space"}></div>
             <MainAdsContainer />
             <div className={"space"}></div>

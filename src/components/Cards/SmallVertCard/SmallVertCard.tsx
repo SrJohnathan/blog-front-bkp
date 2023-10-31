@@ -19,7 +19,7 @@ export const SmallVertCard = () => {
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry
           </p>
-          <MiniCardViews />
+          <MiniCardViews date={""} views={0} category={""} />
         </div>
       </article>
     </Link>

@@ -5,12 +5,12 @@ import { MostReadNewsContainer } from "./MostReadNewsContainer/MostReadNewsConta
 import { MostRecomNewsContainer } from "./MostRecomNewsContainer/MostRecomNewsContainer";
 import { useTranslations } from "next-intl";
 
-export const ReadAndRecomNewsContainer = () => {
+export const MostSearchedNewsContainer = () => {
   const [changeMostSearchedSection, setChangeMostSearchedSection] = useState({
-    section: "most read",
+    section: "mostRead",
   });
 
-  const t = useTranslations("MostReadAndRecomNewsContainer");
+  const t = useTranslations("MostSearchedNewsContainer");
 
   return (
     <div className={"grid"}>
@@ -18,34 +18,34 @@ export const ReadAndRecomNewsContainer = () => {
         <nav className="no-space">
           <button
             className={`border max left-round ${
-              changeMostSearchedSection.section === "most read" ? "primary" : ""
+              changeMostSearchedSection.section === "mostRead" ? "primary" : ""
             }`}
             onClick={() => {
-              setChangeMostSearchedSection({ section: "most read" });
+              setChangeMostSearchedSection({ section: "mostRead" });
             }}
           >
-            <span>{t("Mais Lidas")}</span>
+            <span>{t("Mais_Lidas")}</span>
           </button>
           <button
             className={`border max right-round ${
-              changeMostSearchedSection.section === "most recommended"
+              changeMostSearchedSection.section === "mostRecommended"
                 ? "primary"
                 : ""
             }`}
             onClick={() => {
-              setChangeMostSearchedSection({ section: "most recommended" });
+              setChangeMostSearchedSection({ section: "mostRecommended" });
             }}
           >
-            <span>{t("Mais Recomendadas")}</span>
+            <span>{t("Mais_Recomendadas")}</span>
           </button>
         </nav>
       </div>
-      {changeMostSearchedSection.section === "most read" ? (
+      {changeMostSearchedSection.section === "mostRead" ? (
         <MostReadNewsContainer />
       ) : (
         ""
       )}
-      {changeMostSearchedSection.section === "most recommended" ? (
+      {changeMostSearchedSection.section === "mostRecommended" ? (
         <MostRecomNewsContainer />
       ) : (
         ""

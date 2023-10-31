@@ -17,7 +17,7 @@ export const MenuDesktop = () => {
     >
       <div className={"grid"}>
         <div className={"m1"}>
-          <Link href={"/home"} className="left-align transparent">
+          <Link href={"/"} className="left-align transparent">
             <Image width={80} height={80} src="/stw_1.png" alt={"STW icon"} />
           </Link>
         </div>
