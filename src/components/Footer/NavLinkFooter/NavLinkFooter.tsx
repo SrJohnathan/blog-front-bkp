@@ -41,7 +41,7 @@ export const NavLinkFooter = () => {
   ];
   return (
     <>
-      <div className="center middle large-width">
+      <div className="large-width">
         <div className="grid m12">
           <div className={"m3 left-align"}>
             <h6 className="bold small">STW</h6>
