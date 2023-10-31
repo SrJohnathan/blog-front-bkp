@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { MiniCardViews } from "../MiniCardViews/MiniCardViews";
 import {GetNew} from "@/dtos/News";
+import {useState} from "react";
 
 
 
@@ -27,4 +28,15 @@ export const MedSqCard = ({value}:{value:GetNew}) => {
       </article>
     </Link>
   );
+};
+
+
+
+const ImageWithFallback = ({src, fallbackSrc, alt}: any) => {
+  const [imgSrc, setImgSrc] = useState(src);
+
+  const handleImageError = () => {
+    setImgSrc(fallbackSrc);
+  };
+  return <Image width={200} height={200} src={imgSrc} alt={alt} onError={handleImageError}/>;
 };
