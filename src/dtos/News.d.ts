@@ -10,4 +10,5 @@ export interface GetNew {
     data_criacao: string
     tipo :"Video"|"Texto"|"Audio"|"Html"
     conteudo: string| null
+    name_category:string | null
 }

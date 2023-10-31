@@ -18,7 +18,7 @@ export default function MoreNews() {
 
   useEffect(() => {
       Ex.apiClient()
-      .get(`/api/${locale}/post/list/8/desc/all`)
+      .get(`/api/${locale}/post/list/0/8/desc/all`)
       .then((r) => setNews(r.data))
       .catch((reason) => {});
   }, []);

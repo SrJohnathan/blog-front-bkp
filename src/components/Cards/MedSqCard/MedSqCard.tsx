@@ -13,7 +13,7 @@ export const MedSqCard = ({value}:{value:GetNew}) => {
           className="responsive medium"
           width="200"
           height="200"
-          src="/Component_2.avif"
+          src={value.img || "/Component_2.avif"}
           alt=""
         />
         <div className="padding">
@@ -22,7 +22,7 @@ export const MedSqCard = ({value}:{value:GetNew}) => {
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry
           </p>
-          <MiniCardViews views={value.total_views || 0} category={"Categoria"} date={value.data_criacao}  />
+          <MiniCardViews views={value.total_views || 0} category={value.name_category || ""} date={value.data_criacao}  />
         </div>
       </article>
     </Link>
