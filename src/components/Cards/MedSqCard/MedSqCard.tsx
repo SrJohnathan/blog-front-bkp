@@ -1,20 +1,19 @@
 import Image from "next/image";
 import Link from "next/link";
 import { MiniCardViews } from "../MiniCardViews/MiniCardViews";
-import {GetNew} from "@/dtos/News";
-import {useState} from "react";
+import { GetNew } from "@/dtos/News";
+import { FallbackImage } from "./FallbackImage";
 
-
-
-export const MedSqCard = ({value}:{value:GetNew}) => {
+export const MedSqCard = ({ value }: { value: GetNew }) => {
   return (
     <Link href={"/more-news"} className={"s6 m4"}>
       <article className="no-padding transparent no-elevate">
-        <Image
+        <FallbackImage
           className="responsive medium"
-          width="200"
-          height="200"
+          width={200}
+          height={200}
           src={value.img || "/Component_2.avif"}
+          fallbackSrc={"/lod.gif"}
           alt=""
         />
         <div className="padding">
@@ -23,20 +22,13 @@ export const MedSqCard = ({value}:{value:GetNew}) => {
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry
           </p>
-          <MiniCardViews views={value.total_views || 0} category={value.name_category || ""} date={value.data_criacao}  />
+          <MiniCardViews
+            views={value.total_views || 0}
+            category={value.name_category || ""}
+            date={value.data_criacao}
+          />
         </div>
       </article>
     </Link>
   );
-};
-
-
-
-const ImageWithFallback = ({src, fallbackSrc, alt}: any) => {
-  const [imgSrc, setImgSrc] = useState(src);
-
-  const handleImageError = () => {
-    setImgSrc(fallbackSrc);
-  };
-  return <Image width={200} height={200} src={imgSrc} alt={alt} onError={handleImageError}/>;
 };
