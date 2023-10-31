@@ -22,7 +22,7 @@ export const HorzNewsSqCard = () => {
               <p className="tiny-line">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit
               </p>
-              <MiniCardViews />
+              <MiniCardViews date={""} views={0} category={""} />
             </div>
           </div>
           <div className="medium-divider"></div>

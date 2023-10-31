@@ -4,14 +4,16 @@ import { useTranslations } from "next-intl";
 import { divider } from "@/styles/styles";
 import { RectVideoCard } from "@/components/Cards/RectVideoCard/RectVideoCard";
 import { MostViewedNewsCard } from "@/components/Cards/MostViewedNewsCard/MostViewedNewsCard";
+import { ExtendedNews } from "@/components/Cards/ExtendedNews/ExtendedNews";
 
 const CategoryPage = () => {
   const t = useTranslations("FullNews");
 
   return (
-    <div className="responsive">
+    <div className="responsive s m l large-margin">
       <div className={"grid"}>
         <div className={"s12 m12"}>
+          <div className="large-space"></div>
           <div className="row">
             <h4 className={"small bold primary-title"}>
               Categoria selecionada
@@ -19,9 +21,11 @@ const CategoryPage = () => {
             <div className={"primary-title-container"} style={divider}></div>
           </div>
         </div>
-        <article className={"s12 m12 large-padding no-elevate"}>
-          <div>Aqui vai a lista de notícias</div>
-        </article>
+        <div className={"s12 m12 no-elevate transparent large-padding"}>
+          <ExtendedNews />
+          <ExtendedNews />
+          <ExtendedNews />
+        </div>
       </div>
 
       <div className="large-space"></div>
@@ -47,12 +51,15 @@ const CategoryPage = () => {
         <div className={"primary-title-container"} style={divider}></div>
       </div>
 
-      <div className={"grid medium-space"}>
-        {Array(5)
-          .fill(null)
-          .map((_, index) => (
-            <MostViewedNewsCard key={index} />
-          ))}
+      <div className="space"></div>
+
+      <div className={"grid center medium-space"}>
+        <div></div>
+        <MostViewedNewsCard />
+        <MostViewedNewsCard />
+        <MostViewedNewsCard />
+        <MostViewedNewsCard />
+        <MostViewedNewsCard />
       </div>
     </div>
   );
