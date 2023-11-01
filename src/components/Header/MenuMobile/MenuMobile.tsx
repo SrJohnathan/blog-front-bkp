@@ -20,16 +20,14 @@ export const MenuMobile = () => {
         { label: "Noticias", route: "news" },
         { label: "Servicos", route: "services" },
         { label: "Eventos", route: "events" },
-        { label: "Estude", route: "study" },
-        { label: "Bolsas", route: "becas" },
-        { label: "Trabalhe", route: "work" },
+        { label: "Trabalhe_Conosco", route: "work-with-us" },
       ],
     },
     {
       name: "ESTRANGEIRO",
       links: [
         { label: "Destinos", route: "destinations" },
-        { label: "Universidades", route: "universities" },
+        { label: "Universidades_PT", route: "pt-universities" },
         { label: "Academicos", route: "academics" },
         { label: "Cursos", route: "courses" },
         { label: "Estude", route: "study" },
@@ -51,7 +49,7 @@ export const MenuMobile = () => {
       links: [
         { label: "Oportunidades", route: "oportunities" },
         { label: "Tempo", route: "weather" },
-        { label: "Noticias", route: "news" },
+        { label: "Mais_Noticias", route: "more-news" },
         { label: "Ciencia_e_Inovacao", route: "innovation" },
       ],
     },

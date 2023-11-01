@@ -21,15 +21,6 @@ export default function MoreNews() {
       .catch(() => {});
   }, [locale]);
 
-  // const [showCards, setShowCards] = useState(false);
-
-  // useEffect(() => {
-  //   const timer = setTimeout(() => {
-  //     setShowCards(true);
-  //   }, 3000);
-  //   return () => clearTimeout(timer);
-  // }, []);
-
   const t = useTranslations("MoreNews");
   const secT = useTranslations("Ver_Mais");
 
