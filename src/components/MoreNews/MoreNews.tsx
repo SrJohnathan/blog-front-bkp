@@ -4,22 +4,22 @@ import Link from "next/link";
 import { MedSqCard } from "../Cards/MedSqCard/MedSqCard";
 import { useTranslations, useLocale } from "next-intl";
 import { useEffect, useState } from "react";
-import { GetNew } from "@/dtos/News";
+import { GetNews } from "@/dtos/News";
 import { Ex } from "@/extension/ex";
 
 import MedSqCardSkeleton from "@/components/Cards/MedSqCard/MedSqCardSkeleton";
 import { divider } from "@/styles/styles";
 
 export default function MoreNews() {
-  const [news, setNews] = useState<GetNew[]>([]);
+  const [news, setNews] = useState<GetNews[]>([]);
 
   const locale = useLocale();
   useEffect(() => {
     Ex.apiClient()
       .get(`/api/${locale}/post/list/0/8/desc/all`)
       .then((r) => setNews(r.data))
-      .catch((reason) => {});
-  }, []);
+      .catch(() => {});
+  }, [locale]);
 
   // const [showCards, setShowCards] = useState(false);
 
