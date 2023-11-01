@@ -1,0 +1,63 @@
+{
+  "CustomHead": {
+    "lang": "es",
+    "metaLang": "es-ES",
+    "title": "Blog STW",
+    "ogTitle": "Blog STW",
+    "ogType": "sitio web",
+    "ogUrl": "https://blog.stwipis.com/",
+    "ogImage": "https://blog.stwipis.com/Component_5.png",
+    "ogDescription": "Logra Tu Viaje"
+  },
+  "Home": {
+    "Oportunidades": "Oportunidades",
+    "Top_Estudantes": "Top Estudiantes",
+    "Eventos": "Eventos"
+  },
+  "Footer": {
+    "copyrightText": "Todos los derechos reservados © Desde enero de 2022 Study Travel Work – STW | NIPC 516747428",
+    "info": "Calle de la Magdalena, nº 51, 4750-315, Unión de Parroquias de Barcelos, Vila Boa y Vila Frescainha, Municipio de Barcelos."
+  },
+  "NavLinkDesktopFooter": {
+    "STW": "STW",
+    "ESTRANGEIRO": "EN EL EXTRANJERO",
+    "PROJETOS": "PROYECTOS",
+    "TOPICOS": "OTROS TEMAS",
+    "Noticias": "Noticias",
+    "Servicos": "Servicios",
+    "Eventos": "Eventos",
+    "Estude": "Estudie",
+    "Bolsas": "Becas",
+    "Trabalhe": "Trabaje",
+    "Destinos": "Destinos",
+    "Universidades": "Universidades",
+    "Academicos": "Académicos",
+    "Cursos": "Cursos",
+    "Programa_de_Integracao": "Programa de Integración",
+    "Universidades_pelo_Mundo": "Universidades del Mundo",
+    "Podcasts": "Podcasts",
+    "Top_Students": "Estudiantes Destacados",
+    "Oportunidades": "Oportunidades",
+    "Tempo": "Tiempo",
+    "Ciencia_e_Inovacao": "Innovación"
+  },
+  "MoreNews": {
+    "Mais_Noticias": "Más Noticias"
+  },
+  "MostSearchedNewsContainer": {
+    "Mais_Lidas": "Más Leídas",
+    "Mais_Recomendadas": "Más Recomendadas"
+  },
+  "MoreNewsSkeleton": {
+    "Carregando_Mais_Noticias": "Cargando Más Noticias",
+    "Carregando_Ver_Mais": "Cargando Ver Más"
+  },
+  "FullNews": {
+    "Mais_Noticias": "Más Noticias",
+    "Mais_Vistas": "Más Vistas",
+    "Videos_Relacionados": "Vídeos Relacionados"
+  },
+  "Ver_Mais": {
+    "Ver_Mais": "Ver Más"
+  }
+}

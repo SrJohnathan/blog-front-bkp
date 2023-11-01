@@ -1,13 +1,22 @@
-import { fontSizeSmall } from "./styles";
+import moment from "moment";
 
-export const MiniCardViews = () => {
+export const MiniCardViews = ({
+  views,
+  category,
+  date,
+}: {
+  date: string;
+  views: number;
+  category: string;
+}) => {
   return (
-    <nav>
-      <label style={fontSizeSmall}>18.08.2023</label>
-      <label style={fontSizeSmall}>
-        <i className={"small fill primary-icon"}>visibility</i>105
-      </label>
-      <label style={fontSizeSmall}>Categoria</label>
+    <nav className={"responsive space wrap"}>
+      <small>{moment(date).format("DD.MM.yyyy")}</small>
+      <small>
+        <i className={"fill primary-icon"}>visibility</i>
+        {" " + views}
+      </small>
+      <small>{category}</small>
     </nav>
   );
 };

@@ -1,33 +1,34 @@
 import Image from "next/image";
 import Link from "next/link";
-import { description, title } from "./styles";
 import { MiniCardViews } from "../MiniCardViews/MiniCardViews";
+import { GetNew } from "@/dtos/News";
+import { FallbackImage } from "./FallbackImage";
 
-export const MedSqCard = () => {
+export const MedSqCard = ({ value }: { value: GetNew }) => {
   return (
-    <Link href={"/post"} className={"s12 m4"}>
+    <Link href={"/more-news"} className={"s6 m4"}>
       <article className="no-padding transparent no-elevate">
-        <Image
-          className="responsive small"
-          width={324}
-          height={212}
-          src="/Component_5.png"
+        <FallbackImage
+          className="responsive medium"
+          width={200}
+          height={200}
+          src={value.img || "/Component_2.avif"}
+          fallbackSrc={"/lod.gif"}
           alt=""
         />
         <div className="padding">
-          <div>
-            <p className={"primary-title"} style={title}>
-              What is Lorem Ipsum?
-            </p>
-            <label style={description} className="max primary-title ">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry
-            </label>
-            <MiniCardViews />
-          </div>
+          <h6 className="small bold">{value.titulo}</h6>
+          <p className="small-line">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry
+          </p>
+          <MiniCardViews
+            views={value.total_views || 0}
+            category={value.name_category || ""}
+            date={value.data_criacao}
+          />
         </div>
       </article>
-      <article className="transparent"></article>
     </Link>
   );
 };

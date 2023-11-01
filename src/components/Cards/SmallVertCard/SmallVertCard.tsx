@@ -1,37 +1,27 @@
 import Image from "next/image";
-import { fontSizeSmall, container } from "./styles";
+import Link from "next/link";
+import { MiniCardViews } from "../MiniCardViews/MiniCardViews";
 
 export const SmallVertCard = () => {
   return (
-    <div className={"s12 m3"}>
+    <Link href={"/most-searched"} className={"s12 m3"}>
       <article className="no-padding transparent no-elevate">
         <Image
-          style={container}
           className="responsive small "
-          width={248}
-          height={238}
-          src="/Component_5.png"
+          width={110}
+          height={110}
+          src="/Component_1.avif"
           alt={""}
         />
         <div className="padding">
-          <div>
-            <p className={"primary-title"}>
-              <strong>What is Lorem Ipsum?</strong>
-            </p>
-            <label className="max primary-description ">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry
-            </label>
-            <nav>
-              <label style={fontSizeSmall}>18.08.2023</label>
-              <label style={fontSizeSmall}>
-                <i className={"small fill primary-icon"}>visibility</i>105
-              </label>
-              <label style={fontSizeSmall}>Categoria</label>
-            </nav>
-          </div>
+          <h6 className="small bold">What is Lorem Ipsum?</h6>
+          <p className="small-line">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry
+          </p>
+          <MiniCardViews date={""} views={0} category={""} />
         </div>
       </article>
-    </div>
+    </Link>
   );
 };

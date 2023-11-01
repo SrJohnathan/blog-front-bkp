@@ -1,0 +1,63 @@
+{
+  "CustomHead": {
+    "lang": "en",
+    "metaLang": "en-US",
+    "title": "STW Blog",
+    "ogTitle": "STW Blog",
+    "ogType": "website",
+    "ogUrl": "https://blog.stwipis.com/",
+    "ogImage": "https://blog.stwipis.com/Component_5.png",
+    "ogDescription": "Achieve Your Journey"
+  },
+  "Home": {
+    "Oportunidades": "Opportunities",
+    "Top_Estudantes": "Top Students",
+    "Eventos": "Events"
+  },
+  "Footer": {
+    "copyrightText": "All rights reserved © Since January 2022 Study Travel Work – STW | NIPC 516747428",
+    "info": "Madalena Street, No. 51, 4750-315, Union of Parishes of Barcelos, Vila Boa and Vila Frescainha, Barcelos Municipality."
+  },
+  "NavLinkDesktopFooter": {
+    "STW": "STW",
+    "ESTRANGEIRO": "ABROAD",
+    "PROJETOS": "PROJECTS",
+    "TOPICOS": "TOPICS",
+    "Noticias": "News",
+    "Servicos": "Services",
+    "Eventos": "Events",
+    "Estude": "Study",
+    "Bolsas": "Scholarships",
+    "Trabalhe": "Work",
+    "Destinos": "Destinations",
+    "Universidades": "Universities",
+    "Academicos": "Academics",
+    "Cursos": "Courses",
+    "Programa_de_Integracao": "Integration Program",
+    "Universidades_pelo_Mundo": "Universities Around the World",
+    "Podcasts": "Podcasts",
+    "Top_Students": "Top Students",
+    "Oportunidades": "Opportunities",
+    "Tempo": "Weather",
+    "Ciencia_e_Inovacao": "Innovation"
+  },
+  "MoreNews": {
+    "Mais_Noticias": "More News"
+  },
+  "MostSearchedNewsContainer": {
+    "Mais_Lidas": "Most Read",
+    "Mais_Recomendadas": "Most Recommended"
+  },
+  "MoreNewsSkeleton": {
+    "Carregando_Mais_Noticias": "Loading More News",
+    "Carregando_Ver_Mais": "Loading View More"
+  },
+  "FullNews": {
+    "Mais_Noticias": "More News",
+    "Mais_Vistas": "Most Viewed",
+    "Videos_Relacionados": "Related Videos"
+  },
+  "Ver_Mais": {
+    "Ver_Mais": "View More"
+  }
+}

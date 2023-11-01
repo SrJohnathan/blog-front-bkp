@@ -1,0 +1,63 @@
+{
+  "CustomHead": {
+    "lang": "pt",
+    "metaLang": "pt-PT",
+    "title": "Blog STW",
+    "ogTitle": "Blog STW",
+    "ogType": "website",
+    "ogUrl": "https://blog.stwipis.com/",
+    "ogImage": "https://blog.stwipis.com/Component_5.png",
+    "ogDescription": "Conquiste Sua Viagem"
+  },
+  "Home": {
+    "Oportunidades": "Oportunidades",
+    "Top_Estudantes": "Top Estudantes",
+    "Eventos": "Eventos"
+  },
+  "Footer": {
+    "copyrightText": "Todos os direitos reservados © Desde Janeiro de 2022 Study Travel Work – STW | NIPC 516747428",
+    "info": "Rua da Madalena, nº 51, 4750-315, União de Freguesias de Barcelos, Vila Boa e Vila Frescainha, Concelho Barcelos."
+  },
+  "NavLinkDesktopFooter": {
+    "STW": "STW",
+    "ESTRANGEIRO": "NO ESTRANGEIRO",
+    "PROJETOS": "PROJETOS",
+    "TOPICOS": "OUTROS TÓPICOS",
+    "Noticias": "Notícias",
+    "Servicos": "Serviços",
+    "Eventos": "Eventos",
+    "Estude": "Estude",
+    "Bolsas": "Bolsas",
+    "Trabalhe": "Trabalhe",
+    "Destinos": "Destinos",
+    "Universidades": "Universidades",
+    "Academicos": "Académicos",
+    "Cursos": "Cursos",
+    "Programa_de_Integracao": "Programa de Integração",
+    "Universidades_pelo_Mundo": "Universidades pelo Mundo",
+    "Podcasts": "Podcasts",
+    "Top_Students": "Melhores Estudantes",
+    "Oportunidades": "Oportunidades",
+    "Tempo": "Tempo",
+    "Ciencia_e_Inovacao": "Inovação"
+  },
+  "MoreNews": {
+    "Mais_Noticias": "Mais Notícias"
+  },
+  "MostSearchedNewsContainer": {
+    "Mais_Lidas": "Mais Lidas",
+    "Mais_Recomendadas": "Mais Recomendadas"
+  },
+  "MoreNewsSkeleton": {
+    "Carregando_Mais_Noticias": "Carregando Mais Notícias",
+    "Carregando_Ver_Mais": "Carregando Ver Mais"
+  },
+  "FullNews": {
+    "Mais_Noticias": "Mais Notícias",
+    "Mais_Vistas": "Mais Vistas",
+    "Videos_Relacionados": "Vídeos Relacionados"
+  },
+  "Ver_Mais": {
+    "Ver_Mais": "Ver Mais"
+  }
+}

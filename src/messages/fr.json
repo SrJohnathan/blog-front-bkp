@@ -1,0 +1,63 @@
+{
+  "CustomHead": {
+    "lang": "fr",
+    "metaLang": "fr-FR",
+    "title": "Blog STW",
+    "ogTitle": "Blog STW",
+    "ogType": "site web",
+    "ogUrl": "https://blog.stwipis.com/",
+    "ogImage": "https://blog.stwipis.com/Component_5.png",
+    "ogDescription": "Réalisez Votre Voyage"
+  },
+  "Home": {
+    "Oportunidades": "Opportunités",
+    "Top_Estudantes": "Top Étudiants",
+    "Eventos": "Événements"
+  },
+  "Footer": {
+    "copyrightText": "Tous droits réservés © Depuis janvier 2022 Study Travel Work – STW | NIPC 516747428",
+    "info": "Rue de la Madeleine, nº 51, 4750-315, Union des Paroisses de Barcelos, Vila Boa et Vila Frescainha, Municipalité de Barcelos."
+  },
+  "NavLinkDesktopFooter": {
+    "STW": "STW",
+    "ESTRANGEIRO": "À L'ÉTRANGER",
+    "PROJETOS": "PROJETS",
+    "TOPICOS": "AUTRES SUJETS",
+    "Noticias": "Nouvelles",
+    "Servicos": "Services",
+    "Eventos": "Événements",
+    "Estude": "Étudiez",
+    "Bolsas": "Bourses",
+    "Trabalhe": "Travaillez",
+    "Destinos": "Destinations",
+    "Universidades": "Universités",
+    "Academicos": "Universitaires",
+    "Cursos": "Cours",
+    "Programa_de_Integracao": "Programme d'Intégration",
+    "Universidades_pelo_Mundo": "Universités du Monde",
+    "Podcasts": "Podcasts",
+    "Top_Students": "Meilleurs Étudiants",
+    "Oportunidades": "Opportunités",
+    "Tempo": "Temps",
+    "Ciencia_e_Inovacao": "Innovation"
+  },
+  "MoreNews": {
+    "Mais_Noticias": "Plus de Nouvelles"
+  },
+  "MostSearchedNewsContainer": {
+    "Mais_Lidas": "Les Plus Lues",
+    "Mais_Recomendadas": "Les Plus Recommandées"
+  },
+  "MoreNewsSkeleton": {
+    "Carregando_Mais_Noticias": "Chargement de Plus de Nouvelles",
+    "Carregando_Ver_Mais": "Chargement Voir Plus"
+  },
+  "FullNews": {
+    "Mais_Noticias": "Plus de Nouvelles",
+    "Mais_Vistas": "Les Plus Vues",
+    "Videos_Relacionados": "Vidéos Associées"
+  },
+  "Ver_Mais": {
+    "Ver_Mais": "Voir Plus"
+  }
+}

@@ -1,11 +1,15 @@
-import { marginStyles } from "./styles";
-
 export const TopAdsContainer = () => {
   return (
-    <article style={marginStyles} className="border small padding">
-      <div className="padding absolute center middle">
-        <h5>PUBLICIDADE</h5>
-      </div>
-    </article>
+    <>
+      <div className="large-space"></div>
+      <div className="large-space"></div>
+      <div className="large-space"></div>
+
+      <article className="border small large-width padding center middle">
+        <div className="absolute center middle">
+          <h5>PUBLICIDADE</h5>
+        </div>
+      </article>
+    </>
   );
 };

@@ -1,28 +1,30 @@
-import { VertVideoCard } from "../Cards/VertVideoCard/VertVideoCard";
-import { box, divider } from "../MoreNews/styles";
+"use client";
+
+import { divider } from "@/styles/styles";
+import { PodcastCard } from "../Cards/PodcastCard/PodcastCard";
+import { useTranslations } from "next-intl";
 
 export const PodCasts = () => {
+  const t = useTranslations("Ver_Mais");
+
   return (
-    <div className={"grid"}>
-      <div className={"s12 m12"}>
-        <div style={box}>
-          <h6 className={"primary-title"}>
-            <strong>Podcast</strong>
-          </h6>
-          <div className={"primary-title-container"} style={divider}></div>
-        </div>
+    <div>
+      <div className="space"></div>
+      <div className="row">
+        <h4 className="small bold primary-title">Podcasts</h4>
+        <div className={"primary-title-container"} style={divider}></div>
       </div>
-      <div className={"s12 m12"}>
+      <div className={"s6 m12 padding"}>
         <div className={"grid"}>
-          <VertVideoCard></VertVideoCard>
-          <VertVideoCard></VertVideoCard>
-          <VertVideoCard></VertVideoCard>
-          <VertVideoCard></VertVideoCard>
+          <PodcastCard />
+          <PodcastCard />
+          <PodcastCard />
+          <PodcastCard />
         </div>
-        <a className={"primary-title margin"}>
-          Ver Mais <i>expand_more</i>
-        </a>
       </div>
+      <a className={"primary-title margin"}>
+        {t("Ver_Mais")} <i>expand_more</i>
+      </a>
     </div>
   );
 };

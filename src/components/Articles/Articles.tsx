@@ -1,21 +1,22 @@
+"use client";
+
+import { useTranslations } from "next-intl";
 import { HorzNewsSqCard } from "../Cards/HorzNewsSqCard/HorzNewsSqCard";
+import Link from "next/link";
 
 export const Articles = ({ title }: { title: string }) => {
+  const t = useTranslations("Ver_Mais");
+
   return (
     <article className={"padding background no-elevate "}>
-      <p style={{ fontSize: "12pt" }} className={"primary-title margin"}>
-        <strong>{title}</strong>
-      </p>
-      <div
-        style={{ backgroundColor: "#ddd", height: "1px" }}
-        className={"max"}
-      ></div>
+      <h6 className={"small bold margin"}>{title}</h6>
+      <div className={"medium-divider"}></div>
       <div className={"small-space"}></div>
-      <HorzNewsSqCard></HorzNewsSqCard>
-      <HorzNewsSqCard></HorzNewsSqCard>
-      <a className={"primary-title margin"}>
-        Ver Mais <i>expand_more</i>{" "}
-      </a>
+      <HorzNewsSqCard />
+      <HorzNewsSqCard />
+      <Link href={"/articles"} className={"primary-title margin"}>
+        {t("Ver_Mais")} <i>expand_more</i>
+      </Link>
     </article>
   );
 };
