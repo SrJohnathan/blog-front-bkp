@@ -23,7 +23,7 @@ export const TopMedRectCard = () => {
               </p>
             </div>
           </Link>
-          <MiniCardViews />
+          <MiniCardViews   category={""} views={0} date={""}   />
         </div>
       </article>
     </div>
