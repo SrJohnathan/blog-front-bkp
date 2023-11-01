@@ -1,10 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { MiniCardViews } from "../MiniCardViews/MiniCardViews";
-import { GetNew } from "@/dtos/News";
+import { GetNews } from "@/dtos/News";
 import { FallbackImage } from "./FallbackImage";
 
-export const MedSqCard = ({ value }: { value: GetNew }) => {
+export const MedSqCard = ({ value }: { value: GetNews }) => {
   return (
     <Link href={"/more-news"} className={"s6 m4"}>
       <article className="no-padding transparent no-elevate">

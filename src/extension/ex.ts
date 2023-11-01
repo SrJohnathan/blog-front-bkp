@@ -25,6 +25,14 @@ export namespace Ex {
 
     }
 
+
+    export function formatLoadUrl(str:string) {
+        return  `https://${"stw-docs-plus"}.s3.amazonaws.com/${str}`
+
+    }
+
+
+
     export function notNull<T>(e: T) {
         if (e == null) {
             throw "Erro, Objeto nulo";
