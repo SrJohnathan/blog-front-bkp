@@ -12,9 +12,26 @@ import { Articles } from "@/components/Articles/Articles";
 import { Suspense } from "react";
 import { useTranslations } from "next-intl";
 import { StudentGuidePanel } from "@/components/StudentGuidePanel/StudentGuidePanel";
+import { GetNews } from "@/dtos/News";
+
+// Notícia 1
+export const news1: GetNews = {
+  id: 1,
+  titulo: "Cientistas",
+  img: "",
+  language: "Pt",
+  categoria_id: 1,
+  tipo: "Texto",
+  conteudo: `
+    Cientistas em todo o mundo estão celebrando.
+  `,
+  name_category: "Ciência",
+};
 
 export default function Home() {
   const t = useTranslations("Home");
+
+  // const dataFromAPI = [];
 
   return (
     <>
@@ -48,16 +65,19 @@ export default function Home() {
           </div>
           {/* Coluna lateral */}
           <div className={"s12 m4"}>
-            <Articles title={t("Oportunidades")} />
-            <div className={"space"}></div>
+            <Articles data={news1} />
             <MainAdsContainer />
-            <div className={"space"}></div>
-            <Articles title={t("Top_Estudantes")} />
-            <div className={"space"}></div>
-            <Articles title={t("Eventos")} />
-            <div className={"space"}></div>
+            <Articles data={news1} />
+            <Articles data={news1} />
             <MainAdsContainer />
-            <div className={"space"}></div>
+            {/* {dataFromAPI.map((item, index) => {
+              if (item.type === "category") {
+                return <Articles key={index} data={item} />;
+              }
+              if (item.type === "ads") {
+                return <MainAdsContainer key={index} data={item} />;
+              }
+            })} */}
           </div>
         </div>
       </main>

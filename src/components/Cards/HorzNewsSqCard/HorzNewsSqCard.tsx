@@ -2,7 +2,9 @@ import Image from "next/image";
 import { MiniCardViews } from "../MiniCardViews/MiniCardViews";
 import Link from "next/link";
 
-export const HorzNewsSqCard = () => {
+export const HorzNewsSqCard = ({ article }) => {
+  console.log(article);
+
   return (
     <>
       <Link href={"/categories"}>
@@ -18,10 +20,8 @@ export const HorzNewsSqCard = () => {
               />
             </div>
             <div className="padding s6">
-              <h6 className="small bold">What is Lorem Ipsum?</h6>
-              <p className="tiny-line">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit
-              </p>
+              <h6 className="small bold">{article.titulo}</h6>
+              <p className="tiny-line">{article.conteudo}</p>
               <MiniCardViews date={""} views={0} category={""} />
             </div>
           </div>

@@ -14,10 +14,11 @@ export default function MoreNews() {
   const [news, setNews] = useState<GetNews[]>([]);
 
   const locale = useLocale();
+
   useEffect(() => {
     Ex.apiClient()
       .get(`/api/${locale}/post/list/0/8/desc/all`)
-      .then((r) => setNews(r.data))
+      .then((response) => setNews(response.data))
       .catch(() => {});
   }, [locale]);
 

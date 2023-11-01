@@ -1,5 +1,6 @@
 "use client";
 
+// import layout from "./layout";
 import { useTranslations } from "next-intl";
 import { divider } from "@/styles/styles";
 import { RectVideoCard } from "@/components/Cards/RectVideoCard/RectVideoCard";
@@ -22,6 +23,13 @@ const CategoryPage = () => {
           </div>
         </div>
         <div className={"s12 m12 no-elevate transparent large-padding"}>
+          <ExtendedNews />
+          <ExtendedNews />
+          <ExtendedNews />
+          <ExtendedNews />
+          <ExtendedNews />
+          <ExtendedNews />
+          <ExtendedNews />
           <ExtendedNews />
           <ExtendedNews />
           <ExtendedNews />
