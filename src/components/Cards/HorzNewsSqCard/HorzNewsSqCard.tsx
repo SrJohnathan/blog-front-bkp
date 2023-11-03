@@ -2,9 +2,7 @@ import Image from "next/image";
 import { MiniCardViews } from "../MiniCardViews/MiniCardViews";
 import Link from "next/link";
 
-export const HorzNewsSqCard = ({ article }) => {
-  console.log(article);
-
+export const HorzNewsSqCard = () => {
   return (
     <>
       <Link href={"/categories"}>
@@ -20,8 +18,8 @@ export const HorzNewsSqCard = ({ article }) => {
               />
             </div>
             <div className="padding s6">
-              <h6 className="small bold">{article.titulo}</h6>
-              <p className="tiny-line">{article.conteudo}</p>
+              <h6 className="small bold"></h6>
+              <p className="tiny-line"></p>
               <MiniCardViews date={""} views={0} category={""} />
             </div>
           </div>

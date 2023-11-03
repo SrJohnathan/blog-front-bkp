@@ -8,7 +8,6 @@ import Image from "next/image";
 import { Articles } from "@/components/Articles/Articles";
 import { MainAdsContainer } from "@/components/Ads/MainAdsContainer/MainAdsContainer";
 import { MostRecomNewsContainer } from "@/components/MostSearchedNewsContainer/MostRecomNewsContainer/MostRecomNewsContainer";
-import { news1 } from "../page";
 
 const News = () => {
   const t = useTranslations("");
@@ -30,8 +29,8 @@ const News = () => {
       <div className="grid">
         <div className="m1"></div>
 
-        <p className="bold m1">Resumo</p>
-        <div className="m8">
+        <p className="bold s2 m1">Resumo</p>
+        <div className="s8 m8">
           <h6 className="small left-align">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur
             alias tempora non magnam, quia fuga, mollitia laudantium debitis
@@ -69,8 +68,8 @@ const News = () => {
 
       <div className="grid">
         <div className="m1"></div>
-        <p className="bold m1">Vídeos</p>
-        <div className="m8">
+        <p className="bold s2 m1">Vídeos</p>
+        <div className="s8 m8">
           <div className={"grid medium-space"}>
             {Array(3)
               .fill(null)
@@ -82,69 +81,63 @@ const News = () => {
         <div className="m1"></div>
       </div>
 
-      <div className="medium-space"></div>
+      <div className="m l small-space"></div>
 
       <div className="large-divider"></div>
 
-      <div className="medium-space"></div>
+      <div className="m l small-space"></div>
 
       <div className="grid">
         <div className="m1"></div>
         {/* Coluna principal */}
-        <div className="m7 padding">
-          <div className={"small-space"}>
-            <div>
-              <Image
-                className=" responsive medium-height round"
-                src={"/Component_2.avif"}
-                width={600}
-                height={400}
-                alt=""
-              />
-              <div className="medium-space"></div>
-              <h6 className="small bold">Lorem ipsum dolor sit</h6>
-              <p className="left-align">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. A nemo
-                aliquam id quos, eveniet veritatis! <br /> Lorem ipsum dolor sit
-                amet consectetur adipisicing elit. Aspernatur inventore quia
-                repudiandae hic ab itaque?
-              </p>
-              <div className="medium-space"></div>
-              <Image
-                className=" responsive medium-height round"
-                src={"/Component_2.avif"}
-                width={600}
-                height={400}
-                alt=""
-              />
-              <p className="left-align">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. A nemo
-                aliquam id quos, eveniet veritatis! <br /> Lorem ipsum dolor sit
-                amet consectetur adipisicing elit. Aspernatur inventore quia
-                repudiandae hic ab itaque?
-              </p>
-              <div className={"large-space"}></div>
-              <div className={"center medium-space"}>
-                <div className="row">
-                  <h4 className={"small bold primary-title"}>
-                    Mais Recomendadas
-                  </h4>
-                  <div
-                    className={"primary-title-container"}
-                    style={divider}
-                  ></div>
-                </div>
-                <div className={"medium-space"}></div>
-                <MostRecomNewsContainer />
-              </div>
+        <div className="s12 m7 padding">
+          <div>
+            <Image
+              className=" responsive medium-height round"
+              src={"/Component_2.avif"}
+              width={600}
+              height={400}
+              alt=""
+            />
+            <h6 className="small bold">Lorem ipsum dolor sit</h6>
+            <p className="left-align">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. A nemo
+              aliquam id quos, eveniet veritatis! <br /> Lorem ipsum dolor sit
+              amet consectetur adipisicing elit. Aspernatur inventore quia
+              repudiandae hic ab itaque?
+            </p>
+            <div className="m l small-space"></div>
+            <Image
+              className=" responsive medium-height round"
+              src={"/Component_2.avif"}
+              width={600}
+              height={400}
+              alt=""
+            />
+            <div className="m l small-space"></div>
+            <p className="left-align">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. A nemo
+              aliquam id quos, eveniet veritatis! <br /> Lorem ipsum dolor sit
+              amet consectetur adipisicing elit. Aspernatur inventore quia
+              repudiandae hic ab itaque?
+            </p>
+
+            <div className={"large-space"}></div>
+
+            <div className="row">
+              <h4 className={"small bold primary-title"}>Mais Recomendadas</h4>
+              <div className={"primary-title-container"} style={divider}></div>
             </div>
+
+            <div className={"medium-space"}></div>
+            <MostRecomNewsContainer />
           </div>
         </div>
 
         {/* Coluna lateral */}
-        <div className={"m3"}>
-          <Articles data={news1} />
-          <Articles data={news1} />
+        <div className={"s12 m3"}>
+          <Articles />
+          <Articles />
           <MainAdsContainer />
           {/* {dataFromAPI.map((item, index) => {
               if (item.type === "category") {
