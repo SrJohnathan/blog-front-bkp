@@ -55,10 +55,11 @@ export const FooterMobile = () => {
 
   return (
     <footer className="responsive s primary">
-      <div className="row center-align">
+      <div className="small-space"></div>
+      <div className="grid">
         {topics.map((topic) => (
           <button
-            className="bold small-padding small-round"
+            className="top-align bold small-padding small-round s3"
             key={topic.name}
             onClick={() => {
               if (selectedTopic === topic.name) {
@@ -71,6 +72,7 @@ export const FooterMobile = () => {
             {t(topic.name)}
           </button>
         ))}
+        <div className="small-space"></div>
       </div>
       <div>
         {selectedTopic && (
@@ -90,27 +92,26 @@ export const FooterMobile = () => {
           </menu>
         )}
       </div>
-      <div className={"grid"}>
-        <div className={"grid s12"}>
-          <div className={"s6"}>
-            <Image
-              className=""
-              src={"/stw.svg"}
-              width={194}
-              height={63}
-              alt={""}
-            />
-            <SocialMediaIcons />
-          </div>
-          <div className={"s3"}>
-            <small>{secT("copyrightText")}</small>
-          </div>
-          <div className={"s3"}>
-            <small>{secT("info")}</small>
-          </div>
+      <div className={"grid s12"}>
+        <div className={"s4"}>
+          <Image src={"/stw.svg"} width={100} height={70} alt={""} />
+          <SocialMediaIcons />
         </div>
-        <div className={"space"}></div>
+        <div className={"s4"}>
+          <small>{secT("copyrightText")}</small>
+        </div>
+        <div className={"s4"}>
+          <small>{secT("info")}</small>
+        </div>
       </div>
+      {selectedTopic && (
+        <div>
+          <div className={"large-space"}></div>
+          <div className={"large-space"}></div>
+          <div className={"large-space"}></div>
+        </div>
+      )}
+      <div className={"large-space"}></div>
     </footer>
   );
 };

@@ -5,13 +5,13 @@ export const SocialMediaIcons = () => {
   return (
     <nav>
       <Link target="_blank" href={"https://www.facebook.com/tamba.ventura"}>
-        <i className="small">
+        <i className="tiny">
           <Image src={"/white-facebook.svg"} width={26} height={26} alt="" />
         </i>
       </Link>
 
       <Link target="_blank" href={"https://www.instagram.com/stw.spa/"}>
-        <i className="small">
+        <i className="tiny">
           <Image src={"/white-instagram.svg"} width={26} height={26} alt="" />
         </i>
       </Link>
@@ -20,7 +20,7 @@ export const SocialMediaIcons = () => {
         target="_blank"
         href={"https://www.linkedin.com/company/study-travel-work-portuguese/"}
       >
-        <i className="small">
+        <i className="tiny">
           <Image src={"/white-linkedin.svg"} width={26} height={26} alt="" />
         </i>
       </Link>
