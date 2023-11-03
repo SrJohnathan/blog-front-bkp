@@ -12,22 +12,21 @@ export const FooterDesktop = () => {
   return (
     <footer className="m l primary padding">
       <div className="space"></div>
-      <div className="row center-align">
-        <NavLinkFooter />
+      <div className="grid">
+        <div className="m1"></div>
+        <div className="m10">
+          <NavLinkFooter />
+        </div>
       </div>
 
       <div>
-        <div className="">
-          <Image src={"/stw.svg"} width={194} height={63} alt={""} />
-        </div>
+        <Image src={"/stw.svg"} width={194} height={63} alt={""} />
         <div className="grid">
           <small className="m6">{t("copyrightText")}</small>
           <small className="m6">{t("info")}</small>
         </div>
         <div className="row right-align">
-          <div className="right-margin">
-            <SocialMediaIcons />
-          </div>
+          <SocialMediaIcons />
         </div>
       </div>
     </footer>

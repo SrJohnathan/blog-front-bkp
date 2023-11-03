@@ -15,7 +15,7 @@ const News = () => {
   return (
     <div className="responsive s m l large-margin center-align">
       <TopAdsContainer />
-      <div className="large-space"></div>
+      {/* <div className="medium-space"></div> */}
 
       <h3 className="small bold primary-title center-align">
         Lorem ipsum dolor sit amet consectetur adipisicing elit Lorem ipsum
