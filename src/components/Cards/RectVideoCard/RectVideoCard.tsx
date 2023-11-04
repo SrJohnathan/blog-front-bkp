@@ -2,14 +2,14 @@
 
 import React, { useRef, useState } from "react";
 import { Player } from "video-react";
-import "node_modules/video-react/dist/video-react.css";
+import "video-react/dist/video-react.css";
 import Image from "next/image";
 import Drawer from "./Drawer";
 
 export const RectVideoCard = () => {
   const [modal, setModal] = useState(false);
 
-  const playerRef = useRef(null);
+  const playerRef = useRef<any>(null);
 
   return (
     <>
