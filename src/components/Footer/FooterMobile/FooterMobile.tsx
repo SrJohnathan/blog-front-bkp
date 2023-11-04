@@ -18,16 +18,14 @@ export const FooterMobile = () => {
         { label: "Noticias", route: "news" },
         { label: "Servicos", route: "services" },
         { label: "Eventos", route: "events" },
-        { label: "Estude", route: "study" },
-        { label: "Bolsas", route: "becas" },
-        { label: "Trabalhe", route: "work" },
+        { label: "Trabalhe_Conosco", route: "work-with-us" },
       ],
     },
     {
       name: "ESTRANGEIRO",
       links: [
         { label: "Destinos", route: "destinations" },
-        { label: "Universidades", route: "universities" },
+        { label: "Universidades_PT", route: "pt-universities" },
         { label: "Academicos", route: "academics" },
         { label: "Cursos", route: "courses" },
         { label: "Estude", route: "study" },
@@ -49,7 +47,7 @@ export const FooterMobile = () => {
       links: [
         { label: "Oportunidades", route: "oportunities" },
         { label: "Tempo", route: "weather" },
-        { label: "Noticias", route: "news" },
+        { label: "Mais_Noticias", route: "more-news" },
         { label: "Ciencia_e_Inovacao", route: "innovation" },
       ],
     },
@@ -57,10 +55,11 @@ export const FooterMobile = () => {
 
   return (
     <footer className="responsive s primary">
-      <div className="row center-align">
+      <div className="small-space"></div>
+      <div className="grid">
         {topics.map((topic) => (
           <button
-            className="bold small-padding small-round"
+            className="top-align bold small-padding small-round s3"
             key={topic.name}
             onClick={() => {
               if (selectedTopic === topic.name) {
@@ -73,6 +72,7 @@ export const FooterMobile = () => {
             {t(topic.name)}
           </button>
         ))}
+        <div className="small-space"></div>
       </div>
       <div>
         {selectedTopic && (
@@ -92,27 +92,26 @@ export const FooterMobile = () => {
           </menu>
         )}
       </div>
-      <div className={"grid"}>
-        <div className={"grid s12"}>
-          <div className={"s6"}>
-            <Image
-              className=""
-              src={"/stw.svg"}
-              width={194}
-              height={63}
-              alt={""}
-            />
-            <SocialMediaIcons />
-          </div>
-          <div className={"s3"}>
-            <small>{secT("copyrightText")}</small>
-          </div>
-          <div className={"s3"}>
-            <small>{secT("info")}</small>
-          </div>
+      <div className={"grid s12"}>
+        <div className={"s4"}>
+          <Image src={"/stw.svg"} width={100} height={70} alt={""} />
+          <SocialMediaIcons />
         </div>
-        <div className={"space"}></div>
+        <div className={"s4"}>
+          <small>{secT("copyrightText")}</small>
+        </div>
+        <div className={"s4"}>
+          <small>{secT("info")}</small>
+        </div>
       </div>
+      {selectedTopic && (
+        <div>
+          <div className={"large-space"}></div>
+          <div className={"large-space"}></div>
+          <div className={"large-space"}></div>
+        </div>
+      )}
+      <div className={"large-space"}></div>
     </footer>
   );
 };

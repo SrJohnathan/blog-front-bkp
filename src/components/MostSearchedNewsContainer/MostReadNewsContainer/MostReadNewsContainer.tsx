@@ -16,7 +16,7 @@ export const MostReadNewsContainer = () => {
             <SmallVertCard key={index}></SmallVertCard>
           ))}
       </div>
-      <Link href={"/most-read"} className={"primary-title margin"}>
+      <Link href={"/most-read"} className={"primary-title"}>
         {t("Ver_Mais")} <i>expand_more</i>
       </Link>
     </div>

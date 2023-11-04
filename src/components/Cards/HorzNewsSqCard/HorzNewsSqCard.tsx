@@ -18,10 +18,8 @@ export const HorzNewsSqCard = () => {
               />
             </div>
             <div className="padding s6">
-              <h6 className="small bold">What is Lorem Ipsum?</h6>
-              <p className="tiny-line">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit
-              </p>
+              <h6 className="small bold"></h6>
+              <p className="tiny-line"></p>
               <MiniCardViews date={""} views={0} category={""} />
             </div>
           </div>

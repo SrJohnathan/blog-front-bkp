@@ -14,21 +14,16 @@ export default function MoreNews() {
   const [news, setNews] = useState<GetNews[]>([]);
 
   const locale = useLocale();
+
   useEffect(() => {
     Ex.apiClient()
       .get(`/api/${locale}/post/list/0/8/desc/all`)
-      .then((r) => setNews(r.data))
+      .then((response) => {
+        console.log(response.data);
+        setNews(response.data);
+      })
       .catch(() => {});
-  }, [locale]);
-
-  // const [showCards, setShowCards] = useState(false);
-
-  // useEffect(() => {
-  //   const timer = setTimeout(() => {
-  //     setShowCards(true);
-  //   }, 3000);
-  //   return () => clearTimeout(timer);
-  // }, []);
+  }, [locale, setNews]);
 
   const t = useTranslations("MoreNews");
   const secT = useTranslations("Ver_Mais");
@@ -43,13 +38,13 @@ export default function MoreNews() {
       </div>
       <article className={"s12 m12 large-padding no-elevate"}>
         <div className={"grid "}>
-          {news.length > 0
-            ? news.map((value, index) => (
-                <MedSqCard value={value} key={index} />
-              ))
-            : Array(9)
+          {news.length == 0
+            ? Array(9)
                 .fill(0)
-                .map((_, index) => <MedSqCardSkeleton key={index} />)}
+                .map((_, index) => <MedSqCardSkeleton key={index} />)
+            : news.map((value, index) => (
+                <MedSqCard value={value} key={index} />
+              ))}
         </div>
         <Link href={"/articles?=full"} className={"primary-title margin"}>
           {secT("Ver_Mais")} <i>expand_more</i>{" "}

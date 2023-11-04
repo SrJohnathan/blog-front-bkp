@@ -1,5 +1,3 @@
-"use client";
-
 import { TopAdsContainer } from "@/components/Ads/TopAdsContainer/TopAdsContainer";
 import { VertRectTopCard } from "@/components/Cards/VertRectTopCard/VertRectTopCard";
 import { TopMedRectCard } from "@/components/Cards/TopMedRectCard/TopMedRectCard";
@@ -10,11 +8,11 @@ import { MainAdsContainer } from "@/components/Ads/MainAdsContainer/MainAdsConta
 import { PodCasts } from "@/components/Podcasts/Podcasts";
 import { Articles } from "@/components/Articles/Articles";
 import { Suspense } from "react";
-import { useTranslations } from "next-intl";
 import { StudentGuidePanel } from "@/components/StudentGuidePanel/StudentGuidePanel";
+import { GetNews } from "@/dtos/News";
 
 export default function Home() {
-  const t = useTranslations("Home");
+  // const dataFromAPI = [];
 
   return (
     <>
@@ -46,18 +44,22 @@ export default function Home() {
             <div className={"space"}></div>
             <StudentGuidePanel />
           </div>
+
           {/* Coluna lateral */}
           <div className={"s12 m4"}>
-            <Articles title={t("Oportunidades")} />
-            <div className={"space"}></div>
+            <Articles />
             <MainAdsContainer />
-            <div className={"space"}></div>
-            <Articles title={t("Top_Estudantes")} />
-            <div className={"space"}></div>
-            <Articles title={t("Eventos")} />
-            <div className={"space"}></div>
+            <Articles />
+            <Articles />
             <MainAdsContainer />
-            <div className={"space"}></div>
+            {/* {dataFromAPI.map((item, index) => {
+              if (item.type === "category") {
+                return <Articles key={index} data={item} />;
+              }
+              if (item.type === "ad") {
+                return <MainAdsContainer key={index} data={item} />;
+              }
+            })} */}
           </div>
         </div>
       </main>
