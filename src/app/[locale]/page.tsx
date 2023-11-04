@@ -17,7 +17,7 @@ export default function Home() {
   return (
     <>
       <main className={"responsive"}>
-        <TopAdsContainer />
+        {/* <TopAdsContainer /> */}
         <div className={"grid"}>
           <VertRectTopCard />
           <div className={"s12 m6"}>
@@ -36,11 +36,11 @@ export default function Home() {
             <div className={"space"}></div>
             <MostSearchedNewsContainer />
             <div className={"space"}></div>
-            <MainAdsContainer />
+            {/* <MainAdsContainer /> */}
             <div className={"space"}></div>
             <PodCasts />
             <div className={"space"}></div>
-            <MainAdsContainer />
+            {/* <MainAdsContainer /> */}
             <div className={"space"}></div>
             <StudentGuidePanel />
           </div>
@@ -48,10 +48,10 @@ export default function Home() {
           {/* Coluna lateral */}
           <div className={"s12 m4"}>
             <Articles />
-            <MainAdsContainer />
+            {/* <MainAdsContainer /> */}
             <Articles />
             <Articles />
-            <MainAdsContainer />
+            {/* <MainAdsContainer /> */}
             {/* {dataFromAPI.map((item, index) => {
               if (item.type === "category") {
                 return <Articles key={index} data={item} />;
