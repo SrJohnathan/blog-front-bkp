@@ -35,35 +35,33 @@ export const StudentGuidePanel = () => {
   const { title, text } = renderContent();
 
   return (
-    <article className={"no-margin no-padding no-elevate"}>
+    <article className={"responsive no-margin no-padding no-elevate s m l"}>
       <div className={"grid"}>
-        <div
-          className={
-            "s6 m3 primary no-round border-bottom-left-radius border-top-left-radius responsive padding"
-          }
-        >
+        <div className={"s12 m4 primary small-round responsive small-padding"}>
           <button
-            className={"no-round small-round responsive"}
+            className={"small-round"}
             onClick={() => setActiveContent("Estudantes")}
           >
             <h6 className="bold small">Estudantes</h6>
           </button>
+          <div className="tiny-space"></div>
           <button
-            className={"no-round small-round responsive"}
+            className={"small-round"}
             onClick={() => setActiveContent("Integração")}
           >
             <h6 className="bold small">Integração</h6>
           </button>
+          <div className="tiny-space"></div>
           <button
-            className={"no-round small-round responsive"}
+            className={"small-round "}
             onClick={() => setActiveContent("Universidades")}
           >
             <h6 className="bold small">Universidades</h6>
           </button>
         </div>
         <div className={"s12 m8 padding"}>
-          <h5 className={"small primary-title"}>{title}</h5>
-          <p className={"primary-description"}>{text}</p>
+          <h5 className={"small primary-title left-align"}>{title}</h5>
+          <p className={"primary-description left-align"}>{text}</p>
         </div>
       </div>
     </article>
