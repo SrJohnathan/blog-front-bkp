@@ -10,14 +10,14 @@ export const MainAdsContainer = () => {
     <>
       <article className="small background no-elevate">
         <div className="absolute center middle">
-          <Adsense
+          {/*<Adsense
             client="ca-pub-9265983030484383"
             slot="6729735935"
             adTest={"on"}
             style={{ width: 500, height: 300 }}
             layout="in-article"
             format=""
-          />
+          />*/}
         </div>
       </article>
       <article className="small background no-elevate">

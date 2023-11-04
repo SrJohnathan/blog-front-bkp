@@ -56,13 +56,13 @@ export const TopAdsContainer = () => {
           <div className="large-space"></div>
 
           <div className="no-space  padding  center middle">
-            <Adsense
+            {/*<Adsense
               client="ca-pub-9265983030484383"
               slot="9027175331"
               style={{ display: "block" }}
               layout="in-article"
               format="fluid"
-            />
+            />*/}
 
             {/*   <ReactCaroussel
                               infinite={true}
