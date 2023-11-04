@@ -109,7 +109,7 @@ const News = () => {
               if (item.type === "category") {
                 return <Articles key={index} data={item} />;
               }
-              if (item.type === "ads") {
+              if (item.type === "ad") {
                 return <MainAdsContainer key={index} data={item} />;
               }
             })} */}

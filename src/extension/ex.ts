@@ -3,7 +3,8 @@ import axios from "axios";
 export namespace Ex {
   export function api() {
     return axios.create({
-      baseURL: "https://stw-blog-backend.herokuapp.com",
+      baseURL: "http://localhost:8000",
+     // baseURL: "https://stw-blog-backend.herokuapp.com",
       headers: {
         "Content-Type": "application/json",
       },

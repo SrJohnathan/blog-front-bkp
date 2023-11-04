@@ -201,7 +201,9 @@ a {
   flex-grow: 1;
 }
 
-
+.caroussel-content .row{
+  gap: 0;
+}
 
 .shine {
   background: #f6f7f8

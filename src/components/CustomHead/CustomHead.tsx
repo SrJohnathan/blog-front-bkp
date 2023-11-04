@@ -19,6 +19,9 @@ export default function CustomHead() {
       <meta property="og:url" content={t("ogUrl")} />
       <meta property="og:image" content={t("ogImage")} />
       <meta property="og:description" content={t("ogDescription")} />
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <meta name="google-adsense-account" content="ca-pub-9265983030484383"/>
+
 
       <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/open-sans" />
 
@@ -28,6 +31,8 @@ export default function CustomHead() {
 
       {/* Favicon */}
       <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
+
+
     </>
   );
 }
