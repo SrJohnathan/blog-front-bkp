@@ -6,7 +6,7 @@ import { TopAdsContainer } from "@/components/Ads/TopAdsContainer/TopAdsContaine
 import { RectVideoCard } from "@/components/Cards/RectVideoCard/RectVideoCard";
 import Image from "next/image";
 import { Articles } from "@/components/Articles/Articles";
-import { news1 } from "./page";
+
 import { MainAdsContainer } from "@/components/Ads/MainAdsContainer/MainAdsContainer";
 import { MostRecomNewsContainer } from "@/components/MostSearchedNewsContainer/MostRecomNewsContainer/MostRecomNewsContainer";
 
@@ -100,10 +100,10 @@ const News = () => {
         </div>
         {/* Coluna lateral */}
         <div className={"s12 m4"}>
-          <Articles data={news1} />
+          <Articles  />
           <MainAdsContainer />
-          <Articles data={news1} />
-          <Articles data={news1} />
+          <Articles  />
+          <Articles  />
           <MainAdsContainer />
           {/* {dataFromAPI.map((item, index) => {
               if (item.type === "category") {

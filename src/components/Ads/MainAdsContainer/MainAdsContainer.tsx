@@ -19,9 +19,10 @@ export const MainAdsContainer = () => {
 
               client="ca-pub-9265983030484383"
               slot="6729735935"
-              style={{ display: 'block' }}
+              adTest={"on"}
+              style={{ width: 500, height: 300 }}
               layout="in-article"
-              format="fluid"
+              format=""
           />
               </div>
           </article>
