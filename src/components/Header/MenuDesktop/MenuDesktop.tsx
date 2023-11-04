@@ -17,31 +17,27 @@ export const MenuDesktop = () => {
     >
       <div className={"grid"}>
         <div className={"m1"}>
+          <div className={"tiny-space"}></div>
           <Link href={"/"} className="left-align transparent">
             <Image width={80} height={80} src="/stw_1.png" alt={"STW icon"} />
           </Link>
+          <div className={"tiny-space"}></div>
         </div>
-        <div className="m11">
-          <div className={"small-padding"}></div>
-          <nav>
-            <NavLinkDesktop />
-            <div className={"max"}></div>
-            <SocialMediaIcons />
+        <div className="m11 no-padding row">
+          <div className={"small-space"}></div>
+          <NavLinkDesktop />
+          <SocialMediaIcons />
 
-            <div className="field label prefix center-align small fill small-round">
-              <input type="text" name="" />
-              <i>search</i>
-            </div>
+          <div className="field label prefix small fill small-round">
+            <input type="text" />
+            <i>search</i>
+          </div>
 
-            <Languages />
+          <Languages />
 
-            <button
-              className="circle transparent"
-              onClick={() => toggleTheme()}
-            >
-              {isDark ? <i>dark_mode</i> : <i>light_mode</i>}
-            </button>
-          </nav>
+          <button className="circle transparent" onClick={() => toggleTheme()}>
+            {isDark ? <i>dark_mode</i> : <i>light_mode</i>}
+          </button>
           <div className={"small-space"}></div>
         </div>
       </div>

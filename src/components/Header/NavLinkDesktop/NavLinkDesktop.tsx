@@ -49,17 +49,21 @@ export const NavLinkDesktop = () => {
       <div>
         <div className={"grid left-align"}>
           {Object.entries(categories).map(([key, links]) => (
-            <div key={key} className={"m3"}>
+            <div key={key} className={"m3 no-padding"}>
               <h6 className="small bold">{t(key)}</h6>
               <Collapse isOpen={isOpen}>
                 {links.map((link, index) => (
-                  <Link
-                    key={`${key}-${index}`}
-                    href={`/${key.toLowerCase()}/${link.route}`}
-                  >
-                    <h6 className="small small-line">{t(link.label)}</h6>
-                  </Link>
+                  <>
+                    <Link
+                      key={`${key}-${index}`}
+                      href={`/${key.toLowerCase()}/${link.route}`}
+                    >
+                      <h6 className="small small-line">{t(link.label)}</h6>
+                    </Link>
+                    <br />
+                  </>
                 ))}
+                <div className="space"></div>
               </Collapse>
             </div>
           ))}
