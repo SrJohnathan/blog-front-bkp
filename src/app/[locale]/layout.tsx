@@ -38,6 +38,9 @@ export default async function RootLayout({
     <NextIntlClientProvider locale={locale} messages={messages}>
       <html lang={locale}>
         <head>
+          <script async
+                  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5042411247457773"
+                  crossOrigin="anonymous"></script>
           <CustomHead />
         </head>
         <body>

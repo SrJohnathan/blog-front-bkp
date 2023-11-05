@@ -17,7 +17,7 @@ export default function Home() {
   return (
     <>
       <main className={"responsive"}>
-        {/* <TopAdsContainer /> */}
+       <TopAdsContainer />
         <div className={"grid"}>
           <VertRectTopCard />
           <div className={"s12 m6"}>
@@ -48,7 +48,7 @@ export default function Home() {
           {/* Coluna lateral */}
           <div className={"s12 m4"}>
             <Articles />
-            {/* <MainAdsContainer /> */}
+          <MainAdsContainer />
             <Articles />
             <Articles />
             {/* <MainAdsContainer /> */}
