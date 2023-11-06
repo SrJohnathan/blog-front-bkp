@@ -9,14 +9,14 @@ import Image from "next/image";
 import { Articles } from "@/components/Articles/Articles";
 import { MainAdsContainer } from "@/components/Ads/MainAdsContainer/MainAdsContainer";
 import { MostRecomNewsContainer } from "@/components/MostSearchedNewsContainer/MostRecomNewsContainer/MostRecomNewsContainer";
-import {useRouter} from "next/router";
+
 import {useEffect, useState} from "react";
 import {GetNews} from "@/dtos/News";
 import {Ex} from "@/extension/ex";
 
-const News = () => {
+const Page = ({ params }: { params: { id: string } }) => {
 
-  const route = useRouter()
+
   const locale = useLocale();
 
   const [news, setNews] = useState<GetNews| null>(null);
@@ -24,12 +24,8 @@ const News = () => {
 
 
   useEffect(() => {
-
-
-    Ex.apiClient().get(`/api/${locale}/post/first/${route.query.id}`).then(value =>  setNews(value.data))
-
-
-  }, [route.query.news]);
+    Ex.apiClient().get(`/api/${locale}/post/first/${params.id}`).then(value =>  setNews(value.data))
+  }, []);
 
   const t = useTranslations("");
 
@@ -39,8 +35,7 @@ const News = () => {
       <div className="m l medium-space"></div>
 
       <h3 className="small bold primary-title center-align">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit Lorem ipsum
-        dolor, sit amet consectetur adipisicing elit. Adipisci, illum.
+        {news?.titulo}
       </h3>
 
       <div className="medium-space"></div>
@@ -174,7 +169,7 @@ const News = () => {
   );
 };
 
-export default News;
+export default Page;
 
 {
   /* <div className="row">

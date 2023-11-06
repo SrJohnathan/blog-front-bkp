@@ -7,7 +7,10 @@ import { RectVideoCard } from "@/components/Cards/RectVideoCard/RectVideoCard";
 import { MostViewedNewsCard } from "@/components/Cards/MostViewedNewsCard/MostViewedNewsCard";
 import { ExtendedNews } from "@/components/Cards/ExtendedNews/ExtendedNews";
 
-const CategoryPage = () => {
+const CategoryPage = ({ params }: { params: { id: string } }) => {
+
+
+
   const t = useTranslations("FullNews");
 
   return (
@@ -19,7 +22,7 @@ const CategoryPage = () => {
             <div className="large-space"></div>
             <div className="row">
               <h4 className={"small bold primary-title"}>
-                Categoria selecionada
+                gfdfgfdsgf
               </h4>
               <div className={"primary-title-container"} style={divider}></div>
             </div>
