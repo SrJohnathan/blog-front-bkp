@@ -1,93 +1,73 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
+import { Category } from "@/dtos/Category";
+import { getCategoryAll } from "@/source/category";
 
 export const NavLinkFooter = () => {
+  const [categoriesData, setCategoriesData] = useState<Category[]>([]);
   const t = useTranslations("NavLinkDesktopFooter");
+  const locale = useLocale();
 
-  const STWLinks = [
-    { label: "Noticias", route: "news" },
-    { label: "Servicos", route: "services" },
-    { label: "Eventos", route: "events" },
-    { label: "Trabalhe_Conosco", route: "work-with-us" },
-  ];
+  useEffect(() => {
+    getCategoryAll(locale).then(setCategoriesData);
+  }, [locale]);
 
-  const estrangeiroLinks = [
-    { label: "Destinos", route: "destinations" },
-    { label: "Universidades_PT", route: "pt-universities" },
-    { label: "Academicos", route: "academics" },
-    { label: "Cursos", route: "courses" },
-    { label: "Estude", route: "study" },
-    { label: "Bolsas", route: "becas" },
-    { label: "Trabalhe", route: "work" },
-  ];
+  const categories = {
+    STW: ["noticias", "servicos", "eventos", "trabalheconosco"],
+    ESTRANGEIRO: [
+      "destinos",
+      "universidadespt",
+      "academicos",
+      "cursos",
+      "estude",
+      "bolsas",
+      "trabalhe",
+    ],
+    PROJETOS: [
+      "programadeintegracao",
+      "universidadespelomundo",
+      "podcasts",
+      "topstudents",
+    ],
+    TOPICOS: ["oportunidades", "tempo", "maisnoticias", "cienciaeinovacao"],
+  };
 
-  const projetosLinks = [
-    { label: "Programa_de_Integracao", route: "integration-program" },
-    { label: "Universidades_pelo_Mundo", route: "world-universities" },
-    { label: "Podcasts", route: "podcasts" },
-    { label: "Top_Students", route: "top-students" },
-  ];
+  type CategoryKey = keyof typeof categories;
 
-  const topicosLinks = [
-    { label: "Oportunidades", route: "oportunities" },
-    { label: "Tempo", route: "weather" },
-    { label: "Mais_Noticias", route: "more-news" },
-    { label: "Ciencia_e_Inovacao", route: "innovation" },
-  ];
-  return (
-    <>
-      <div className="grid m12">
-        <div className={"m3 left-align"}>
-          <h6 className="bold small">STW</h6>
-          {STWLinks.map((link, index) => (
+  const renderCategorySection = (categoryKey: CategoryKey) => {
+    return (
+      <div key={categoryKey} className={"m3 no-padding"}>
+        <h6 className="small bold">{t(categoryKey)}</h6>
+        {filter(categoriesData, categories[categoryKey])?.map(
+          (category, index) => (
             <React.Fragment key={index}>
-              <Link className="medium-line" href={`/stw/${link.route}`}>
-                {t(link.label)}
+              <Link href={`/category/${category.name_url}`}>
+                <h6 className="small small-line">{category.name}</h6>
               </Link>
               <br />
             </React.Fragment>
-          ))}
-        </div>
-
-        <div className={"m3 left-align"}>
-          <h6 className="bold small">{t("ESTRANGEIRO")}</h6>
-          {estrangeiroLinks.map((link, index) => (
-            <React.Fragment key={index}>
-              <Link className="medium-line" href={`/abroad/${link.route}`}>
-                {t(link.label)}
-              </Link>
-              <br />
-            </React.Fragment>
-          ))}
-        </div>
-
-        <div className={"m3 left-align"}>
-          <h6 className="bold small">{t("PROJETOS")}</h6>
-          {projetosLinks.map((link, index) => (
-            <React.Fragment key={index}>
-              <Link className="medium-line" href={`/projects/${link.route}`}>
-                {t(link.label)}
-              </Link>
-              <br />
-            </React.Fragment>
-          ))}
-        </div>
-
-        <div className={"m3 left-align"}>
-          <h6 className="bold small">{t("TOPICOS")}</h6>
-          {topicosLinks.map((link, index) => (
-            <React.Fragment key={index}>
-              <Link className="medium-line" href={`/topics/${link.route}`}>
-                {t(link.label)}
-              </Link>
-              <br />
-            </React.Fragment>
-          ))}
-        </div>
+          )
+        )}
       </div>
-    </>
+    );
+  };
+
+  return (
+    <div className="max">
+      <div className={"grid left-align"}>
+        {Object.keys(categories).map((categoryKey) =>
+          renderCategorySection(categoryKey as CategoryKey)
+        )}
+      </div>
+    </div>
   );
 };
+
+function filter(categories: Category[], filterItems: string[]) {
+  return categories.filter((category) =>
+    filterItems.includes(category.name_url)
+  );
+}
