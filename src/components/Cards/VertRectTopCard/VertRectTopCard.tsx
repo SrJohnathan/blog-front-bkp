@@ -30,7 +30,7 @@ export const VertRectTopCard = async ({id}:{id?:number }) => {
         />*/}
 
         <div className="absolute bottom left right padding bottom-shadow white-text">
-          <Link href={"/news/:id"}>
+          <Link href={`/news/${id}`}>
             <div>
               <h5>{response.titulo}</h5>
               <p>

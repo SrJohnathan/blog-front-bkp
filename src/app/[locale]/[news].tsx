@@ -1,7 +1,7 @@
 "use client";
 
 // import layout from "./layout";
-import { useTranslations } from "next-intl";
+import {useLocale, useTranslations} from "next-intl";
 import { divider } from "@/styles/styles";
 import { TopAdsContainer } from "@/components/Ads/TopAdsContainer/TopAdsContainer";
 import { RectVideoCard } from "@/components/Cards/RectVideoCard/RectVideoCard";
@@ -9,8 +9,28 @@ import Image from "next/image";
 import { Articles } from "@/components/Articles/Articles";
 import { MainAdsContainer } from "@/components/Ads/MainAdsContainer/MainAdsContainer";
 import { MostRecomNewsContainer } from "@/components/MostSearchedNewsContainer/MostRecomNewsContainer/MostRecomNewsContainer";
+import {useRouter} from "next/router";
+import {useEffect, useState} from "react";
+import {GetNews} from "@/dtos/News";
+import {Ex} from "@/extension/ex";
 
 const News = () => {
+
+  const route = useRouter()
+  const locale = useLocale();
+
+  const [news, setNews] = useState<GetNews| null>(null);
+
+
+
+  useEffect(() => {
+
+
+    Ex.apiClient().get(`/api/${locale}/post/first/${route.query.id}`).then(value =>  setNews(value.data))
+
+
+  }, [route.query.news]);
+
   const t = useTranslations("");
 
   return (
