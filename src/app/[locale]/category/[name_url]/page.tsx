@@ -7,7 +7,7 @@ import { RectVideoCard } from "@/components/Cards/RectVideoCard/RectVideoCard";
 import { MostViewedNewsCard } from "@/components/Cards/MostViewedNewsCard/MostViewedNewsCard";
 import { ExtendedNews } from "@/components/Cards/ExtendedNews/ExtendedNews";
 
-const CategoryPage = ({ params }: { params: { id: string } }) => {
+const CategoryPage = ({ params }: { params: { name_url: string } }) => {
 
 
 

@@ -2,6 +2,7 @@ import {LateralPostImpl, TopAdsImpl,Config} from "@/dtos/Settings";
 import {Ads} from "@/dtos/Ads";
 import {GetNews} from "@/dtos/News";
 import {Ex} from "@/extension/ex";
+import {Category} from "@/dtos/Category";
 
 
 /*
@@ -50,12 +51,16 @@ export class MainPost{
     ids?: {card1:number,card2:number,card3:number} | null
 }
 
+export class Categorys{
+    c?: Category[] | null
+}
+
 
 export async  function getSettingsAll() {
 
 }
 
-export  async  function  getSettings<T extends TopAds | LateralPost | MainPost>(instancie:{new (): T}) {
+export  async  function  getSettings<T extends TopAds | LateralPost | MainPost | Categorys>(instancie:{new (): T}) {
     let ins = new instancie()
 
     if (ins instanceof TopAds) {
@@ -70,6 +75,11 @@ export  async  function  getSettings<T extends TopAds | LateralPost | MainPost>(
 
     if (ins instanceof MainPost) {
         const res : Config<T>   =  ( await Ex.api().get("/settings/name/mainpost") ).data
+        return  res
+    }
+
+    if (ins instanceof MainPost) {
+        const res : Config<T>   =  ( await Ex.api().get("/settings/name/category_list") ).data
         return  res
     }
 

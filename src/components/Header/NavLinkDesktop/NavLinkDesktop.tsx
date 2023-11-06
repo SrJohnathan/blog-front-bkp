@@ -1,20 +1,40 @@
 "use client";
 
-import { useState } from "react";
-import { useTranslations } from "next-intl";
+import {useEffect, useState} from "react";
+import {useLocale, useTranslations} from "next-intl";
 import { Collapse } from "./Collapse";
 import Link from "next/link";
+import {Category} from "@/dtos/Category";
+import {Ex} from "@/extension/ex";
+import {getCategoryAll} from "@/source/category";
 
 export const NavLinkDesktop = () => {
+
+  const [categorys,setC] = useState<Category[]>()
+
+  const  locale = useLocale()
+
+  useEffect(() => {
+    getCategoryAll(locale).then(value =>   {
+      if(value){
+        setC(value)
+      }
+    })
+  }, [setC]);
+
+
+
   const t = useTranslations("NavLinkDesktopFooter");
   const [isOpen, setIsOpen] = useState(false);
 
+
+
   const categories = {
     STW: [
-      { label: "Noticias", route: "news" },
-      { label: "Servicos", route: "services" },
-      { label: "Eventos", route: "events" },
-      { label: "Trabalhe_Conosco", route: "work-with-us" },
+       "noticias" ,
+      "servicos" ,
+      "eventos" ,
+     "trabalheconosco" ,
     ],
     ESTRANGEIRO: [
       { label: "Destinos", route: "destinations" },
@@ -39,6 +59,9 @@ export const NavLinkDesktop = () => {
     ],
   };
 
+
+
+
   return (
     <div
       className="max"
@@ -48,7 +71,38 @@ export const NavLinkDesktop = () => {
       {/* Submenu */}
       <div>
         <div className={"grid left-align"}>
-          {Object.entries(categories).map(([key, links]) => (
+
+
+          {["STW"].map((value1, index) =>
+
+              <div key={index}  className={"m3 no-padding"}>
+                <h6 className="small bold">{value1}</h6>
+                <Collapse isOpen={isOpen}>
+                  {filter(categorys,categories.STW)?.map((value, index) =>  {
+                    return (
+                        <>
+                          <Link
+                              key={index}
+                              href={`/category/${value.name_url}`}
+                          >
+                            <h6 className="small small-line">{value.name}</h6>
+                          </Link>
+                          <br/>
+                        </>
+                    )
+                  })}
+                  <div className="space"></div>
+                </Collapse>
+              </div>
+
+
+          )}
+
+
+
+
+
+         {/* {Object.entries(categories).map(([key, links]) => (
             <div key={key} className={"m3 no-padding"}>
               <h6 className="small bold">{t(key)}</h6>
               <Collapse isOpen={isOpen}>
@@ -66,9 +120,39 @@ export const NavLinkDesktop = () => {
                 <div className="space"></div>
               </Collapse>
             </div>
-          ))}
+          ))}*/}
         </div>
       </div>
     </div>
   );
 };
+
+
+
+function filter(ar : Category[]| null | undefined,fi:string[]) {
+
+
+
+
+
+  if(ar){
+     const new_ar =  ar.filter((value, index) =>  {
+
+       if(fi.includes(value.name_url)){
+         return true
+       }else {
+         return  false
+       }
+
+
+     }  )
+
+
+    return new_ar
+  }else {
+    return  null
+  }
+
+
+
+}
