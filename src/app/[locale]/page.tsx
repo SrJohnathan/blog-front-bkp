@@ -7,30 +7,26 @@ import { MostSearchedNewsContainer } from "@/components/MostSearchedNewsContaine
 import { MainAdsContainer } from "@/components/Ads/MainAdsContainer/MainAdsContainer";
 import { PodCasts } from "@/components/Podcasts/Podcasts";
 import { Articles } from "@/components/Articles/Articles";
-import {Suspense} from "react";
+import { Suspense } from "react";
 import { StudentGuidePanel } from "@/components/StudentGuidePanel/StudentGuidePanel";
 import { GetNews } from "@/dtos/News";
-import {getSettings, MainPost} from "@/source/settings";
-
-
-
+import { getSettings, MainPost } from "@/source/settings";
 
 export default async function Home() {
   // const dataFromAPI = [];
-        const  postMain =  await getSettings(MainPost)
+  const postMain = await getSettings(MainPost);
 
-    console.log(postMain?.data)
-
+  console.log(postMain?.data);
 
   return (
     <>
       <main className={"responsive"}>
-       <TopAdsContainer />
+        <TopAdsContainer />
         <div className={"grid"}>
           <VertRectTopCard id={postMain?.data.ids?.card1} />
           <div className={"s12 m6"}>
-            <TopMedRectCard />
-            <TopMedRectCard />
+            <TopMedRectCard id={postMain?.data.ids?.card2} />
+            <TopMedRectCard id={postMain?.data.ids?.card3} />
           </div>
         </div>
         <div className="space"></div>
@@ -56,7 +52,7 @@ export default async function Home() {
           {/* Coluna lateral */}
           <div className={"s12 m4"}>
             <Articles />
-          <MainAdsContainer />
+            <MainAdsContainer />
             <Articles />
             <Articles />
             {/* <MainAdsContainer /> */}
