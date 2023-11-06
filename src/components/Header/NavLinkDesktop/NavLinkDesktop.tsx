@@ -45,7 +45,7 @@ export const NavLinkDesktop = () => {
       <div key={categoryKey} className={"m3 no-padding"}>
         <h6 className="small bold">{t(categoryKey)}</h6>
         <Collapse isOpen={isOpen}>
-          {filter(categoriesData, categories[categoryKey])?.map(
+          {filteredCategories(categoriesData, categories[categoryKey])?.map(
             (category, index) => (
               <React.Fragment key={index}>
                 <Link href={`/category/${category.name_url}`}>
@@ -75,8 +75,11 @@ export const NavLinkDesktop = () => {
   );
 };
 
-function filter(categories: Category[], filterItems: string[]) {
+const filteredCategories = (
+  categories: Category[],
+  filteredItems: string[]
+) => {
   return categories.filter((category) =>
-    filterItems.includes(category.name_url)
+    filteredItems.includes(category.name_url)
   );
-}
+};
