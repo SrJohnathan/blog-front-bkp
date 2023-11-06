@@ -1,5 +1,3 @@
-"use client";
-
 // import layout from "./layout";
 import {useLocale, useTranslations} from "next-intl";
 import { divider } from "@/styles/styles";
@@ -10,24 +8,28 @@ import { Articles } from "@/components/Articles/Articles";
 import { MainAdsContainer } from "@/components/Ads/MainAdsContainer/MainAdsContainer";
 import { MostRecomNewsContainer } from "@/components/MostSearchedNewsContainer/MostRecomNewsContainer/MostRecomNewsContainer";
 
-import {useEffect, useState} from "react";
+
 import {GetNews} from "@/dtos/News";
 import {Ex} from "@/extension/ex";
+import {PostText} from "@/components/Post/PostText";
+import {FallbackImage} from "@/components/Cards/MedSqCard/FallbackImage";
 
-const Page = ({ params }: { params: { id: string } }) => {
-
-
-  const locale = useLocale();
-
-  const [news, setNews] = useState<GetNews| null>(null);
+const Page =  async ({ params }: { params: { id: string } }) => {
 
 
 
-  useEffect(() => {
-    Ex.apiClient().get(`/api/${locale}/post/first/${params.id}`).then(value =>  setNews(value.data))
-  }, []);
+    const news: GetNews = (await Ex.api().get(`/post/insert_view/${params.id}`)).data;
 
-  const t = useTranslations("");
+
+  const  array_new : GetNews[] = (await  Ex.api().get(`/post/${news.language}/list/${0}/${2}/desc/${news.categoria_id}`)).data;
+
+
+
+
+  console.log(array_new)
+
+
+
 
   return (
     <div className="responsive s m l large-margin center-align">
@@ -48,33 +50,27 @@ const Page = ({ params }: { params: { id: string } }) => {
         <p className="bold s2 m1">Resumo</p>
         <div className="s8 m8">
           <h6 className="small left-align">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur
-            alias tempora non magnam, quia fuga, mollitia laudantium debitis
-            doloremque ea aperiam ad, aliquid cumque autem dolor repudiandae
-            aliquam totam facere eaque voluptatum recusandae necessitatibus
-            quidem ab earum! Pariatur minima nulla inventore sit doloremque
-            reprehenderit dolorum.
+            {news.description}
           </h6>
 
-          <Image
-            className="responsive large-height round"
-            width={800}
-            height={358}
-            src="/Component_5.png"
-            alt=""
-          />
-          <div className="small-space"></div>
-          <h5 className="small bold">Lorem ipsum dolor sit</h5>
-          <h6 className="small left-align">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat
-            veritatis doloremque aspernatur saepe repudiandae eum facere hic
-            earum! Consectetur aliquam perspiciatis ratione odit reiciendis
-            blanditiis itaque dolore, corporis odio quo officiis veniam nemo
-            dolor rem, incidunt nostrum! Voluptate magni at iure numquam,
-            architecto laborum cupiditate impedit beatae consectetur? Aspernatur
-            ullam blanditiis fugiat recusandae mollitia tenetur unde.
-          </h6>
-          <div className="m1"></div>
+
+          {news.tipo === "Texto"  && (
+              <PostText news={news}/>
+          )  }
+
+          {news.tipo === "Html"  && (
+              <PostText news={news}/>
+          )  }
+
+          {news.tipo === "Audio"  && (
+              <PostText news={news}/>
+          )  }
+
+          {news.tipo === "Video"  && (
+              <PostText news={news}/>
+          )  }
+
+
         </div>
       </div>
 
@@ -107,35 +103,30 @@ const Page = ({ params }: { params: { id: string } }) => {
         <div className="m1"></div>
         {/* Coluna principal */}
         <div className="s12 m7 padding">
+
           <div>
-            <Image
+            <FallbackImage
               className=" responsive medium-height round"
-              src={"/Component_2.avif"}
+              src={"/api/files/"+array_new[0].img}
               width={600}
               height={400}
               alt=""
             />
-            <h6 className="small bold">Lorem ipsum dolor sit</h6>
+            <h6 className="small bold">{array_new[0].titulo}</h6>
             <p className="left-align">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. A nemo
-              aliquam id quos, eveniet veritatis! <br /> Lorem ipsum dolor sit
-              amet consectetur adipisicing elit. Aspernatur inventore quia
-              repudiandae hic ab itaque?
+                {array_new[0].description}
             </p>
             <div className="m l small-space"></div>
-            <Image
+            <FallbackImage
               className=" responsive medium-height round"
-              src={"/Component_2.avif"}
+              src={"/api/files/"+array_new[1].img}
               width={600}
               height={400}
               alt=""
             />
             <div className="m l small-space"></div>
             <p className="left-align">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. A nemo
-              aliquam id quos, eveniet veritatis! <br /> Lorem ipsum dolor sit
-              amet consectetur adipisicing elit. Aspernatur inventore quia
-              repudiandae hic ab itaque?
+                {array_new[1].description}
             </p>
 
             <div className={"large-space"}></div>
@@ -170,6 +161,15 @@ const Page = ({ params }: { params: { id: string } }) => {
 };
 
 export default Page;
+
+
+
+
+
+
+
+
+
 
 {
   /* <div className="row">
