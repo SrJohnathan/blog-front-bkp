@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 
-export const FallbackImage = ({ src, fallbackSrc, alt }: any) => {
+export const FallbackImage = ({ src, fallbackSrc, alt,className }: any) => {
   const [imgSrc, setImgSrc] = useState(src);
 
   const handleImageDelay = () => {
@@ -12,6 +12,7 @@ export const FallbackImage = ({ src, fallbackSrc, alt }: any) => {
 
   return (
     <Image
+      className={className}
       width={200}
       height={200}
       src={imgSrc}

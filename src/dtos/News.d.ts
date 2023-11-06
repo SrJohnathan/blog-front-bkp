@@ -9,4 +9,5 @@ export interface GetNews {
   tipo: "Video" | "Texto" | "Audio" | "Html";
   conteudo: string | null;
   name_category: string | null;
+  description: string | null;
 }

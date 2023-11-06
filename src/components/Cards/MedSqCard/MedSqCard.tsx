@@ -12,15 +12,14 @@ export const MedSqCard = ({ value }: { value: GetNews }) => {
           className="responsive medium"
           width={200}
           height={200}
-          src={value.img || "/Component_2.avif"}
+          src={`/api/files/${value.img}`|| "/Component_2.avif"}
           fallbackSrc={"/lod.gif"}
           alt=""
         />
         <div className="padding">
           <h6 className="small bold">{value.titulo}</h6>
           <p className="small-line">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry
+            {value.description}
           </p>
           <MiniCardViews
             views={value.total_views || 0}

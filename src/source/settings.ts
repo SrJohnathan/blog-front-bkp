@@ -46,22 +46,30 @@ export class LateralPost implements LateralPostImpl{
     value: (Ads | GetNews)[] = []
 }
 
+export class MainPost{
+    ids?: {card1:number,card2:number,card3:number} | null
+}
 
 
 export async  function getSettingsAll() {
 
 }
 
-export  async  function  getSettings<T extends TopAds | LateralPost>(instancie:{new (): T}) {
+export  async  function  getSettings<T extends TopAds | LateralPost | MainPost>(instancie:{new (): T}) {
     let ins = new instancie()
 
     if (ins instanceof TopAds) {
-         const res : Config<T>   =  ( await Ex.apiClient().get("api/settings/topads") ).data
+         const res : Config<T>   =  ( await Ex.api().get("/settings/name/topads") ).data
         return  res
     }
 
     if (ins instanceof LateralPost) {
-        const res : Config<T>   =  ( await Ex.apiClient().get("api/settings/lpost") ).data
+        const res : Config<T>   =  ( await Ex.api().get("/settings/name/lpost") ).data
+        return  res
+    }
+
+    if (ins instanceof MainPost) {
+        const res : Config<T>   =  ( await Ex.api().get("/settings/name/mainpost") ).data
         return  res
     }
 

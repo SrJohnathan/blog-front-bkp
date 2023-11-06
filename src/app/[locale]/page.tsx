@@ -7,19 +7,27 @@ import { MostSearchedNewsContainer } from "@/components/MostSearchedNewsContaine
 import { MainAdsContainer } from "@/components/Ads/MainAdsContainer/MainAdsContainer";
 import { PodCasts } from "@/components/Podcasts/Podcasts";
 import { Articles } from "@/components/Articles/Articles";
-import { Suspense } from "react";
+import {Suspense} from "react";
 import { StudentGuidePanel } from "@/components/StudentGuidePanel/StudentGuidePanel";
 import { GetNews } from "@/dtos/News";
+import {getSettings, MainPost} from "@/source/settings";
 
-export default function Home() {
+
+
+
+export default async function Home() {
   // const dataFromAPI = [];
+        const  postMain =  await getSettings(MainPost)
+
+    console.log(postMain?.data)
+
 
   return (
     <>
       <main className={"responsive"}>
        <TopAdsContainer />
         <div className={"grid"}>
-          <VertRectTopCard />
+          <VertRectTopCard id={postMain?.data.ids?.card1} />
           <div className={"s12 m6"}>
             <TopMedRectCard />
             <TopMedRectCard />
