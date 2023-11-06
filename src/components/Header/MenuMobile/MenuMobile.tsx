@@ -71,12 +71,13 @@ export const MenuMobile = () => {
             className="row bold small-padding small-round"
             key={index}
             onClick={() => {
-              alert(category);
+
               if (selectedTopic === category) {
                 setSelectedTopic("NULL");
               } else {
+                setSelectedTopic(category as CategoryKey);
               }
-              setSelectedTopic(category as CategoryKey);
+
             }}
           >
             {t(category)}
@@ -84,7 +85,7 @@ export const MenuMobile = () => {
         ))}
 
         <div>
-          {selectedTopic != "NULL" && (
+          {selectedTopic !== "NULL" && (
             <menu
               key={selectedTopic}
               className={`min ${
