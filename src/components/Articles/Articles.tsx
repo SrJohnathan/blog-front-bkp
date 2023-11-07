@@ -6,24 +6,32 @@ import Link from "next-intl/link";
 import { GetNews } from "@/dtos/News";
 import { useEffect, useState } from "react";
 import { Ex } from "@/extension/ex";
-import { getAllCategories } from "@/source/category";
+import {getAllCategories, getCategory} from "@/source/category";
 import { Category } from "@/dtos/Category";
 
-export const Articles = () => {
+interface Props {
+    id:number
+}
+
+export const Articles = ({id}:Props) => {
   const t = useTranslations("Ver_Mais");
   const [news, setNews] = useState<GetNews[]>([]);
-  const [categoriesData, setCategoriesData] = useState<Category[]>([]);
-  const locale = useLocale();
+    const [category, setCategory] = useState<Category | null>();
 
-  useEffect(() => {
-    getAllCategories(locale).then(setCategoriesData);
-  }, [locale]);
+    const locale = useLocale();
+
 
   useEffect(() => {
     const fetchData = async () => {
+
+        try {
+            setCategory( await getCategory(id,locale));
+        } catch (error) {
+            console.error("Falha ao buscar notícias", error);
+        }
       try {
         const response = await Ex.apiClient().get(
-          `/api/${locale}/post/list/0/2/desc/all`
+          `/api/${locale}/post/list/0/2/desc/${id}`
         );
         setNews(response.data);
       } catch (error) {
@@ -34,20 +42,11 @@ export const Articles = () => {
     fetchData();
   }, [locale]);
 
-  const categories = {
-    TOPICOS: [`${"aqui: value.name_category"}`],
-  };
 
-  type CategoryKey = keyof typeof categories;
 
-  const renderVerMais = (categoryKey: CategoryKey) => {
-    const categoryUrls = categories[categoryKey];
-    const filteredCategoryData = filteredCategories(
-      categoriesData,
-      categoryUrls
-    );
-    if (filteredCategoryData.length > 0) {
-      const category = filteredCategoryData[0];
+
+
+  const renderVerMais = (category: Category) => {
       return (
         <>
           <Link
@@ -59,14 +58,13 @@ export const Articles = () => {
           <br />
         </>
       );
-    }
-    return null;
+
   };
 
   return (
     <article className={"padding background no-elevate "}>
       <h6 className={"small bold margin"}>
-        {"aqui vai o value.name_category"}
+        {category &&  category.name}
       </h6>
       <div className={"medium-divider"}></div>
       <div className={"small-space"}></div>
@@ -76,16 +74,10 @@ export const Articles = () => {
             <HorzNewsSqCard value={value} key={index} />
           ))}
       <>
-        {Object.keys(categories).map((categoryKey) =>
-          renderVerMais(categoryKey as CategoryKey)
-        )}
+          { category && renderVerMais(category)}
       </>
     </article>
   );
 };
 
-const filteredCategories = (categories: Category[], filterItems: string[]) => {
-  return categories.filter((category) =>
-    filterItems.includes(category.name_url)
-  );
-};
+

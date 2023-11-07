@@ -6,7 +6,7 @@ export interface TopAdsImpl {
     id_ads: number;
 }
 export interface LateralPostImpl {
-    value: (Ads | GetNews)[];
+    value: {typ:string , id:number}[] | undefined ;
 }
 export interface Config<T> {
     id: number;

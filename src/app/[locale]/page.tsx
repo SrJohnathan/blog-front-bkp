@@ -9,10 +9,11 @@ import { PodCasts } from "@/components/Podcasts/Podcasts";
 import { Articles } from "@/components/Articles/Articles";
 import { Suspense } from "react";
 import { StudentGuidePanel } from "@/components/StudentGuidePanel/StudentGuidePanel";
-import { getSettings, MainPost } from "@/source/settings";
+import {getSettings, LateralPost, MainPost} from "@/source/settings";
 
 export default async function Home() {
   const postMain = await getSettings(MainPost);
+  const lpost = await getSettings(LateralPost);
 
   return (
     <>
@@ -47,10 +48,23 @@ export default async function Home() {
 
           {/* Coluna lateral */}
           <div className={"s12 m4"}>
-            <Articles />
-            <MainAdsContainer />
-            <Articles />
-            <Articles />
+
+            {lpost && lpost.data.value?.map((value, index) => {
+              if(value.typ === "stw"){
+                return (<Articles id={value.id} key={index} />)
+
+              }
+              if(value.typ === "google"){
+                return ( <MainAdsContainer key={index} />)
+
+              }
+
+            })}
+
+
+
+
+
             {/* <MainAdsContainer /> */}
             {/* {dataFromAPI.map((item, index) => {
               if (item.type === "category") {
