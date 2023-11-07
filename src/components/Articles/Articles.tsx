@@ -34,16 +34,6 @@ export const Articles = () => {
     fetchData();
   }, [locale]);
 
-  // useEffect(() => {
-  //   Ex.apiClient()
-  //     .get(`/api/${locale}/post/list/0/2/desc/all`)
-  //     .then((response) => {
-  //       console.log(response.data);
-  //       setNews(response.data);
-  //     })
-  //     .catch(() => {});
-  // }, [locale, setNews]);
-
   const categories = {
     TOPICOS: [`${"aqui: value.name_category"}`],
   };
