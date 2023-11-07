@@ -21,10 +21,9 @@ export const TopMedRectCard = async ({ id }: { id?: number }) => {
         <div className="absolute bottom left right padding bottom-shadow white-text">
           <Link href={"/news/:id"}>
             <div>
-              <h5 className="bottom-padding">What is Lorem Ipsum?</h5>
+              <h5 className="bottom-padding">{response.titulo}</h5>
               <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry
+                {response.description}
               </p>
             </div>
           </Link>
