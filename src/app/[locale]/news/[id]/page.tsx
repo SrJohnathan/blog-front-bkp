@@ -1,9 +1,6 @@
-// import layout from "./layout";
-import { useLocale, useTranslations } from "next-intl";
 import { divider } from "@/styles/styles";
 import { TopAdsContainer } from "@/components/Ads/TopAdsContainer/TopAdsContainer";
 import { RectVideoCard } from "@/components/Cards/RectVideoCard/RectVideoCard";
-import Image from "next/image";
 import { Articles } from "@/components/Articles/Articles";
 import { MainAdsContainer } from "@/components/Ads/MainAdsContainer/MainAdsContainer";
 import { MostRecomNewsContainer } from "@/components/MostSearchedNewsContainer/MostRecomNewsContainer/MostRecomNewsContainer";
@@ -124,14 +121,6 @@ const Page = async ({ params }: { params: { id: string } }) => {
           <Articles />
           <Articles />
           <MainAdsContainer />
-          {/* {dataFromAPI.map((item, index) => {
-              if (item.type === "category") {
-                return <Articles key={index} data={item} />;
-              }
-              if (item.type === "ad") {
-                return <MainAdsContainer key={index} data={item} />;
-              }
-            })} */}
         </div>
       </div>
     </div>
@@ -139,10 +128,3 @@ const Page = async ({ params }: { params: { id: string } }) => {
 };
 
 export default Page;
-
-{
-  /* <div className="row">
-          <h5 className={"small bold primary-title"}>{t("Resumo")}</h5>
-          <div className={"primary-title-container"} style={divider}></div>
-        </div> */
-}

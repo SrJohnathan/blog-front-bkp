@@ -12,7 +12,6 @@ import { StudentGuidePanel } from "@/components/StudentGuidePanel/StudentGuidePa
 import { getSettings, MainPost } from "@/source/settings";
 
 export default async function Home() {
-  // const dataFromAPI = [];
   const postMain = await getSettings(MainPost);
 
   return (

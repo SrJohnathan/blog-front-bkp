@@ -1,6 +1,5 @@
 "use client";
 
-// import layout from "./layout";
 import { useTranslations } from "next-intl";
 import { divider } from "@/styles/styles";
 import { RectVideoCard } from "@/components/Cards/RectVideoCard/RectVideoCard";
@@ -8,10 +7,8 @@ import { MostViewedNewsCard } from "@/components/Cards/MostViewedNewsCard/MostVi
 import { ExtendedNews } from "@/components/Cards/ExtendedNews/ExtendedNews";
 
 const CategoryPage = ({ params }: { params: { name_url: string } }) => {
-
-
-
   const t = useTranslations("FullNews");
+  const shouldRenderMostViewedNewsCard = params.name_url !== "all";
 
   return (
     <div className="grid responsive s m l">
@@ -21,9 +18,7 @@ const CategoryPage = ({ params }: { params: { name_url: string } }) => {
           <div className={"s12 m12"}>
             <div className="large-space"></div>
             <div className="row">
-              <h4 className={"small bold primary-title"}>
-                gfdfgfdsgf
-              </h4>
+              <h4 className={"small bold primary-title"}>gfdfgfdsgf</h4>
               <div className={"primary-title-container"} style={divider}></div>
             </div>
           </div>
@@ -51,21 +46,23 @@ const CategoryPage = ({ params }: { params: { name_url: string } }) => {
 
         <div className="large-space"></div>
 
-        <div className="row">
-          <h4 className={"small bold primary-title"}>{t("Mais_Vistas")}</h4>
-          <div className={"primary-title-container"} style={divider}></div>
-        </div>
-
-        <div className="space"></div>
-
-        <div className={"grid center medium-space"}>
-          <MostViewedNewsCard />
-          <MostViewedNewsCard />
-          <MostViewedNewsCard />
-          <MostViewedNewsCard />
-          <MostViewedNewsCard />
-          <MostViewedNewsCard />
-        </div>
+        {shouldRenderMostViewedNewsCard && (
+          <>
+            <div className="row">
+              <h4 className={"small bold primary-title"}>{t("Mais_Vistas")}</h4>
+              <div className={"primary-title-container"} style={divider}></div>
+            </div>
+            <div className="space"></div>
+            <div className={"grid center medium-space"}>
+              <MostViewedNewsCard />
+              <MostViewedNewsCard />
+              <MostViewedNewsCard />
+              <MostViewedNewsCard />
+              <MostViewedNewsCard />
+              <MostViewedNewsCard />
+            </div>
+          </>
+        )}
         <div className="large-space"></div>
       </div>
 

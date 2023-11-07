@@ -31,7 +31,7 @@ export const MostReadNewsContainer = () => {
         ))}
       </div>
       <div className="small-space"></div>
-      <Link href={"/most-read"} className={"primary-title"}>
+      <Link href={"/category/all"} className={"primary-title"}>
         {t("Ver_Mais")} <i>expand_more</i>
       </Link>
     </div>

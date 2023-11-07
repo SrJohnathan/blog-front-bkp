@@ -9,7 +9,7 @@ import { Ex } from "@/extension/ex";
 import { getAllCategories } from "@/source/category";
 import { Category } from "@/dtos/Category";
 
-export const Articles = ({ value }: { value: GetNews }) => {
+export const Articles = () => {
   const t = useTranslations("Ver_Mais");
   const [news, setNews] = useState<GetNews[]>([]);
   const [categoriesData, setCategoriesData] = useState<Category[]>([]);
@@ -20,14 +20,29 @@ export const Articles = ({ value }: { value: GetNews }) => {
   }, [locale]);
 
   useEffect(() => {
-    Ex.apiClient()
-      .get(`/api/${locale}/post/list/0/2/desc/all`)
-      .then((response) => {
-        console.log(response.data);
+    const fetchData = async () => {
+      try {
+        const response = await Ex.apiClient().get(
+          `/api/${locale}/post/list/0/2/desc/all`
+        );
         setNews(response.data);
-      })
-      .catch(() => {});
-  }, [locale, setNews]);
+      } catch (error) {
+        console.error("Falha ao buscar notícias", error);
+      }
+    };
+
+    fetchData();
+  }, [locale]);
+
+  // useEffect(() => {
+  //   Ex.apiClient()
+  //     .get(`/api/${locale}/post/list/0/2/desc/all`)
+  //     .then((response) => {
+  //       console.log(response.data);
+  //       setNews(response.data);
+  //     })
+  //     .catch(() => {});
+  // }, [locale, setNews]);
 
   const categories = {
     TOPICOS: [`${"aqui: value.name_category"}`],
