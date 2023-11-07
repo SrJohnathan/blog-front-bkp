@@ -61,7 +61,10 @@ export const Articles = ({id}:Props) => {
 
   };
 
-  return (
+  return news.length == 0 ?  null :  (
+
+
+
     <article className={"padding background no-elevate "}>
       <h6 className={"small bold margin"}>
         {category &&  category.name}
@@ -77,6 +80,8 @@ export const Articles = ({id}:Props) => {
           { category && renderVerMais(category)}
       </>
     </article>
+
+
   );
 };
 
