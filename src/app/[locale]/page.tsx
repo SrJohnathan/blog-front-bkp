@@ -9,13 +9,11 @@ import { PodCasts } from "@/components/Podcasts/Podcasts";
 import { Articles } from "@/components/Articles/Articles";
 import { Suspense } from "react";
 import { StudentGuidePanel } from "@/components/StudentGuidePanel/StudentGuidePanel";
-import { GetNews } from "@/dtos/News";
-import {Categorys, getSettings, MainPost} from "@/source/settings";
+import { getSettings, MainPost } from "@/source/settings";
 
 export default async function Home() {
   // const dataFromAPI = [];
   const postMain = await getSettings(MainPost);
-
 
   return (
     <>

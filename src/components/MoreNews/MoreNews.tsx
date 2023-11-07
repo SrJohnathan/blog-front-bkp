@@ -3,16 +3,24 @@
 import Link from "next/link";
 import { MedSqCard } from "../Cards/MedSqCard/MedSqCard";
 import { useTranslations, useLocale } from "next-intl";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { GetNews } from "@/dtos/News";
 import { Ex } from "@/extension/ex";
-
 import MedSqCardSkeleton from "@/components/Cards/MedSqCard/MedSqCardSkeleton";
 import { divider } from "@/styles/styles";
+import { Category } from "@/dtos/Category";
+import { getAllCategories } from "@/source/category";
 
 export default function MoreNews() {
   const [news, setNews] = useState<GetNews[]>([]);
   const locale = useLocale();
+  const [categoriesData, setCategoriesData] = useState<Category[]>([]);
+  const t = useTranslations("MoreNews");
+  const secT = useTranslations("Ver_Mais");
+
+  useEffect(() => {
+    getAllCategories(locale).then(setCategoriesData);
+  }, [locale]);
 
   useEffect(() => {
     Ex.apiClient()
@@ -24,8 +32,34 @@ export default function MoreNews() {
       .catch(() => {});
   }, [locale, setNews]);
 
-  const t = useTranslations("MoreNews");
-  const secT = useTranslations("Ver_Mais");
+  const categories = {
+    TOPICOS: ["maisnoticias"],
+  };
+
+  type CategoryKey = keyof typeof categories;
+
+  const renderVerMais = (categoryKey: CategoryKey) => {
+    const categoryUrls = categories[categoryKey];
+    const filteredCategoryData = filteredCategories(
+      categoriesData,
+      categoryUrls
+    );
+    if (filteredCategoryData.length > 0) {
+      const category = filteredCategoryData[0];
+      return (
+        <>
+          <Link
+            href={`/category/${category.name_url}`}
+            className={"primary-title margin"}
+          >
+            {secT("Ver_Mais")} <i>expand_more</i>{" "}
+          </Link>
+          <br />
+        </>
+      );
+    }
+    return null;
+  };
 
   return (
     <div className={"grid"}>
@@ -45,10 +79,18 @@ export default function MoreNews() {
                 <MedSqCard value={value} key={index} />
               ))}
         </div>
-        <Link href={"/articles?=full"} className={"primary-title margin"}>
-          {secT("Ver_Mais")} <i>expand_more</i>{" "}
-        </Link>
+        <>
+          {Object.keys(categories).map((categoryKey) =>
+            renderVerMais(categoryKey as CategoryKey)
+          )}
+        </>
       </article>
     </div>
   );
 }
+
+const filteredCategories = (categories: Category[], filterItems: string[]) => {
+  return categories.filter((category) =>
+    filterItems.includes(category.name_url)
+  );
+};

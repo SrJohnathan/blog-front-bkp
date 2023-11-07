@@ -5,7 +5,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { Collapse } from "./Collapse";
 import Link from "next/link";
 import { Category } from "@/dtos/Category";
-import { getCategoryAll } from "@/source/category";
+import { getAllCategories } from "@/source/category";
 import React from "react";
 
 export const NavLinkDesktop = () => {
@@ -15,7 +15,7 @@ export const NavLinkDesktop = () => {
   const t = useTranslations("NavLinkDesktopFooter");
 
   useEffect(() => {
-    getCategoryAll(locale).then(setCategoriesData);
+    getAllCategories(locale).then(setCategoriesData);
   }, [locale]);
 
   const categories = {

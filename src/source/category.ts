@@ -26,11 +26,11 @@ export async function getCategory(id: string | number, str: string) {
   }
 }
 
-export async function getCategoryAll(str: string) {
+export async function getAllCategories(str: string) {
   const res: CategoryImp[] = (await Ex.apiClient().get(`/api/category/all`))
     .data;
 
-  const categorys = res.map((value, index) => {
+  const categoriesAll = res.map((value, index) => {
     let category: Category = {
       active: true,
       id: 0,
@@ -54,5 +54,5 @@ export async function getCategoryAll(str: string) {
     return category;
   });
 
-  return categorys;
+  return categoriesAll;
 }

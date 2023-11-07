@@ -7,7 +7,7 @@ import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { Languages } from "../MenuDesktop/Languages/Languages";
 import { Category } from "@/dtos/Category";
-import { getCategoryAll } from "@/source/category";
+import { getAllCategories } from "@/source/category";
 import { useLocale } from "next-intl";
 
 export const MenuMobile = () => {
@@ -18,7 +18,7 @@ export const MenuMobile = () => {
   const [categoriesData, setCategoriesData] = useState<Category[]>([]);
 
   useEffect(() => {
-    getCategoryAll(locale).then(setCategoriesData);
+    getAllCategories(locale).then(setCategoriesData);
   }, [locale]);
 
   const categories = {
@@ -71,13 +71,11 @@ export const MenuMobile = () => {
             className="row bold small-padding small-round"
             key={index}
             onClick={() => {
-
               if (selectedTopic === category) {
                 setSelectedTopic("NULL");
               } else {
                 setSelectedTopic(category as CategoryKey);
               }
-
             }}
           >
             {t(category)}

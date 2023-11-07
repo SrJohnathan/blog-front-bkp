@@ -1,9 +1,8 @@
-import {LateralPostImpl, TopAdsImpl,Config} from "@/dtos/Settings";
-import {Ads} from "@/dtos/Ads";
-import {GetNews} from "@/dtos/News";
-import {Ex} from "@/extension/ex";
-import {Category} from "@/dtos/Category";
-
+import { LateralPostImpl, TopAdsImpl, Config } from "@/dtos/Settings";
+import { Ads } from "@/dtos/Ads";
+import { GetNews } from "@/dtos/News";
+import { Ex } from "@/extension/ex";
+import { Category } from "@/dtos/Category";
 
 /*
 * <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5042411247457773"
@@ -39,49 +38,48 @@ import {Category} from "@/dtos/Category";
 *
 * */
 
-
 export class TopAds implements TopAdsImpl {
-    id_ads: number = 0;
+  id_ads: number = 0;
 }
-export class LateralPost implements LateralPostImpl{
-    value: (Ads | GetNews)[] = []
-}
-
-export class MainPost{
-    ids?: {card1:number,card2:number,card3:number} | null
+export class LateralPost implements LateralPostImpl {
+  value: (Ads | GetNews)[] = [];
 }
 
-export class Categorys{
-    c?: Category[] | null
+export class MainPost {
+  ids?: { card1: number; card2: number; card3: number } | null;
 }
 
-
-export async  function getSettingsAll() {
-
+export class Categories {
+  c?: Category[] | null;
 }
 
-export  async  function  getSettings<T extends TopAds | LateralPost | MainPost | Categorys>(instancie:{new (): T}) {
-    let ins = new instancie()
+export async function getSettingsAll() {}
 
-    if (ins instanceof TopAds) {
-         const res : Config<T>   =  ( await Ex.api().get("/settings/name/topads") ).data
-        return  res
-    }
+export async function getSettings<
+  T extends TopAds | LateralPost | MainPost | Categories
+>(instancie: { new (): T }) {
+  let ins = new instancie();
 
-    if (ins instanceof LateralPost) {
-        const res : Config<T>   =  ( await Ex.api().get("/settings/name/lpost") ).data
-        return  res
-    }
+  if (ins instanceof TopAds) {
+    const res: Config<T> = (await Ex.api().get("/settings/name/topads")).data;
+    return res;
+  }
 
-    if (ins instanceof MainPost) {
-        const res : Config<T>   =  ( await Ex.api().get("/settings/name/mainpost") ).data
-        return  res
-    }
+  if (ins instanceof LateralPost) {
+    const res: Config<T> = (await Ex.api().get("/settings/name/lpost")).data;
+    return res;
+  }
 
-    if (ins instanceof MainPost) {
-        const res : Config<T>   =  ( await Ex.api().get("/settings/name/category_list") ).data
-        return  res
-    }
+  if (ins instanceof MainPost) {
+    const res: Config<T> = (await Ex.api().get("/settings/name/mainpost")).data;
+    return res;
+  }
 
-    return  null
+  if (ins instanceof MainPost) {
+    const res: Config<T> = (await Ex.api().get("/settings/name/category_list"))
+      .data;
+    return res;
+  }
+
+  return null;
 }

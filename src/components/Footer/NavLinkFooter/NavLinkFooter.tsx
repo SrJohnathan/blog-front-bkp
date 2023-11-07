@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
 import { Category } from "@/dtos/Category";
-import { getCategoryAll } from "@/source/category";
+import { getAllCategories } from "@/source/category";
 
 export const NavLinkFooter = () => {
   const [categoriesData, setCategoriesData] = useState<Category[]>([]);
@@ -12,7 +12,7 @@ export const NavLinkFooter = () => {
   const locale = useLocale();
 
   useEffect(() => {
-    getCategoryAll(locale).then(setCategoriesData);
+    getAllCategories(locale).then(setCategoriesData);
   }, [locale]);
 
   const categories = {
@@ -41,7 +41,7 @@ export const NavLinkFooter = () => {
     return (
       <div key={categoryKey} className={"m3 no-padding"}>
         <h6 className="small bold">{t(categoryKey)}</h6>
-        {filter(categoriesData, categories[categoryKey])?.map(
+        {filteredCategories(categoriesData, categories[categoryKey])?.map(
           (category, index) => (
             <React.Fragment key={index}>
               <Link href={`/category/${category.name_url}`}>
@@ -66,8 +66,11 @@ export const NavLinkFooter = () => {
   );
 };
 
-function filter(categories: Category[], filterItems: string[]) {
+const filteredCategories = (
+  categories: Category[],
+  filteredItems: string[]
+) => {
   return categories.filter((category) =>
-    filterItems.includes(category.name_url)
+    filteredItems.includes(category.name_url)
   );
-}
+};
