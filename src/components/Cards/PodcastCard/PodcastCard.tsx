@@ -1,7 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
+import {GetNews} from "@/dtos/News";
+import {FallbackImage} from "@/components/Cards/MedSqCard/FallbackImage";
 
-export const PodcastCard = () => {
+export const PodcastCard = ({ value }: { value: GetNews }) => {
   return (
     <div className={"s6 m3"}>
       <article className="no-padding transparent no-elevate">
@@ -15,17 +17,17 @@ export const PodcastCard = () => {
         <div className="absolute bottom left right padding bottom-shadow white-text">
           <div className="center-align">
             <Link href={"/podcasts"}>
-              <Image
+              <FallbackImage
                 className="round"
                 width="80"
                 height="80"
-                src={"/gridicons_play.svg"}
+                src={ "/api/files/"+value.img?.split("||")[0]    ||   "/gridicons_play.svg"}
                 alt=""
               />
             </Link>
           </div>
           <p className="max">
-            Lorem Ipsum é simplesmente um texto fictício da indústria de.
+            {value.titulo}
           </p>
         </div>
       </article>

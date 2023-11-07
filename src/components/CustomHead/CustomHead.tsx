@@ -20,7 +20,7 @@ export default function CustomHead() {
             <meta property="og:image" content={t("ogImage")}/>
             <meta property="og:description" content={t("ogDescription")}/>
 
-            <meta name="google-adsense-account" content="ca-pub-9265983030484383"/>
+
 
 
             <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/open-sans"/>

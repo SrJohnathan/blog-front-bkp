@@ -3,12 +3,15 @@
 import { useState } from "react";
 import { MostReadNewsContainer } from "./MostReadNewsContainer/MostReadNewsContainer";
 import { MostRecomNewsContainer } from "./MostRecomNewsContainer/MostRecomNewsContainer";
-import { useTranslations } from "next-intl";
+import {useLocale, useTranslations} from "next-intl";
 
 export const MostSearchedNewsContainer = () => {
   const [changeMostSearchedSection, setChangeMostSearchedSection] = useState({
     section: "mostRead",
   });
+
+
+
 
   const t = useTranslations("MostSearchedNewsContainer");
 
