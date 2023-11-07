@@ -4,8 +4,13 @@ import { Category, CategoryImp } from "@/dtos/Category";
 export async function getCategory(id: string | number, str: string) {
   let category: Category = { active: false, id: 0, name: "", name_url: "" };
   try {
-    const res: CategoryImp = (await Ex.apiClient().get(`/api/category/${id}`))
+    const res: CategoryImp = (await Ex.apiClient().get(`/api/category/first/${id}`))
       .data;
+
+
+    category.id = res.id
+    category.name_url = res.name_url
+
     switch (str) {
       case "pt":
         category.name = res.name_pt;

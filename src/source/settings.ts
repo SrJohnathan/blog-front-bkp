@@ -42,7 +42,7 @@ export class TopAds implements TopAdsImpl {
   id_ads: number = 0;
 }
 export class LateralPost implements LateralPostImpl {
-  value: (Ads | GetNews)[] = [];
+  value: { typ: string; id: number }[] | undefined;
 }
 
 export class MainPost {
@@ -75,7 +75,7 @@ export async function getSettings<
     return res;
   }
 
-  if (ins instanceof MainPost) {
+  if (ins instanceof Categories) {
     const res: Config<T> = (await Ex.api().get("/settings/name/category_list"))
       .data;
     return res;
