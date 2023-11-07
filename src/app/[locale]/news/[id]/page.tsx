@@ -9,15 +9,20 @@ import { GetNews } from "@/dtos/News";
 import { Ex } from "@/extension/ex";
 import { PostText } from "@/components/Post/PostText";
 import { FallbackImage } from "@/components/Cards/MedSqCard/FallbackImage";
+import {getSettings, LateralPost} from "@/source/settings";
 
 const Page = async ({ params }: { params: { id: string } }) => {
-  const news: GetNews = (await Ex.api().get(`/post/insert_view/${params.id}`))
-    .data;
+  const news: GetNews = (await Ex.api().get(`/post/insert_view/${params.id}`)).data;
+
+
   const array_new: GetNews[] = (
     await Ex.api().get(
       `/post/${news.language}/list/${0}/${2}/desc/${news.categoria_id}`
     )
   ).data;
+
+
+    const lpost = await getSettings(LateralPost);
 
   return (
     <div className="responsive s m l large-margin center-align">
@@ -118,9 +123,17 @@ const Page = async ({ params }: { params: { id: string } }) => {
 
         {/* Coluna lateral */}
         <div className={"s12 m3"}>
-          <Articles />
-          <Articles />
-          <MainAdsContainer />
+            {lpost && lpost.data.value?.map((value, index) => {
+                if(value.typ === "stw"){
+                    return (<Articles id={value.id} key={index} />)
+
+                }
+                if(value.typ === "google"){
+                    return ( <MainAdsContainer key={index} />)
+
+                }
+
+            })}
         </div>
       </div>
     </div>
