@@ -1,94 +1,85 @@
 "use client";
 
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { SocialMediaIcons } from "@/components/SocialMediaIcons/SocialMediaIcons";
 import Image from "next/image";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
+import { getAllCategories } from "@/source/category";
+import { Category } from "@/dtos/Category";
 
 export const FooterMobile = () => {
   const t = useTranslations("NavLinkDesktopFooter");
   const secT = useTranslations("Footer");
-  const [selectedTopic, setSelectedTopic] = useState<string | null>(null);
+  const [categoriesData, setCategoriesData] = useState<Category[]>([]);
+  const locale = useLocale();
 
-  const topics = [
-    {
-      name: "STW",
-      links: [
-        { label: "Noticias", route: "news" },
-        { label: "Servicos", route: "services" },
-        { label: "Eventos", route: "events" },
-        { label: "Trabalhe_Conosco", route: "work-with-us" },
-      ],
-    },
-    {
-      name: "ESTRANGEIRO",
-      links: [
-        { label: "Destinos", route: "destinations" },
-        { label: "Universidades_PT", route: "pt-universities" },
-        { label: "Academicos", route: "academics" },
-        { label: "Cursos", route: "courses" },
-        { label: "Estude", route: "study" },
-        { label: "Bolsas", route: "becas" },
-        { label: "Trabalhe", route: "work" },
-      ],
-    },
-    {
-      name: "PROJETOS",
-      links: [
-        { label: "Programa_de_Integracao", route: "integration-program" },
-        { label: "Universidades_pelo_Mundo", route: "world-universities" },
-        { label: "Podcasts", route: "podcasts" },
-        { label: "Top_Students", route: "top-students" },
-      ],
-    },
-    {
-      name: "TOPICOS",
-      links: [
-        { label: "Oportunidades", route: "oportunities" },
-        { label: "Tempo", route: "weather" },
-        { label: "Mais_Noticias", route: "more-news" },
-        { label: "Ciencia_e_Inovacao", route: "innovation" },
-      ],
-    },
-  ];
+  useEffect(() => {
+    getAllCategories(locale).then(setCategoriesData);
+  }, [locale]);
+
+  const categories = {
+    STW: ["noticias", "servicos", "eventos", "trabalheconosco"],
+    ESTRANGEIRO: [
+      "destinos",
+      "universidadespt",
+      "academicos",
+      "cursos",
+      "estude",
+      "bolsas",
+      "trabalhe",
+    ],
+    PROJETOS: [
+      "programadeintegracao",
+      "universidadespelomundo",
+      "podcasts",
+      "topstudents",
+    ],
+    TOPICOS: ["oportunidades", "tempo", "maisnoticias", "cienciaeinovacao"],
+  };
+
+  type CategoryKey = "STW" | "ESTRANGEIRO" | "TOPICOS" | "PROJETOS" | "NULL";
+  const [selectedTopic, setSelectedTopic] = useState<CategoryKey>();
 
   return (
     <footer className="responsive s primary">
       <div className="small-space"></div>
       <div className="grid">
-        {topics.map((topic) => (
+        {Object.keys(categories).map((category, index) => (
           <button
             className="top-align bold small-padding small-round s3"
-            key={topic.name}
+            key={index}
             onClick={() => {
-              if (selectedTopic === topic.name) {
-                setSelectedTopic(null);
+              if (selectedTopic === category) {
+                setSelectedTopic("NULL");
               } else {
-                setSelectedTopic(topic.name);
+                setSelectedTopic(category as CategoryKey);
               }
             }}
           >
-            {t(topic.name)}
+            {t(category)}
           </button>
         ))}
         <div className="small-space"></div>
       </div>
       <div>
-        {selectedTopic && (
+        {selectedTopic !== "NULL" && (
           <menu
             key={selectedTopic}
             className={`min ${
               selectedTopic ? "active" : ""
             } small-round primary`}
           >
-            {topics
-              .find((topic) => topic.name === selectedTopic)
-              ?.links.map((link) => (
-                <Link key={link.route} href={`/${link.route}`}>
-                  {t(link.label)}
-                </Link>
-              ))}
+            {filteredCategories(
+              categoriesData,
+              categories[
+                selectedTopic === undefined ? "PROJETOS" : selectedTopic
+              ]
+            ).map((category, index) => (
+              <Link key={index} href={`/category/${category.name_url}`}>
+                {category.name}
+              </Link>
+            ))}
           </menu>
         )}
       </div>
@@ -113,5 +104,13 @@ export const FooterMobile = () => {
       )}
       <div className={"large-space"}></div>
     </footer>
+  );
+};
+const filteredCategories = (
+  categories: Category[],
+  filteredItems: string[]
+) => {
+  return categories.filter((category) =>
+    filteredItems.includes(category.name_url)
   );
 };

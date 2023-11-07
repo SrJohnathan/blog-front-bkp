@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { MiniCardViews } from "../MiniCardViews/MiniCardViews";
 import { GetNews } from "@/dtos/News";
@@ -12,15 +11,13 @@ export const MedSqCard = ({ value }: { value: GetNews }) => {
           className="responsive medium"
           width={200}
           height={200}
-          src={`/api/files/${value.img}`|| "/Component_2.avif"}
+          src={`/api/files/${value.img}` || "/Component_2.avif"}
           fallbackSrc={"/lod.gif"}
           alt=""
         />
         <div className="padding">
           <h6 className="small bold">{value.titulo}</h6>
-          <p className="small-line">
-            {value.description}
-          </p>
+          <p className="small-line">{value.description}</p>
           <MiniCardViews
             views={value.total_views || 0}
             category={value.name_category || ""}
