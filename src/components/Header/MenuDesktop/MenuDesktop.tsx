@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useContext } from "react";
+import React, { useContext, useState, useMemo } from "react";
 import { ThemeModeContext } from "@/context/ThemeModeContext";
 import { Languages } from "./Languages/Languages";
 import { SocialMediaIcons } from "../../SocialMediaIcons/SocialMediaIcons";
@@ -8,8 +8,18 @@ import Image from "next/image";
 import { NavLinkDesktop } from "../NavLinkDesktop/NavLinkDesktop";
 import Link from "next/link";
 
+const example = ["x", "y", "z"]; //buscar API e array de posts
+
 export const MenuDesktop = () => {
   const { toggleTheme, isDark } = useContext(ThemeModeContext);
+  const [search, setSearch] = useState("");
+
+  const filteredPosts = useMemo(() => {
+    const lowerSearch = search.toLowerCase();
+    return example.filter((postInfo) =>
+      postInfo.toLowerCase().includes(lowerSearch)
+    );
+  }, [search]); //por nas dependências o array dinâmico de posts
 
   return (
     <header
@@ -29,7 +39,12 @@ export const MenuDesktop = () => {
           <SocialMediaIcons />
 
           <div className="field label prefix small fill small-round">
-            <input type="text" />
+            <input
+              type="text"
+              value={search}
+              onChange={(event) => setSearch(event.target.value)}
+            />
+            {filteredPosts.length > 0 && filteredPosts.map((postInfo) => <></>)}
             <i>search</i>
           </div>
 

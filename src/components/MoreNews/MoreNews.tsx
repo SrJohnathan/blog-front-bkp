@@ -12,7 +12,6 @@ import { divider } from "@/styles/styles";
 
 export default function MoreNews() {
   const [news, setNews] = useState<GetNews[]>([]);
-
   const locale = useLocale();
 
   useEffect(() => {
