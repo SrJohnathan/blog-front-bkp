@@ -7,7 +7,7 @@ import { MostViewedNewsCard } from "@/components/Cards/MostViewedNewsCard/MostVi
 import { ExtendedNews } from "@/components/Cards/ExtendedNews/ExtendedNews";
 import { useEffect, useState } from "react";
 import { Category } from "@/dtos/Category";
-import { getCategory, getCategoryNameUrl } from "@/source/category";
+import { getCategoryNameUrl } from "@/source/category";
 import { Ex } from "@/extension/ex";
 import { GetNews } from "@/dtos/News";
 
@@ -21,25 +21,43 @@ const CategoryPage = ({ params }: { params: { name_url: string } }) => {
   const t = useTranslations("FullNews");
   const shouldRenderMostViewedNewsCard = params.name_url !== "all";
 
+  const [limit, setLimit] = useState(9);
+  const [init, setInit] = useState(0);
+
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const new_category = await getCategoryNameUrl(params.name_url, locale);
-        setCategory(new_category);
-        if (new_category) {
+        if (params.name_url !== "all") {
+          const new_category = await getCategoryNameUrl(
+            params.name_url,
+            locale
+          );
+
+          setCategory(new_category);
+
+          if (new_category) {
+            const response = await Ex.apiClient().get(
+              `/api/${locale}/post/list/${init}/${limit}/desc/${new_category.id}`
+            );
+
+            setNews(response.data);
+            setNewsRead(
+              (
+                await Ex.apiClient().get(
+                  `/api/${locale}/post/views/6/${
+                    shouldRenderMostViewedNewsCard ? new_category.id : "all"
+                  }`
+                )
+              ).data
+            );
+          }
+        } else {
           const response = await Ex.apiClient().get(
-            `/api/${locale}/post/list/0/2/desc/${new_category.id}`
+            `/api/${locale}/post/list/${init}/${limit}/desc/all`
           );
           setNews(response.data);
-
           setNewsRead(
-            (
-              await Ex.apiClient().get(
-                `/api/${locale}/post/views/6/${
-                  shouldRenderMostViewedNewsCard ? new_category.id : "all"
-                }`
-              )
-            ).data
+            (await Ex.apiClient().get(`/api/${locale}/post/views/6/all`)).data
           );
         }
       } catch (error) {
@@ -48,7 +66,20 @@ const CategoryPage = ({ params }: { params: { name_url: string } }) => {
     };
 
     fetchData().then();
-  }, [locale, params.name_url, shouldRenderMostViewedNewsCard]);
+  }, [locale, init, limit]);
+
+  const setNext = () => {
+    setLimit((prevState) => prevState + 10);
+    setInit((prevState) => prevState + 10);
+  };
+
+  const setPrev = () => {
+    if (init >= 10) {
+      setLimit((prevState) => prevState - 10);
+      setInit((prevState) => prevState - 10);
+    } else {
+    }
+  };
 
   return (
     <div className="grid responsive s m l">
@@ -58,7 +89,9 @@ const CategoryPage = ({ params }: { params: { name_url: string } }) => {
           <div className={"s12 m12"}>
             <div className="large-space"></div>
             <div className="row">
-              <h4 className={"small bold primary-title"}>{category?.name}</h4>
+              <h4 className={"small bold primary-title"}>
+                {category ? category?.name : "Mais Notícias"}
+              </h4>
               <div className={"primary-title-container"} style={divider}></div>
             </div>
           </div>
@@ -69,9 +102,9 @@ const CategoryPage = ({ params }: { params: { name_url: string } }) => {
               ))}
           </div>
         </div>
-
+        <button onClick={setPrev}>Prev</button>{" "}
+        <button onClick={setNext}>next</button>
         <div className="large-space"></div>
-
         <div className="row">
           <h4 className={"small bold primary-title"}>
             {t("Videos_Relacionados")}
@@ -88,7 +121,6 @@ const CategoryPage = ({ params }: { params: { name_url: string } }) => {
           </div>
         )}
         <div className="large-space"></div>
-
         {newsRead.length > 0 && (
           <>
             <div className="row">

@@ -49,7 +49,7 @@ export default function MoreNews() {
       return (
         <>
           <Link
-            href={`/category/${category.name_url}`}
+            href={`/category/all`}
             className={"primary-title margin"}
           >
             {secT("Ver_Mais")} <i>expand_more</i>{" "}
