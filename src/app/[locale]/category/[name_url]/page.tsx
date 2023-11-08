@@ -30,18 +30,22 @@ const CategoryPage = ({ params }: { params: { name_url: string } }) => {
   useEffect(() => {
     const fetchData = async () => {
 
-
       try {
-
-
         if(params.name_url !== "all" ){
           const  new_category = await getCategoryNameUrl(params.name_url,locale)
+
+
+
           setCategory( new_category );
 
           if(new_category) {
             const response = await Ex.apiClient().get(
                 `/api/${locale}/post/list/${init}/${limit}/desc/${new_category.id}`
             );
+
+
+
+
             setNews(response.data);
             setNewsRead(   ( await Ex.apiClient().get(`/api/${locale}/post/views/6/${  shouldRenderMostViewedNewsCard ?  new_category.id  : "all" }`)).data )
 
