@@ -8,18 +8,18 @@ import Image from "next/image";
 import { NavLinkDesktop } from "../NavLinkDesktop/NavLinkDesktop";
 import Link from "next/link";
 
-const example = ["x", "y", "z"]; //buscar API e array de posts
+// const example = ["x", "y", "z"]; Search - buscar API e array de posts
 
 export const MenuDesktop = () => {
   const { toggleTheme, isDark } = useContext(ThemeModeContext);
-  const [search, setSearch] = useState("");
+  // const [search, setSearch] = useState("");
 
-  const filteredPosts = useMemo(() => {
-    const lowerSearch = search.toLowerCase();
-    return example.filter((postInfo) =>
-      postInfo.toLowerCase().includes(lowerSearch)
-    );
-  }, [search]); //por nas dependências o array dinâmico de posts
+  // const filteredPosts = useMemo(() => {
+  //   const lowerSearch = search.toLowerCase();
+  //   return example.filter((postInfo) =>
+  //     postInfo.toLowerCase().includes(lowerSearch)
+  //   );
+  // }, [search]); Search - por nas dependências o array dinâmico de posts
 
   return (
     <header
@@ -37,8 +37,10 @@ export const MenuDesktop = () => {
           <div className={"small-space"}></div>
           <NavLinkDesktop />
           <SocialMediaIcons />
-
-          <div className="field label prefix small fill small-round">
+          <div></div>
+          <div></div>
+          {/* Omitido temporariamente botão Search */}
+          {/* <div className="field label prefix small fill small-round">
             <input
               type="text"
               value={search}
@@ -46,7 +48,7 @@ export const MenuDesktop = () => {
             />
             {filteredPosts.length > 0 && filteredPosts.map((postInfo) => <></>)}
             <i>search</i>
-          </div>
+          </div> */}
 
           <Languages />
 
