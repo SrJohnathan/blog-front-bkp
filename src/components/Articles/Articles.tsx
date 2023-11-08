@@ -6,29 +6,27 @@ import Link from "next-intl/link";
 import { GetNews } from "@/dtos/News";
 import { useEffect, useState } from "react";
 import { Ex } from "@/extension/ex";
-import {getAllCategories, getCategory} from "@/source/category";
+import { getAllCategories, getCategory } from "@/source/category";
 import { Category } from "@/dtos/Category";
 
 interface Props {
-    id:number
+  id: number;
 }
 
-export const Articles = ({id}:Props) => {
+export const Articles = ({ id }: Props) => {
   const t = useTranslations("Ver_Mais");
   const [news, setNews] = useState<GetNews[]>([]);
-    const [category, setCategory] = useState<Category | null>();
+  const [category, setCategory] = useState<Category | null>();
 
-    const locale = useLocale();
-
+  const locale = useLocale();
 
   useEffect(() => {
     const fetchData = async () => {
-
-        try {
-            setCategory( await getCategory(id,locale));
-        } catch (error) {
-            console.error("Falha ao buscar notícias", error);
-        }
+      try {
+        setCategory(await getCategory(id, locale));
+      } catch (error) {
+        console.error("Falha ao buscar notícias", error);
+      }
       try {
         const response = await Ex.apiClient().get(
           `/api/${locale}/post/list/0/2/desc/${id}`
@@ -40,33 +38,25 @@ export const Articles = ({id}:Props) => {
     };
 
     fetchData().then();
-  }, [locale]);
-
-
-
-
+  }, [id, locale]);
 
   const renderVerMais = (category: Category) => {
-      return (
-        <>
-          <Link
-            href={`/category/${category.name_url}`}
-            className={"primary-title margin"}
-          >
-            {t("Ver_Mais")} <i>expand_more</i>{" "}
-          </Link>
-          <br />
-        </>
-      );
-
+    return (
+      <>
+        <Link
+          href={`/category/${category.name_url}`}
+          className={"primary-title margin"}
+        >
+          {t("Ver_Mais")} <i>expand_more</i>{" "}
+        </Link>
+        <br />
+      </>
+    );
   };
 
-  return news.length == 0 ?  null :  (
-
+  return news.length == 0 ? null : (
     <article className={"padding background no-elevate "}>
-      <h6 className={"small bold margin"}>
-        {category &&  category.name}
-      </h6>
+      <h6 className={"small bold margin"}>{category && category.name}</h6>
       <div className={"medium-divider"}></div>
       <div className={"small-space"}></div>
       {news.length === 0
@@ -74,13 +64,7 @@ export const Articles = ({id}:Props) => {
         : news.map((value, index) => (
             <HorzNewsSqCard value={value} key={index} />
           ))}
-      <>
-          { category && renderVerMais(category)}
-      </>
+      <>{category && renderVerMais(category)}</>
     </article>
-
-
   );
 };
-
-

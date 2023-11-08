@@ -4,16 +4,19 @@ import { GetNews } from "@/dtos/News";
 import { FallbackImage } from "@/components/Cards/MedSqCard/FallbackImage";
 
 export const PodcastCard = ({ value }: { value: GetNews }) => {
-  return (
-    <div className={"s6 m3"}>
+  return <div className="s6 m3"></div>;
+};
+
+{
+  /* <div className={"s6 m3"}>
       <article className="no-padding transparent no-elevate">
-        {/* <FallbackImage
+        <FallbackImage
           className="responsive large"
           width={110}
           height={240}
           src={"/api/files/" + value.img?.split("||")[0] || "/Component_4.jpeg"}
           alt=""
-        /> */}
+        />
         <Image
           className="responsive large"
           width={110}
@@ -30,7 +33,7 @@ export const PodcastCard = ({ value }: { value: GetNews }) => {
               />
               Your browser does not support the audio element.
             </audio>
-            {/* <Link href={"/podcasts"}>
+            <Link href={"/podcasts"}>
               <FallbackImage
                 className="round"
                 width="80"
@@ -41,11 +44,10 @@ export const PodcastCard = ({ value }: { value: GetNews }) => {
                 }
                 alt=""
               />
-            </Link> */}
+            </Link>
           </div>
           <p className="max">{value.titulo}</p>
         </div>
       </article>
-    </div>
-  );
-};
+    </div> */
+}

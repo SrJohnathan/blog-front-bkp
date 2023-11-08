@@ -13,7 +13,7 @@ export const MiniCardViews = ({
     <nav className={"responsive space wrap"}>
       <small>{moment(date).format("DD.MM.yyyy")}</small>
       <small>
-        <i className={"fill primary-icon"}>visibility</i>
+        <i className={"on-primary"}>visibility</i>
         {" " + views}
       </small>
       <small>{category}</small>
