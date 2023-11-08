@@ -21,10 +21,10 @@ export default async function Home() {
         <TopAdsContainer />
         <div className={"grid"}>
           <VertRectTopCard id={postMain?.data.ids?.card1} />
-          <div className={"s12 m6"}>
+          <div className={"s12 m6 l6"}>
             <TopMedRectCard id={postMain?.data.ids?.card2} />
-            <div className="m large-space"></div>
-            <div className="small-space"></div>
+            <div className="m l large-space"></div>
+            <div className="m l small-space"></div>
             <TopMedRectCard id={postMain?.data.ids?.card3} />
           </div>
         </div>

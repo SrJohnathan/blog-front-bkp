@@ -17,7 +17,13 @@ export const MedSqCard = ({ value }: { value: GetNews }) => {
         />
         <div className="padding">
           <h6 className="small bold">{value.titulo}</h6>
-          <p className="small-line">{value.description}</p>
+          <p className="small-line">
+            {value.description
+              ? value.description.length > 66
+                ? value.description.substring(0, 66) + "..."
+                : value.description
+              : ""}
+          </p>
           <MiniCardViews
             views={value.total_views || 0}
             category={value.name_category || ""}

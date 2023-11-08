@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { MiniCardViews } from "../MiniCardViews/MiniCardViews";
 import Link from "next/link";
 import { FallbackImage } from "../MedSqCard/FallbackImage";
@@ -22,7 +21,13 @@ export const TopMedRectCard = async ({ id }: { id?: number }) => {
           <Link href={"/news/:id"}>
             <div>
               <h5 className="bottom-padding">{response.titulo}</h5>
-              <p>{response.description}</p>
+              <p>
+                {response.description
+                  ? response.description.length > 66
+                    ? response.description.substring(0, 66) + "..."
+                    : response.description
+                  : ""}
+              </p>
             </div>
           </Link>
           <MiniCardViews

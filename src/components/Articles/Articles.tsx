@@ -6,7 +6,7 @@ import Link from "next-intl/link";
 import { GetNews } from "@/dtos/News";
 import { useEffect, useState } from "react";
 import { Ex } from "@/extension/ex";
-import { getAllCategories, getCategory } from "@/source/category";
+import { getCategory } from "@/source/category";
 import { Category } from "@/dtos/Category";
 
 interface Props {

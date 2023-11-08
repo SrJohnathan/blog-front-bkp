@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { MiniCardViews } from "../MiniCardViews/MiniCardViews";
 import Link from "next/link";
 import { Ex } from "@/extension/ex";
@@ -20,19 +19,18 @@ export const VertRectTopCard = async ({ id }: { id?: number }) => {
           alt=""
         />
 
-        {/* <Image
-            className="responsive extra large-height"
-            width={377}
-            height={734}
-            src="/Component_5.png"
-            alt=""
-        />*/}
-
         <div className="absolute bottom left right padding bottom-shadow white-text">
           <Link href={`/news/${id}`}>
             <div>
               <h5>{response.titulo}</h5>
-              <p>{response.description}</p>
+              <p>
+                {" "}
+                {response.description
+                  ? response.description.length > 66
+                    ? response.description.substring(0, 66) + "..."
+                    : response.description
+                  : ""}
+              </p>
             </div>
           </Link>
           <MiniCardViews
