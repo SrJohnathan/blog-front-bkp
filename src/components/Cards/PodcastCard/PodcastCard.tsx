@@ -3,12 +3,14 @@ import { FallbackImage } from "@/components/Cards/MedSqCard/FallbackImage";
 import { MiniCardViews } from "../MiniCardViews/MiniCardViews";
 
 export const PodcastCard = ({ value }: { value: GetNews }) => {
+  console.log(value);
+
   return (
-    <div className="primary small-round s6 m6">
-      <article className="no-padding transparent no-elevate">
-        <div className="grid padding">
+    <div className="primary small-round s12 m6">
+      <article className="padding transparent no-elevate">
+        <div className="grid">
           <FallbackImage
-            className="responsive large"
+            className="s12 m7 large small-height small-width"
             width={110}
             height={240}
             src={
@@ -16,7 +18,8 @@ export const PodcastCard = ({ value }: { value: GetNews }) => {
             }
             alt=""
           />
-          <div className="m6 responsive small-round wrap">
+
+          <div className="s12 m5 small-round wrap responsive">
             <h6 className="small on-primary">#Day1 | Educação em Portugal</h6>
             <MiniCardViews
               views={value.total_views || 0}
@@ -25,15 +28,18 @@ export const PodcastCard = ({ value }: { value: GetNews }) => {
             />
           </div>
         </div>
+        <div className="small-space"></div>
         <div className="center-align">
-          <audio controls>
+          <audio controls className="small-padding">
             <source
-              src="/709214__newlocknew__rain_eaves-dropsmelted-snowrainautumncity-yard-3_em.wav"
+              src={
+                "/api/files/" + value.conteudo?.split("||")[0] ||
+                "/709214__newlocknew__rain_eaves-dropsmelted-snowrainautumncity-yard-3_em.wav"
+              }
               type="audio/wav"
             />
             Your browser does not support the audio element.
           </audio>
-          <div className="small-space"></div>
         </div>
       </article>
     </div>
