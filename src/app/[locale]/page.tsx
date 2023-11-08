@@ -61,10 +61,6 @@ export default async function Home() {
 
             })}
 
-
-
-
-
             {/* <MainAdsContainer /> */}
             {/* {dataFromAPI.map((item, index) => {
               if (item.type === "category") {

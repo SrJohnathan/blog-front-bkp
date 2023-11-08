@@ -19,7 +19,7 @@ export const MostReadNewsContainer = () => {
         setNews(response.data);
       })
       .catch(() => {});
-  }, [locale, setNews]);
+  }, [locale]);
 
   const t = useTranslations("Ver_Mais");
 

@@ -1,26 +1,31 @@
 import Image from "next/image";
 import Link from "next/link";
 import { MiniCardViews } from "../MiniCardViews/MiniCardViews";
+import {GetNews} from "@/dtos/News";
+import {FallbackImage} from "@/components/Cards/MedSqCard/FallbackImage";
 
-export const MostViewedNewsCard = () => {
+export const MostViewedNewsCard = ({ value }: { value: GetNews }) => {
   return (
     <div className="s6 m2 responsive">
       <Link href={"/most-viewed"}>
         <article className="no-padding transparent no-elevate">
-          <Image
+          <FallbackImage
             className="responsive small "
             width={110}
             height={110}
-            src="/Component_1.avif"
+            src={"/api/files/"+value.img}
             alt={""}
           />
           <div className="padding">
-            <h6 className="small bold">What is Lorem Ipsum?</h6>
+            <h6 className="small bold">{value.titulo}</h6>
             <p className="small-line">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry
+              {value.description}
             </p>
-            <MiniCardViews date={""} views={0} category={""} />
+            <MiniCardViews
+                views={value.total_views || 0}
+                category={value.name_category || ""}
+                date={value.data_criacao}
+            />
           </div>
         </article>
       </Link>

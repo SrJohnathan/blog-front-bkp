@@ -4,38 +4,36 @@ import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 import { MiniCardViews } from "../MiniCardViews/MiniCardViews";
+import {FallbackImage} from "@/components/Cards/MedSqCard/FallbackImage";
+import {GetNews} from "@/dtos/News";
 
-export const ExtendedNews = () => {
+export const ExtendedNews = ({ value }: { value: GetNews }) => {
   const t = useTranslations("Ver_Mais");
 
   return (
     <article className={"padding no-elevate background"}>
       <div className={"medium-divider"}></div>
 
-      <Link href={"/categories"}>
+      <Link href={`/news/${value.id}`}>
         <article className="no-padding no-elevate">
           <div className="grid padding">
-            <Image
+            <FallbackImage
               className="s12 m5 responsive"
               width={110}
               height={110}
-              src="/Component_3.avif"
+              src={"/api/files/"+value.img}
               alt={""}
             />
             <div className="s12 m7">
-              <h5 className="small bold">What is Lorem Ipsum?</h5>
+              <h5 className="small bold">{value.titulo}</h5>
               <p className="medium-line">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem
-                ipsum dolor, sit amet consectetur adipisicing elit. Quae, esse.
-                Doloribus, debitis dolore. Autem incidunt reiciendis nam rem
-                tenetur aliquam laudantium nihil quisquam sapiente! Suscipit eos
-                porro dolore natus, accusamus totam dolorum corporis odio sed?
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum
-                praesentium dolorem ullam amet tempore fugit aperiam possimus
-                magnam vel laboriosam soluta placeat quaerat, asperiores, modi,
-                consequatur sint culpa eius ab?
+                  {value.description}
               </p>
-              <MiniCardViews date={""} views={0} category={""} />
+                <MiniCardViews
+                    views={value.total_views || 0}
+                    category={value.name_category || ""}
+                    date={value.data_criacao}
+                />
             </div>
           </div>
         </article>
