@@ -24,6 +24,9 @@ const CategoryPage = ({ params }: { params: { name_url: string } }) => {
   const [limit, setLimit] = useState(9);
   const [init, setInit] = useState(0);
 
+  const totalPages = 10;
+  const totalButtons = 5;
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -66,7 +69,7 @@ const CategoryPage = ({ params }: { params: { name_url: string } }) => {
     };
 
     fetchData().then();
-  }, [locale, init, limit]);
+  }, [locale, init, limit, params.name_url, shouldRenderMostViewedNewsCard]);
 
   const setNext = () => {
     setLimit((prevState) => prevState + 10);
@@ -77,8 +80,16 @@ const CategoryPage = ({ params }: { params: { name_url: string } }) => {
     if (init >= 10) {
       setLimit((prevState) => prevState - 10);
       setInit((prevState) => prevState - 10);
-    } else {
     }
+  };
+
+  const renderizeButtons = () => {
+    const start = (init - 1) * totalButtons + 1;
+    const end = Math.min(init * totalButtons, totalPages);
+
+    return Array.from({ length: end - start + 1 }, (_, index) => (
+      <button key={start + index}>{start + index}</button>
+    ));
   };
 
   return (
@@ -102,8 +113,15 @@ const CategoryPage = ({ params }: { params: { name_url: string } }) => {
               ))}
           </div>
         </div>
-        <button onClick={setPrev}>Prev</button>{" "}
-        <button onClick={setNext}>next</button>
+
+        <button onClick={setPrev}>
+          <i>arrow_back</i>
+        </button>
+
+        {renderizeButtons()}
+        <button onClick={setNext}>
+          <i>arrow_forward</i>
+        </button>
         <div className="large-space"></div>
         <div className="row">
           <h4 className={"small bold primary-title"}>
