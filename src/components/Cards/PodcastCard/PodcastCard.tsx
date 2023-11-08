@@ -3,8 +3,6 @@ import { FallbackImage } from "@/components/Cards/MedSqCard/FallbackImage";
 import { MiniCardViews } from "../MiniCardViews/MiniCardViews";
 
 export const PodcastCard = ({ value }: { value: GetNews }) => {
-  console.log(value);
-
   return (
     <div className="primary small-round s12 m6">
       <article className="padding transparent no-elevate">
