@@ -63,8 +63,6 @@ export const Articles = ({id}:Props) => {
 
   return news.length == 0 ?  null :  (
 
-
-
     <article className={"padding background no-elevate "}>
       <h6 className={"small bold margin"}>
         {category &&  category.name}
