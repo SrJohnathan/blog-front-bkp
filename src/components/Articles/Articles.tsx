@@ -39,7 +39,7 @@ export const Articles = ({id}:Props) => {
       }
     };
 
-    fetchData();
+    fetchData().then();
   }, [locale]);
 
 

@@ -42,8 +42,6 @@ const CategoryPage = ({ params }: { params: { name_url: string } }) => {
         }
 
 
-
-
       } catch (error) {
         console.error("Falha ao buscar notícias", error);
       }
