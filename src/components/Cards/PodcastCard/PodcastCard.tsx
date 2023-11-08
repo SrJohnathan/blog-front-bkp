@@ -10,7 +10,7 @@ export const PodcastCard = ({ value }: { value: GetNews }) => {
       <article className="padding transparent no-elevate">
         <div className="grid">
           <FallbackImage
-            className="s12 m7 large small-height small-width"
+            className="s7 m7 large small-height small-width"
             width={110}
             height={240}
             src={
@@ -19,8 +19,15 @@ export const PodcastCard = ({ value }: { value: GetNews }) => {
             alt=""
           />
 
-          <div className="s12 m5 small-round wrap responsive">
-            <h6 className="small on-primary">#Day1 | Educação em Portugal</h6>
+          <div className="s5 m5 small-round wrap responsive">
+            <h6 className="small on-primary">
+              #STW1 |{" "}
+              {value.titulo
+                ? value.titulo.length > 66
+                  ? value.titulo.substring(0, 66) + "..."
+                  : value.titulo
+                : ""}
+            </h6>
             <MiniCardViews
               views={value.total_views || 0}
               category={value.name_category || ""}
