@@ -49,14 +49,23 @@ export class MainPost {
   ids?: { card1: number; card2: number; card3: number } | null;
 }
 
+
+export class SMatt {
+  value?: { language: "pt"|"en"|"es"|"fr" ; array: number[] } | null;
+}
+
 export class Categories {
   c?: Category[] | null;
 }
 
 export async function getSettingsAll() {}
 
+/**
+ *
+ * @param  {TopAds | LateralPost | MainPost | Categories | SMatt} instancie
+ */
 export async function getSettings<
-  T extends TopAds | LateralPost | MainPost | Categories
+  T extends TopAds | LateralPost | MainPost | Categories | SMatt
 >(instancie: { new (): T }) {
   let ins = new instancie();
 
@@ -78,6 +87,12 @@ export async function getSettings<
   if (ins instanceof Categories) {
     const res: Config<T> = (await Ex.api().get("/settings/name/category_list"))
       .data;
+    return res;
+  }
+
+  if (ins instanceof SMatt) {
+    const res: Config<T> = (await Ex.api().get("/settings/name/smatt"))
+        .data;
     return res;
   }
 

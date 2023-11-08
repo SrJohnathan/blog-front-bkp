@@ -16,6 +16,8 @@ const CategoryPage = ({ params }: { params: { name_url: string } }) => {
   const [news, setNews] = useState<GetNews[]>([]);
   const [newsRead, setNewsRead] = useState<GetNews[]>([]);
 
+
+
   const [category, setCategory] = useState<Category | null>();
   const locale = useLocale();
 
