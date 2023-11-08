@@ -22,7 +22,7 @@ export const PodCasts = () => {
 
   useEffect(() => {
     Ex.apiClient()
-      .get(`/api/${locale}/post/list/0/4/desc/16?typ=Audio`)
+      .get(`/api/${locale}/post/audio/4/all`)
       .then((response) => {
         console.log(response.data);
         setNews(response.data);
