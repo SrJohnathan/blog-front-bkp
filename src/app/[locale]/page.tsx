@@ -9,7 +9,7 @@ import { PodCasts } from "@/components/Podcasts/Podcasts";
 import { Articles } from "@/components/Articles/Articles";
 import { Suspense } from "react";
 import { StudentGuidePanel } from "@/components/StudentGuidePanel/StudentGuidePanel";
-import {getSettings, LateralPost, MainPost} from "@/source/settings";
+import { getSettings, LateralPost, MainPost } from "@/source/settings";
 
 export default async function Home() {
   const postMain = await getSettings(MainPost);
@@ -23,6 +23,8 @@ export default async function Home() {
           <VertRectTopCard id={postMain?.data.ids?.card1} />
           <div className={"s12 m6"}>
             <TopMedRectCard id={postMain?.data.ids?.card2} />
+            <div className="large-space"></div>
+            <div className="small-space"></div>
             <TopMedRectCard id={postMain?.data.ids?.card3} />
           </div>
         </div>
@@ -48,18 +50,15 @@ export default async function Home() {
 
           {/* Coluna lateral */}
           <div className={"s12 m4"}>
-
-            {lpost && lpost.data.value?.map((value, index) => {
-              if(value.typ === "stw"){
-                return (<Articles id={value.id} key={index} />)
-
-              }
-              if(value.typ === "google"){
-                return ( <MainAdsContainer key={index} />)
-
-              }
-
-            })}
+            {lpost &&
+              lpost.data.value?.map((value, index) => {
+                if (value.typ === "stw") {
+                  return <Articles id={value.id} key={index} />;
+                }
+                if (value.typ === "google") {
+                  return <MainAdsContainer key={index} />;
+                }
+              })}
 
             {/* <MainAdsContainer /> */}
             {/* {dataFromAPI.map((item, index) => {

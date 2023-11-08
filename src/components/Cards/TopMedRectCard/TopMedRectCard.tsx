@@ -9,7 +9,7 @@ export const TopMedRectCard = async ({ id }: { id?: number }) => {
   const response: GetNews = (await Ex.api().get(`/post/first/${id}`)).data;
 
   return (
-    <div className="padding">
+    <div>
       <article className="no-padding small-round">
         <FallbackImage
           className="responsive large"
@@ -22,9 +22,7 @@ export const TopMedRectCard = async ({ id }: { id?: number }) => {
           <Link href={"/news/:id"}>
             <div>
               <h5 className="bottom-padding">{response.titulo}</h5>
-              <p>
-                {response.description}
-              </p>
+              <p>{response.description}</p>
             </div>
           </Link>
           <MiniCardViews
