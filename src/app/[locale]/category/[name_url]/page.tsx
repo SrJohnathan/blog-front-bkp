@@ -7,7 +7,7 @@ import { MostViewedNewsCard } from "@/components/Cards/MostViewedNewsCard/MostVi
 import { ExtendedNews } from "@/components/Cards/ExtendedNews/ExtendedNews";
 import {useEffect, useState} from "react";
 import {Category} from "@/dtos/Category";
-import {getCategory, getCategoryNameUrl} from "@/source/category";
+import { getCategoryNameUrl} from "@/source/category";
 import {Ex} from "@/extension/ex";
 import {GetNews} from "@/dtos/News";
 
