@@ -23,7 +23,7 @@ export default async function Home() {
           <VertRectTopCard id={postMain?.data.ids?.card1} />
           <div className={"s12 m6"}>
             <TopMedRectCard id={postMain?.data.ids?.card2} />
-            <div className="large-space"></div>
+            <div className="m large-space"></div>
             <div className="small-space"></div>
             <TopMedRectCard id={postMain?.data.ids?.card3} />
           </div>

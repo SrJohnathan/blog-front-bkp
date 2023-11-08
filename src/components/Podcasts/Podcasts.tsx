@@ -22,10 +22,10 @@ export const PodCasts = () => {
 
   useEffect(() => {
     Ex.apiClient()
-      .get(`/api/${locale}/post/list/0/4/desc/16`)
+      .get(`/api/${locale}/post/list/0/2/desc/16`)
       .then((response) => {
         console.log(response.data);
-        // setNews(response.data);
+        setNews(response.data);
       })
       .catch(() => {});
   }, [locale, setNews]);
@@ -66,13 +66,14 @@ export const PodCasts = () => {
         <h4 className="small bold primary-title">Podcasts</h4>
         <div className={"primary-title-container"} style={divider}></div>
       </div>
-      <div className={"s6 m12 padding"}>
-        <div className={"grid"}>
+      <div className={"small-padding"}>
+        <div className={"grid s12 m12"}>
           {news.map((value, index) => (
             <PodcastCard key={index} value={value} />
           ))}
         </div>
       </div>
+      <div className="small-space"></div>
       <>
         {Object.keys(categories).map((categoryKey) =>
           renderVerMais(categoryKey as CategoryKey)
