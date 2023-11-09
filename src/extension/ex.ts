@@ -7,6 +7,7 @@ export namespace Ex {
      // baseURL: "https://stw-blog-backend.herokuapp.com",
       headers: {
         "Content-Type": "application/json",
+        'Cache-Control': 'no-cache',
       },
     });
   }

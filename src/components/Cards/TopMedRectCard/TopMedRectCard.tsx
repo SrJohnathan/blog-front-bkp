@@ -5,6 +5,9 @@ import { GetNews } from "@/dtos/News";
 import { Ex } from "@/extension/ex";
 
 export const TopMedRectCard = async ({ id }: { id?: number }) => {
+
+
+
   const response: GetNews = (await Ex.api().get(`/post/first/${id}`)).data;
 
   return (
