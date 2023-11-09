@@ -13,6 +13,9 @@ import { getSettings, LateralPost, MainPost } from "@/source/settings";
 
 export default async function Home() {
   const postMain = await getSettings(MainPost);
+
+
+
   const lpost = await getSettings(LateralPost);
 
   return (

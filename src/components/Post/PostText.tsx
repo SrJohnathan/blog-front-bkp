@@ -29,7 +29,7 @@ export const PostText = (props: Props) => {
         alt=""
         fallbackSrc={"./lod.gif"}
       />
-      <h6 className="small left-align large-margin">{props.news.conteudo}</h6>
+      <p className="left-align">{props.news.conteudo}</p>
     </>
   );
 };

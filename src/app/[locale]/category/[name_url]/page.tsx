@@ -81,7 +81,7 @@ const CategoryPage = ({ params }: { params: { name_url: string } }) => {
     <div className="grid s m l">
       <div className="s1 m1"></div>
       <div className="s10 m10">
-        <div>
+        <div className={"grid"}>
           <div className={"s12 m12"}>
             <div className="large-space"></div>
             <div className="row">

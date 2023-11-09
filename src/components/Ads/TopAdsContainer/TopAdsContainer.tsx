@@ -41,10 +41,10 @@ export const TopAdsContainer = () => {
   }, [currentSlide, ads]);
 
   useEffect(() => {
-    Ex.apiClient()
+   /* Ex.apiClient()
       .get("/api/ad/first/1")
       .then((value) => setAds(value.data))
-      .catch((reason) => setAds(null));
+      .catch((reason) => setAds(null));*/
   }, [setAds]);
 
   return (

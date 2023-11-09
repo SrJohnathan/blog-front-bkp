@@ -43,9 +43,14 @@ const Page = async ({ params }: { params: { id: string } }) => {
 
         <div className="grid">
           <div className="m1"></div>
-          <p className="bold m1 left-align">Resumo</p>
+
+
+
+          <h6 style={{flexDirection:"column",justifyContent:"start"}} className="small no-margin bold m1 left-align">Resumo</h6>
+
+
           <div className="s12 m8">
-            <h6 className="small">{news.description}</h6>
+            <p className="left-align">{news.description}</p>
             <div className="medium-space"></div>
 
             {news.tipo === "Texto" && <PostText news={news} />}
