@@ -19,7 +19,7 @@ export const ExtendedNews = ({ value }: { value: GetNews }) => {
           <div className="grid padding">
             <FallbackImage
               className="s12 m5 extra small-height medium-width"
-              style={{ width: "25%", height: "50%" }}
+              // style={{ width: "700px", height: "600px" }}
               width={110}
               height={110}
               src={"/api/files/" + value.img}

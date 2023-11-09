@@ -155,7 +155,7 @@ const Page = async ({ params }: { params: { id: string } }) => {
       <div className="responsive s center-align">
         <TopAdsContainer />
         <div className="large-space"></div>
-        <div className="background s12 small-round">
+        <div className="background s12 small-round elevate">
           <div className="small-space"></div>
           <h3 className="small bold primary-title left-align large-margin">
             {news?.titulo}
@@ -175,83 +175,79 @@ const Page = async ({ params }: { params: { id: string } }) => {
 
         <div className="medium-space"></div>
 
-        <div className="grid">
-          <div className="m1"></div>
-          <p className="bold m1">Vídeos</p>
-          <div className="s12 m8">
-            <div className={"grid medium-space"}>
-              {Array(3)
+        <div className="background elevate">
+          <p className="bold large-margin left-align ">Vídeos</p>
+          <div className="s12">
+            <div className={"grid"}>
+              {Array(2)
                 .fill(null)
                 .map((_, index) => (
                   <RectVideoCard key={index} />
                 ))}
             </div>
           </div>
-          <div className="m1"></div>
+        </div>
+        <div className="large-space"></div>
+
+        <div className={"s12"}>
+          {lpost &&
+            lpost.data.value?.map((value, index) => {
+              if (value.typ === "stw") {
+                return <Articles id={value.id} key={index} />;
+              }
+              if (value.typ === "google") {
+                return <MainAdsContainer key={index} />;
+              }
+            })}
         </div>
 
-        <div className="m l small-space"></div>
+        <div className="large-space"></div>
+        <div className="large-space"></div>
 
-        <div className="large-divider"></div>
+        <div className="s12">
+          <div>
+            <FallbackImage
+              className="responsive medium-height"
+              src={"/api/files/" + array_new[0].img}
+              width={600}
+              height={400}
+              alt=""
+            />
+            <div className="small-space"></div>
+            <h6 className="small bold">{array_new[0].titulo}</h6>
+            <p className="left-align">{array_new[0].description}</p>
+            <div className="medium-space"></div>
+            <FallbackImage
+              className=" responsive medium-height"
+              src={"/api/files/" + array_new[1].img}
+              width={600}
+              height={400}
+              alt=""
+            />
+            <div className="small-space"></div>
+            <p className="left-align">{array_new[1].description}</p>
 
-        <div className="m l small-space"></div>
+            <div className={"large-space"}></div>
 
-        <div className="grid">
-          <div className="m1"></div>
+            <div className="left-align background elevate">
+              <div className="medium-space"></div>
+              <div className="row">
+                <h4 className={"small bold primary-title"}>
+                  Mais Recomendadas
+                </h4>
+                <div
+                  className={"primary-title-container"}
+                  style={divider}
+                ></div>
+              </div>
 
-          {/* Coluna principal */}
-          <div className="s12 m7 padding">
-            <div>
-              <FallbackImage
-                className=" responsive medium-height round"
-                src={"/api/files/" + array_new[0].img}
-                width={600}
-                height={400}
-                alt=""
-              />
-              <h6 className="small bold">{array_new[0].titulo}</h6>
-              <p className="left-align">{array_new[0].description}</p>
-              <div className="m l small-space"></div>
-              <FallbackImage
-                className=" responsive medium-height round"
-                src={"/api/files/" + array_new[1].img}
-                width={600}
-                height={400}
-                alt=""
-              />
-              <div className="m l small-space"></div>
-              <p className="left-align">{array_new[1].description}</p>
-
-              <div className={"large-space"}></div>
-
-              <div className="left-align">
-                <div className="row">
-                  <h4 className={"small bold primary-title"}>
-                    Mais Recomendadas
-                  </h4>
-                  <div
-                    className={"primary-title-container"}
-                    style={divider}
-                  ></div>
-                </div>
-
-                <div className={"medium-space"}></div>
+              <div className={"medium-space"}></div>
+              <div className="padding">
                 <MostRecomNewsContainer />
               </div>
+              <div className={"large-space"}></div>
             </div>
-          </div>
-
-          {/* Coluna lateral */}
-          <div className={"s12 m3"}>
-            {lpost &&
-              lpost.data.value?.map((value, index) => {
-                if (value.typ === "stw") {
-                  return <Articles id={value.id} key={index} />;
-                }
-                if (value.typ === "google") {
-                  return <MainAdsContainer key={index} />;
-                }
-              })}
+            <div className={"large-space"}></div>
           </div>
         </div>
       </div>

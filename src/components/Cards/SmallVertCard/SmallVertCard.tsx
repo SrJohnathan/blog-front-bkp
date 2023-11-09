@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { MiniCardViews } from "../MiniCardViews/MiniCardViews";
 import { GetNews } from "@/dtos/News";
@@ -9,7 +8,7 @@ export const SmallVertCard = ({ value }: { value: GetNews }) => {
     <Link href={`/news/${value.id}`} className={"s6 m3"}>
       <article className="no-padding transparent no-elevate">
         <FallbackImage
-          className="responsive small"
+          className="small-height small-width small"
           width={110}
           height={110}
           src={"/api/files/" + value.img}
