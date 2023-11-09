@@ -1,20 +1,28 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import {CSSProperties, useState} from "react";
 
-export const FallbackImage = ({ src, fallbackSrc, alt,className }: any) => {
+
+interface Props {
+  src:string ,fallbackSrc?:string, alt:string,className:string  ,width:number  | undefined,height:number  | undefined,style? : CSSProperties
+
+}
+
+
+export const FallbackImage = ({ src, fallbackSrc, alt,className  ,width ,height,style }: Props) => {
   const [imgSrc, setImgSrc] = useState(src);
 
   const handleImageDelay = () => {
-    setImgSrc(fallbackSrc);
+    setImgSrc(fallbackSrc || "");
   };
 
   return (
     <Image
       className={className}
-      width={200}
-      height={200}
+      style={style}
+      width={width}
+      height={height}
       src={imgSrc}
       alt={alt}
       onError={handleImageDelay}

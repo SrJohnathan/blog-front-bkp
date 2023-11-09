@@ -15,16 +15,18 @@ export const PostText = (props: Props) => {
         height={358}
         src={`/api/files/${props.news.img}`}
         alt=""
-      />
+       fallbackSrc={"./lod.gif"}/>
       <div className="small-space"></div>
 
       <FallbackImage
-        className="s large-height extra-width no-padding no-margin"
-        style={{ width: "100%" }}
+        className="s"
+        width={800}
+        height={358}
         src={`/api/files/${props.news.img}`}
+        style={{width:"100%"}}
         alt=""
-      />
-      <h6 className="small left-align">{props.news.conteudo}</h6>
+       fallbackSrc={"./lod.gif"}/>
+      <h6 className="small left-align large-margin">{props.news.conteudo}</h6>
       <div className="m1"></div>
     </>
   );
