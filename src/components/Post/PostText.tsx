@@ -29,7 +29,9 @@ export const PostText = (props: Props) => {
         alt=""
         fallbackSrc={"./lod.gif"}
       />
-      <p className="left-align">{props.news.conteudo}</p>
+        {props.news.tipo == "Texto"  &&  ( <p className="left-align">{props.news.conteudo}</p>) }
+        {props.news.tipo == "Html"  &&  ( <div dangerouslySetInnerHTML={{__html: props.news.conteudo || "" }} className="left-align"></div>) }
+
     </>
   );
 };
