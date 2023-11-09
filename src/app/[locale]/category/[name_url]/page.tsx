@@ -97,13 +97,15 @@ const CategoryPage = ({ params }: { params: { name_url: string } }) => {
                 <ExtendedNews value={value} key={index} />
               ))}
           </div>
+          <div className="center-align">
+            <Pagination
+              totalPages={totalPages}
+              currentPage={currentPage}
+              setPage={setPage}
+            />
+          </div>
         </div>
 
-        <Pagination
-          totalPages={totalPages}
-          currentPage={currentPage}
-          setPage={setPage}
-        />
         <div className="large-space"></div>
         <div className="row">
           <h4 className={"small bold primary-title"}>
