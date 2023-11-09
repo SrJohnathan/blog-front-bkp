@@ -10,6 +10,7 @@ import { Category } from "@/dtos/Category";
 import { getCategoryNameUrl } from "@/source/category";
 import { Ex } from "@/extension/ex";
 import { GetNews } from "@/dtos/News";
+import Pagination from "@/components/Pagination/Pagination";
 
 const CategoryPage = ({ params }: { params: { name_url: string } }) => {
   const [news, setNews] = useState<GetNews[]>([]);
@@ -23,9 +24,7 @@ const CategoryPage = ({ params }: { params: { name_url: string } }) => {
 
   const [limit, setLimit] = useState(9);
   const [init, setInit] = useState(0);
-
-  const totalPages = 10;
-  const totalButtons = 5;
+  const [totalPages, setTotalPages] = useState(0); // Trazer da API
 
   useEffect(() => {
     const fetchData = async () => {
@@ -71,26 +70,12 @@ const CategoryPage = ({ params }: { params: { name_url: string } }) => {
     fetchData().then();
   }, [locale, init, limit, params.name_url, shouldRenderMostViewedNewsCard]);
 
-  const setNext = () => {
-    setLimit((prevState) => prevState + 10);
-    setInit((prevState) => prevState + 10);
+  const setPage = (pageNumber: number) => {
+    const newInit = (pageNumber - 1) * limit;
+    setInit(newInit);
   };
 
-  const setPrev = () => {
-    if (init >= 10) {
-      setLimit((prevState) => prevState - 10);
-      setInit((prevState) => prevState - 10);
-    }
-  };
-
-  const renderizeButtons = () => {
-    const start = (init - 1) * totalButtons + 1;
-    const end = Math.min(init * totalButtons, totalPages);
-
-    return Array.from({ length: end - start + 1 }, (_, index) => (
-      <button key={start + index}>{start + index}</button>
-    ));
-  };
+  const currentPage = Math.floor(init / limit) + 1;
 
   return (
     <div className="grid s m l">
@@ -114,14 +99,11 @@ const CategoryPage = ({ params }: { params: { name_url: string } }) => {
           </div>
         </div>
 
-        <button onClick={setPrev}>
-          <i>arrow_back</i>
-        </button>
-
-        {renderizeButtons()}
-        <button onClick={setNext}>
-          <i>arrow_forward</i>
-        </button>
+        <Pagination
+          totalPages={totalPages}
+          currentPage={currentPage}
+          setPage={setPage}
+        />
         <div className="large-space"></div>
         <div className="row">
           <h4 className={"small bold primary-title"}>
