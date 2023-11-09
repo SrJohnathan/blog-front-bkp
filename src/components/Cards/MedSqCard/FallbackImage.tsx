@@ -14,7 +14,7 @@ export const FallbackImage = ({ src, fallbackSrc, alt,className  ,width ,height,
   const [imgSrc, setImgSrc] = useState(src);
 
   const handleImageDelay = () => {
-    setImgSrc(fallbackSrc || "");
+    setImgSrc(fallbackSrc || "./lod.gif");
   };
 
   return (
