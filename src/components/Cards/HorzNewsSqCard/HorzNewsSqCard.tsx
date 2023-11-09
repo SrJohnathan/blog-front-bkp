@@ -18,7 +18,7 @@ export const HorzNewsSqCard = ({ value }: { value: GetNews }) => {
                 alt={""}
               />
             </div>
-            <div className="padding s6">
+            <div className="padding s6 left-align">
               <h6 className="small bold">{value.titulo}</h6>
               <p className="tiny-line">
                 {value.description
