@@ -32,12 +32,26 @@ const Page = async ({ params }: { params: { id: string } }) => {
 
       <div className="medium-space"></div>
 
-      <div className="large-divider"></div>
+      <div className="m l large-divider"></div>
 
-      <div className="grid">
+      <div className="grid m l ">
         <div className="m1"></div>
-        <p className="bold s2 m1">Resumo</p>
-        <div className="s8 m8">
+        <p className="bold m1">Resumo</p>
+        <div className="s12 m8">
+          <h6 className="small left-align">{news.description}</h6>
+
+          {news.tipo === "Texto" && <PostText news={news} />}
+
+          {news.tipo === "Html" && <PostText news={news} />}
+
+          {news.tipo === "Audio" && <PostText news={news} />}
+
+          {news.tipo === "Video" && <PostText news={news} />}
+        </div>
+      </div>
+
+      <div className="grid s no-padding">
+        <div className="s12">
           <h6 className="small left-align">{news.description}</h6>
 
           {news.tipo === "Texto" && <PostText news={news} />}
@@ -56,8 +70,8 @@ const Page = async ({ params }: { params: { id: string } }) => {
 
       <div className="grid">
         <div className="m1"></div>
-        <p className="bold s2 m1">Vídeos</p>
-        <div className="s8 m8">
+        <p className="bold m1">Vídeos</p>
+        <div className="s12 m8">
           <div className={"grid medium-space"}>
             {Array(3)
               .fill(null)
