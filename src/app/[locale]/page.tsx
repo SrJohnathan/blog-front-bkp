@@ -59,16 +59,6 @@ export default async function Home() {
                   return <MainAdsContainer key={index} />;
                 }
               })}
-
-            {/* <MainAdsContainer /> */}
-            {/* {dataFromAPI.map((item, index) => {
-              if (item.type === "category") {
-                return <Articles key={index} data={item} />;
-              }
-              if (item.type === "ad") {
-                return <MainAdsContainer key={index} data={item} />;
-              }
-            })} */}
           </div>
         </div>
       </main>

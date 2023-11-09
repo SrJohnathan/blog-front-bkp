@@ -10,12 +10,14 @@ export const PostText = (props: Props) => {
   return (
     <>
       <FallbackImage
-        className="responsive m l large-height round"
+        className="responsive m l medium-height"
         width={800}
         height={358}
         src={`/api/files/${props.news.img}`}
         alt=""
-       fallbackSrc={"./lod.gif"}/>
+        fallbackSrc={"./lod.gif"}
+      />
+
       <div className="small-space"></div>
 
       <FallbackImage
@@ -23,11 +25,11 @@ export const PostText = (props: Props) => {
         width={800}
         height={358}
         src={`/api/files/${props.news.img}`}
-        style={{width:"100%"}}
+        style={{ width: "100%" }}
         alt=""
-       fallbackSrc={"./lod.gif"}/>
+        fallbackSrc={"./lod.gif"}
+      />
       <h6 className="small left-align large-margin">{props.news.conteudo}</h6>
-      <div className="m1"></div>
     </>
   );
 };
