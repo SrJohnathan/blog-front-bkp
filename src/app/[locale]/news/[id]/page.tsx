@@ -44,10 +44,12 @@ const Page = async ({ params }: { params: { id: string } }) => {
         <div className="grid">
           <div className="m1"></div>
 
-
-
-          <h6 style={{flexDirection:"column",justifyContent:"start"}} className="small no-margin bold m1 left-align">Resumo</h6>
-
+          <h6
+            style={{ flexDirection: "column", justifyContent: "start" }}
+            className="small no-margin bold m1 left-align"
+          >
+            Resumo
+          </h6>
 
           <div className="s12 m8">
             <p className="left-align">{news.description}</p>
@@ -65,7 +67,12 @@ const Page = async ({ params }: { params: { id: string } }) => {
 
         <div className="grid">
           <div className="m1"></div>
-          <p className="bold m1">Vídeos</p>
+          <h6
+            style={{ flexDirection: "column", justifyContent: "start" }}
+            className="small no-margin bold m1 left-align"
+          >
+            Vídeos
+          </h6>
           <div className="s12 m8">
             <div className={"grid medium-space"}>
               {Array(3)
@@ -167,7 +174,8 @@ const Page = async ({ params }: { params: { id: string } }) => {
         <div className="medium-space"></div>
 
         <div className="background elevate">
-          <p className="bold large-margin left-align ">Vídeos</p>
+          <div className="small-space"></div>
+          <h6 className="small bold large-margin left-align ">Vídeos</h6>
           <div className="s12">
             <div className={"grid"}>
               {Array(2)
