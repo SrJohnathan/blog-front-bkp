@@ -24,7 +24,7 @@ const CategoryPage = ({ params }: { params: { name_url: string } }) => {
 
   const [limit, setLimit] = useState(9);
   const [init, setInit] = useState(0);
-  const [totalPages, setTotalPages] = useState(0); // Trazer da API
+  const [totalPages, setTotalPages] = useState(0);
 
   useEffect(() => {
     const fetchData = async () => {

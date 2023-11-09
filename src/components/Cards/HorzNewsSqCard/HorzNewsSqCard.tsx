@@ -19,11 +19,17 @@ export const HorzNewsSqCard = ({ value }: { value: GetNews }) => {
               />
             </div>
             <div className="padding s6 left-align">
-              <h6 className="small bold">{value.titulo}</h6>
+              <h6 className="small bold">
+                {value.titulo
+                  ? value.titulo.length > 17
+                    ? value.titulo.substring(0, 17) + "..."
+                    : value.titulo
+                  : ""}
+              </h6>
               <p className="tiny-line">
                 {value.description
-                  ? value.description.length > 60
-                    ? value.description.substring(0, 60) + "..."
+                  ? value.description.length > 19
+                    ? value.description.substring(0, 19) + "..."
                     : value.description
                   : ""}
               </p>

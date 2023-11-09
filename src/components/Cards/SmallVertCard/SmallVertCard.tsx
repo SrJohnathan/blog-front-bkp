@@ -16,11 +16,17 @@ export const SmallVertCard = ({ value }: { value: GetNews }) => {
         />
         <div className="small-space"></div>
         <div>
-          <h6 className="small bold left-align">{value.titulo}</h6>
+          <h6 className="small bold left-align">
+            {value.titulo
+              ? value.titulo.length > 17
+                ? value.titulo.substring(0, 17) + "..."
+                : value.titulo
+              : ""}
+          </h6>
           <p className="small-line left-align">
             {value.description
-              ? value.description.length > 66
-                ? value.description.substring(0, 66) + "..."
+              ? value.description.length > 19
+                ? value.description.substring(0, 19) + "..."
                 : value.description
               : ""}
           </p>

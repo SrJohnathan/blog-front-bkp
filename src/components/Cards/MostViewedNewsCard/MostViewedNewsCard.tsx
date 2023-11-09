@@ -17,8 +17,20 @@ export const MostViewedNewsCard = ({ value }: { value: GetNews }) => {
             alt={""}
           />
           <div className="padding">
-            <h6 className="small bold">{value.titulo}</h6>
-            <p className="small-line">{value.description}</p>
+            <h6 className="small bold">
+              {value.titulo
+                ? value.titulo.length > 13
+                  ? value.titulo.substring(0, 13) + "..."
+                  : value.titulo
+                : ""}
+            </h6>
+            <p className="small-line">
+              {value.description
+                ? value.description.length > 19
+                  ? value.description.substring(0, 19) + "..."
+                  : value.description
+                : ""}
+            </p>
             <MiniCardViews
               views={value.total_views || 0}
               category={value.name_category || ""}
