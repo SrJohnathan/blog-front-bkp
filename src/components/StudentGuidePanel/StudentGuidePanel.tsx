@@ -53,7 +53,7 @@ export const StudentGuidePanel = () => {
           </button>
           <div className="tiny-space"></div>
           <button
-            className={"small-round "}
+            className={"small-round"}
             onClick={() => setActiveContent("Universidades")}
           >
             <h6 className="bold small">Universidades</h6>

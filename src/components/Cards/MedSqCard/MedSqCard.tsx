@@ -8,7 +8,7 @@ export const MedSqCard = ({ value }: { value: GetNews }) => {
     <Link href={`/news/${value.id}`} className={"s6 m4"}>
       <article className="no-padding transparent no-elevate">
         <FallbackImage
-          className="responsive medium"
+          className="small-height medium-width medium"
           width={200}
           height={200}
           src={`/api/files/${value.img}` || "/Component_2.avif"}
