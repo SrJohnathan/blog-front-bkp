@@ -11,5 +11,4 @@ export interface GetNews {
   name_category: string | null;
   description: string | null;
   total_post: number | null;
-
 }

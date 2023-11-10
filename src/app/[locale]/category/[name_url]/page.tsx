@@ -34,7 +34,6 @@ const CategoryPage = ({ params }: { params: { name_url: string } }) => {
             params.name_url,
             locale
           );
-
           setCategory(new_category);
 
           if (new_category) {
@@ -43,24 +42,35 @@ const CategoryPage = ({ params }: { params: { name_url: string } }) => {
             );
 
             setNews(response.data);
-            setNewsRead(
-              (
-                await Ex.apiClient().get(
-                  `/api/${locale}/post/views/6/${
-                    shouldRenderMostViewedNewsCard ? new_category.id : "all"
-                  }`
-                )
-              ).data
+            console.log(response.data);
+
+            const totalPosts =
+              response.data.length > 0 ? response.data[0].total_post : 0;
+            const totalPages = Math.ceil(totalPosts / 10);
+            setTotalPages(totalPages);
+
+            const newsReadResponse = await Ex.apiClient().get(
+              `/api/${locale}/post/views/6/${
+                shouldRenderMostViewedNewsCard ? new_category.id : "all"
+              }`
             );
+            setNewsRead(newsReadResponse.data);
           }
         } else {
           const response = await Ex.apiClient().get(
             `/api/${locale}/post/list/${init}/${limit}/desc/all`
           );
+
           setNews(response.data);
-          setNewsRead(
-            (await Ex.apiClient().get(`/api/${locale}/post/views/6/all`)).data
+          const totalPosts =
+            response.data.length > 0 ? response.data[0].total_post : 0;
+          const totalPages = Math.ceil(totalPosts / 10);
+          setTotalPages(totalPages);
+
+          const newsReadResponse = await Ex.apiClient().get(
+            `/api/${locale}/post/views/6/all`
           );
+          setNewsRead(newsReadResponse.data);
         }
       } catch (error) {
         console.error("Falha ao buscar notícias", error);
@@ -92,7 +102,8 @@ const CategoryPage = ({ params }: { params: { name_url: string } }) => {
             </div>
           </div>
           <div className={"s12 m12 no-elevate transparent large-padding"}>
-            {news.length > 0 &&
+            {news &&
+              news.length > 0 &&
               news.map((value, index) => (
                 <ExtendedNews value={value} key={index} />
               ))}
