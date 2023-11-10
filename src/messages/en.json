@@ -20,9 +20,9 @@
   },
   "NavLinkDesktopFooter": {
     "STW": "STW",
-    "ESTRANGEIRO": "ABROAD",
-    "PROJETOS": "PROJECTS",
-    "TOPICOS": "TOPICS",
+    "ESTRANGEIRO": "Abroad",
+    "PROJETOS": "Projects",
+    "TOPICOS": "Topics",
     "Noticias": "News",
     "Mais_Noticias": "More News",
     "Servicos": "Services",

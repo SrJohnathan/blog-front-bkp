@@ -108,13 +108,13 @@ const Page = async ({ params }: { params: { id: string } }) => {
               <div className="small-space"></div>
               <FallbackImage
                 className=" responsive medium-height round"
-                src={"/api/files/" + array_new[1].img}
+                src={"/api/files/" + array_new[0].img}
                 width={600}
                 height={400}
                 alt=""
               />
               <div className="small-space"></div>
-              <p className="left-align">{array_new[1].description}</p>
+              <p className="left-align">{array_new[0].description}</p>
 
               <div className={"large-space"}></div>
 
@@ -218,13 +218,13 @@ const Page = async ({ params }: { params: { id: string } }) => {
             <div className="medium-space"></div>
             <FallbackImage
               className=" responsive medium-height"
-              src={"/api/files/" + array_new[1].img}
+              src={"/api/files/" + array_new[0].img}
               width={600}
               height={400}
               alt=""
             />
             <div className="small-space"></div>
-            <p className="left-align">{array_new[1].description}</p>
+            <p className="left-align">{array_new[0].description}</p>
 
             <div className={"large-space"}></div>
 

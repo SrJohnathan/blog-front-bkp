@@ -31,8 +31,7 @@ export const MostRecomNewsContainer = () => {
           <SmallVertCard value={value} key={index} />
         ))}
       </div>
-      <div className="small-space"></div>
-      <Link href={"/most-read"} className={"primary-title"}>
+      <Link href={"/most-recommended"} className={"primary-title"}>
         {t("Ver_Mais")} <i>expand_more</i>
       </Link>
     </div>

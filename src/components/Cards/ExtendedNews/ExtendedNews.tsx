@@ -48,7 +48,7 @@ export const ExtendedNews = ({ value }: { value: GetNews }) => {
 
       <div className={"small-space"}></div>
 
-      <Link href={"/articles"} className={"primary-title margin"}>
+      <Link href={`/news/${value.id}`} className={"primary-title margin"}>
         {t("Ver_Mais")} <i>expand_more</i>
       </Link>
       <div className="medium-divider"></div>

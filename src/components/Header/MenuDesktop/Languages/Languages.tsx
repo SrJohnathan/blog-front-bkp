@@ -12,7 +12,14 @@ export const Languages = () => {
       className="circle transparent"
       onClick={() => setIsMenuOpen(!isMenuOpen)}
     >
-      <i>translate</i>
+      {/* <i>translate</i> */}
+      <Image
+        className=""
+        src={"/white-globe.svg"}
+        alt=""
+        width={26}
+        height={26}
+      ></Image>
       {isMenuOpen && (
         <menu className="no-wrap left">
           <Link href={"/en"} className="row">

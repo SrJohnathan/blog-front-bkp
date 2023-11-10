@@ -48,10 +48,7 @@ export default function MoreNews() {
       const category = filteredCategoryData[0];
       return (
         <>
-          <Link
-            href={`/category/all`}
-            className={"primary-title margin"}
-          >
+          <Link href={`/category/all`} className={"primary-title"}>
             {secT("Ver_Mais")} <i>expand_more</i>{" "}
           </Link>
           <br />
@@ -80,6 +77,7 @@ export default function MoreNews() {
               ))}
         </div>
         <>
+          <div className="medium-space"></div>
           {Object.keys(categories).map((categoryKey) =>
             renderVerMais(categoryKey as CategoryKey)
           )}

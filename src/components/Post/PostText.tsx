@@ -10,7 +10,7 @@ export const PostText = (props: Props) => {
   return (
     <>
       <FallbackImage
-        className="responsive m l medium-height"
+        className="responsive m l medium-height round"
         width={800}
         height={358}
         src={`/api/files/${props.news.img}`}
@@ -21,7 +21,7 @@ export const PostText = (props: Props) => {
       <div className="small-space"></div>
 
       <FallbackImage
-        className="s"
+        className="s round"
         width={800}
         height={358}
         src={`/api/files/${props.news.img}`}
@@ -29,9 +29,16 @@ export const PostText = (props: Props) => {
         alt=""
         fallbackSrc={"./lod.gif"}
       />
-        {props.news.tipo == "Texto"  &&  ( <p className="left-align">{props.news.conteudo}</p>) }
-        {props.news.tipo == "Html"  &&  ( <div dangerouslySetInnerHTML={{__html: props.news.conteudo || "" }} className="left-align"></div>) }
+      {props.news.tipo == "Texto" && (
+        <p className="left-align">{props.news.conteudo}</p>
+      )}
 
+      {props.news.tipo == "Html" && (
+        <div
+          dangerouslySetInnerHTML={{ __html: props.news.conteudo || "" }}
+          className="left-align"
+        ></div>
+      )}
     </>
   );
 };

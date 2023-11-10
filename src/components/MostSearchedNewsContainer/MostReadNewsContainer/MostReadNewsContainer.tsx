@@ -30,7 +30,6 @@ export const MostReadNewsContainer = () => {
           <SmallVertCard value={value} key={index} />
         ))}
       </div>
-      <div className="small-space"></div>
       <Link href={"/category/all"} className={"primary-title"}>
         {t("Ver_Mais")} <i>expand_more</i>
       </Link>

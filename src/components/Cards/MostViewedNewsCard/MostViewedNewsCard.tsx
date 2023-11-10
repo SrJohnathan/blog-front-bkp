@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { MiniCardViews } from "../MiniCardViews/MiniCardViews";
 import { GetNews } from "@/dtos/News";
@@ -7,7 +6,7 @@ import { FallbackImage } from "@/components/Cards/MedSqCard/FallbackImage";
 export const MostViewedNewsCard = ({ value }: { value: GetNews }) => {
   return (
     <div className="s6 m2 responsive">
-      <Link href={"/most-viewed"}>
+      <Link href={`/news/${value.id}`}>
         <article className="no-padding transparent no-elevate">
           <FallbackImage
             className="small-height small-width small"
