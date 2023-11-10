@@ -14,8 +14,6 @@ import { getSettings, LateralPost, MainPost } from "@/source/settings";
 export default async function Home() {
   const postMain = await getSettings(MainPost);
 
-
-
   const lpost = await getSettings(LateralPost);
 
   return (
@@ -24,10 +22,19 @@ export default async function Home() {
         <TopAdsContainer />
         <div className={"grid"}>
           <VertRectTopCard id={postMain?.data.ids?.card1} />
-          <div className={"s12 m6 l6"}>
+
+          {/* *******DESKTOP***** */}
+          <div className={"m l m6 l6"}>
             <TopMedRectCard id={postMain?.data.ids?.card2} />
-            <div className="m l large-space"></div>
-            <div className="m l small-space"></div>
+            <div className="large-space"></div>
+            <div className="small-space"></div>
+            <TopMedRectCard id={postMain?.data.ids?.card3} />
+          </div>
+
+          {/* *******MOBILE******* */}
+          <div className={"s s12"}>
+            <TopMedRectCard id={postMain?.data.ids?.card2} />
+            <div className="small-space"></div>
             <TopMedRectCard id={postMain?.data.ids?.card3} />
           </div>
         </div>

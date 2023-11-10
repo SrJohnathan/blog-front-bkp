@@ -15,18 +15,44 @@ export const MedSqCard = ({ value }: { value: GetNews }) => {
           fallbackSrc={"/lod.gif"}
           alt=""
         />
-        <div className="padding">
+        <div className="small-space"></div>
+        {/* *************DESKTOP************** */}
+        <div className="m l">
           <h6 className="small bold">
             {value.titulo
-              ? value.titulo.length > 17
-                ? value.titulo.substring(0, 17) + "..."
+              ? value.titulo.length > 23
+                ? value.titulo.substring(0, 23) + "..."
                 : value.titulo
               : ""}
           </h6>
           <p className="small-line">
             {value.description
-              ? value.description.length > 19
-                ? value.description.substring(0, 19) + "..."
+              ? value.description.length > 28
+                ? value.description.substring(0, 28) + "..."
+                : value.description
+              : ""}
+          </p>
+          <MiniCardViews
+            views={value.total_views || 0}
+            category={value.name_category || ""}
+            date={value.data_criacao}
+          />
+        </div>
+
+        {/* *************MOBILE************** */}
+        <div className="s">
+          <h6 className="small bold">
+            {value.titulo
+              ? value.titulo.length > 12
+                ? value.titulo.substring(0, 12) + "..."
+                : value.titulo
+              : ""}
+          </h6>
+
+          <p className="small-line">
+            {value.description
+              ? value.description.length > 15
+                ? value.description.substring(0, 15) + "..."
                 : value.description
               : ""}
           </p>
