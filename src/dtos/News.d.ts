@@ -10,4 +10,6 @@ export interface GetNews {
   conteudo: string | null;
   name_category: string | null;
   description: string | null;
+  total_post: number | null;
+
 }
