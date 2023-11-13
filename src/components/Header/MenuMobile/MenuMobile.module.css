@@ -1,22 +1,20 @@
 .wrapper {
   display: flex;
-  flex-wrap: no-wrap;
-  border: 1px solid white;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-around;
 }
 
-.category {
-  margin: 5px;
-  border: 1px solid white;
-}
+
 
 .buttons {
   display: flex;
   align-items: center;
-  width: 30px;
-  height: 25px;
   font-size: 9px;
+  padding: 0;
+  gap: 0.5rem;
+  flex-grow: 1;
 
-  border: 1px solid white;
 }
 
 .buttons:hover {
@@ -25,7 +23,7 @@
   color: white;
 }
 
-.img {
-  width: 10px;
-  height: 10px;
+.buttons:after {
+  background-image: none;
 }
+

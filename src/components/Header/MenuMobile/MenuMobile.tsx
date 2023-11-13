@@ -102,8 +102,9 @@ export const MenuMobile = () => {
               const category = categories[key];
               return (
                 <button
+
                   key={categoryKey}
-                  className={styles.buttons}
+                  className={ styles.buttons}
                   onClick={() => {
                     if (selectedTopic === categoryKey) {
                       setSelectedTopic("NULL");
@@ -112,14 +113,19 @@ export const MenuMobile = () => {
                     }
                   }}
                 >
-                  <Image
-                    className="img"
-                    src={category.icon}
-                    alt={`${categoryKey} icon`}
-                    width={10}
-                    height={10}
-                  />
-                  {t(categoryKey)}
+                  <div>
+                    <Image
+                        className="img"
+                        src={category.icon}
+                        alt={`${categoryKey} icon`}
+                        width={13}
+                        height={13}
+                    />
+                  </div>
+
+
+
+                  <p>{t(categoryKey)}</p>
                 </button>
               );
             })}
