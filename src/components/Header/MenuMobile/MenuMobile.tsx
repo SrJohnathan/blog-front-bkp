@@ -14,6 +14,7 @@ import StwIcon from "../../../../public/stw-icon.svg";
 import AbroadIcon from "../../../../public/white-plane.svg";
 import ProjectsIcon from "../../../../public/white-projects.svg";
 import TopicsIcon from "../../../../public/white-topics.svg";
+import styles from "./MenuMobile.module.css";
 
 export const MenuMobile = () => {
   const t = useTranslations("NavLinkDesktopFooter");
@@ -26,11 +27,6 @@ export const MenuMobile = () => {
   }, [locale]);
 
   const categories = {
-    STW: {
-      topics: ["noticias", "servicos", "eventos", "trabalheconosco"],
-      icon: StwIcon,
-      size: "s2",
-    },
     ESTRANGEIRO: {
       topics: [
         "destinos",
@@ -42,7 +38,6 @@ export const MenuMobile = () => {
         "trabalhe",
       ],
       icon: AbroadIcon,
-      size: "s4",
     },
     PROJETOS: {
       topics: [
@@ -52,12 +47,14 @@ export const MenuMobile = () => {
         "topstudents",
       ],
       icon: ProjectsIcon,
-      size: "s3",
     },
     TOPICOS: {
       topics: ["oportunidades", "tempo", "maisnoticias", "cienciaeinovacao"],
       icon: TopicsIcon,
-      size: "s3",
+    },
+    STW: {
+      topics: ["noticias", "servicos", "eventos", "trabalheconosco"],
+      icon: StwIcon,
     },
   };
 
@@ -67,37 +64,48 @@ export const MenuMobile = () => {
   return (
     <>
       <header className={`small-padding s primary fixed ${theme}`}>
+        {/* Menu social no topo  */}
         <div>
           <nav className="grid">
-            <Link href={"/"} className="left-align s3">
-              <Image width={80} height={80} src="/stw.svg" alt="STW icon" />
+            <Link href={"/"} className="center-align s2 vertical">
+              <Image
+                width={26}
+                height={26}
+                src="/color-STW-img.svg"
+                alt="STW icon"
+              />
+              <span className="bold small">STW</span>
             </Link>
-            <div className="s1"></div>
+            <div className="s4"></div>
             <div className="s3">
               <SocialMediaIcons />
             </div>
-            <div className="s1"></div>
-            <div className="s2">
+            <div className="s1">
               <Languages />
             </div>
-            <button onClick={toggleTheme} className="circle transparent s2">
-              {theme === "dark" ? <i>dark_mode</i> : <i>light_mode</i>}
-            </button>
+            <div className="s1">
+              <button className="circle transparent" onClick={toggleTheme}>
+                <Image
+                  src={"/theme-icon.svg"}
+                  alt="Ícone do tema"
+                  width={40}
+                  height={40}
+                />
+              </button>
+            </div>
           </nav>
+          <div className="small-space"></div>
+
+          {/* Menu subtópicos */}
           <div>
-            <div className="grid">
+            <div className={styles.topics}>
               {Object.keys(categories).map((categoryKey) => {
                 const key = categoryKey as keyof typeof categories;
                 const category = categories[key];
                 return (
-                  <div key={categoryKey} className={`${category.size}`}>
+                  <div key={categoryKey} className={styles.category}>
                     <h6
-                      style={{
-                        cursor: "pointer",
-                        fontSize: "12px",
-                        display: "flex",
-                        alignItems: "flex-start",
-                      }}
+                      className={styles.title}
                       onMouseOver={(e) =>
                         (e.currentTarget.style.opacity = "0.5")
                       }

@@ -14,11 +14,11 @@ export const Languages = () => {
     >
       {/* <i>translate</i> */}
       <Image
-        className=""
+        className="circle"
         src={"/white-globe.svg"}
         alt=""
-        width={26}
-        height={26}
+        width={22}
+        height={22}
       ></Image>
       {isMenuOpen && (
         <menu className="no-wrap left">

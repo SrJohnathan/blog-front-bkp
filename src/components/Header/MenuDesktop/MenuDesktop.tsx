@@ -7,6 +7,7 @@ import { SocialMediaIcons } from "../../SocialMediaIcons/SocialMediaIcons";
 import Image from "next/image";
 import { NavLinkDesktop } from "../NavLinkDesktop/NavLinkDesktop";
 import Link from "next/link";
+import themeIcon from "../../../../public/theme-icon.svg";
 
 // const example = ["x", "y", "z"]; Search - buscar API e array de posts
 
@@ -52,9 +53,17 @@ export const MenuDesktop = () => {
 
           <Languages />
 
-          <button className="circle transparent" onClick={() => toggleTheme()}>
-            {isDark ? <i>dark_mode</i> : <i>light_mode</i>}
+          <button className="circle transparent" onClick={toggleTheme}>
+            <Image
+              src={"/theme-icon.svg"}
+              alt="Ícone do tema"
+              width={24}
+              height={24}
+            />
           </button>
+          {/* <button className="circle transparent" onClick={() => toggleTheme()}>
+            {isDark ? <i>dark_mode</i> : <i>light_mode</i>}
+          </button> */}
           <div className={"small-space"}></div>
         </div>
       </div>
