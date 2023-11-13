@@ -1,17 +1,31 @@
-.topics {
+.wrapper {
   display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
+  flex-wrap: no-wrap;
+  border: 1px solid white;
 }
 
 .category {
-  display: flex;
-  align-items: center;
+  margin: 5px;
+  border: 1px solid white;
 }
 
-.title {
+.buttons {
   display: flex;
   align-items: center;
+  width: 30px;
+  height: 25px;
   font-size: 9px;
-  cursor: pointer;
+
+  border: 1px solid white;
+}
+
+.buttons:hover {
+  background-color: #1b4266;
+  border: 1px solid white;
+  color: white;
+}
+
+.img {
+  width: 10px;
+  height: 10px;
 }

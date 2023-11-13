@@ -94,38 +94,33 @@ export const MenuMobile = () => {
 
         <div className="small-space"></div>
 
-        {/* Menu subtópicos */}
+        {/* Menu tópicos e subtópicos */}
         <div>
-          <div className={styles.topics}>
+          <div className={styles.wrapper}>
             {Object.keys(categories).map((categoryKey) => {
               const key = categoryKey as keyof typeof categories;
               const category = categories[key];
               return (
-                <div key={categoryKey} className={styles.category}>
-                  <h6
-                    className={styles.title}
-                    onMouseOver={(e) => (e.currentTarget.style.opacity = "0.5")}
-                    onMouseOut={(e) => (e.currentTarget.style.opacity = "1")}
-                    onClick={() => {
-                      if (selectedTopic === categoryKey) {
-                        setSelectedTopic("NULL");
-                      } else {
-                        setSelectedTopic(categoryKey as CategoryKey);
-                      }
-                    }}
-                  >
-                    <Image
-                      src={category.icon}
-                      alt={`${categoryKey} icon`}
-                      width={15}
-                      height={15}
-                      style={{
-                        marginRight: "3px",
-                      }}
-                    />
-                    {t(categoryKey)}
-                  </h6>
-                </div>
+                <button
+                  key={categoryKey}
+                  className={styles.buttons}
+                  onClick={() => {
+                    if (selectedTopic === categoryKey) {
+                      setSelectedTopic("NULL");
+                    } else {
+                      setSelectedTopic(categoryKey as CategoryKey);
+                    }
+                  }}
+                >
+                  <Image
+                    className="img"
+                    src={category.icon}
+                    alt={`${categoryKey} icon`}
+                    width={10}
+                    height={10}
+                  />
+                  {t(categoryKey)}
+                </button>
               );
             })}
           </div>
