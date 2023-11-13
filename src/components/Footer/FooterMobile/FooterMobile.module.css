@@ -1,0 +1,18 @@
+.topics {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.category {
+  display: flex;
+  align-items: center;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  cursor: pointer;
+  font-weight: bold;
+}
