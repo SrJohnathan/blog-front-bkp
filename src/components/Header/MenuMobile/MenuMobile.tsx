@@ -10,7 +10,7 @@ import { Category } from "@/dtos/Category";
 import { getAllCategories } from "@/source/category";
 import { useLocale } from "next-intl";
 import { SocialMediaIcons } from "@/components/SocialMediaIcons/SocialMediaIcons";
-import StwIcon from "../../../../public/white-home.svg";
+import StwIcon from "../../../../public/stw-icon.svg";
 import AbroadIcon from "../../../../public/white-plane.svg";
 import ProjectsIcon from "../../../../public/white-projects.svg";
 import TopicsIcon from "../../../../public/white-topics.svg";
