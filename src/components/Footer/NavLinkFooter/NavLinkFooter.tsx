@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
 import { Category } from "@/dtos/Category";
 import { getAllCategories } from "@/source/category";
+import styles from "./NavLinkFooter.module.css";
 
 export const NavLinkFooter = () => {
   const [categoriesData, setCategoriesData] = useState<Category[]>([]);
@@ -39,8 +40,8 @@ export const NavLinkFooter = () => {
 
   const renderCategorySection = (categoryKey: CategoryKey) => {
     return (
-      <div key={categoryKey} className={"m3 no-padding"}>
-        <h6 className="small bold">{t(categoryKey)}</h6>
+      <div key={categoryKey}>
+        <h6 className={styles.topics}>{t(categoryKey)}</h6>
         {filteredCategories(categoriesData, categories[categoryKey])?.map(
           (category, index) => (
             <React.Fragment key={index}>
@@ -57,7 +58,7 @@ export const NavLinkFooter = () => {
 
   return (
     <div className="max">
-      <div className={"grid left-align"}>
+      <div className={styles.topics}>
         {Object.keys(categories).map((categoryKey) =>
           renderCategorySection(categoryKey as CategoryKey)
         )}
