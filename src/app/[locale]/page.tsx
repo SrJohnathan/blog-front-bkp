@@ -63,10 +63,13 @@ export default async function Home() {
             {lpost &&
               lpost.data.value?.map((value, index) => {
                 if (value.typ === "stw") {
-                  return <Articles id={value.id} key={index} />;
+                  return <MainAdsContainer key={index} />;
                 }
                 if (value.typ === "google") {
                   return <MainAdsContainer key={index} />;
+                }
+                if (value.typ === "stw_post") {
+                  return <Articles id={value.id} key={index} />;
                 }
               })}
           </div>
