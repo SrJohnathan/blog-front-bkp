@@ -28,7 +28,10 @@ export const Collapse: React.FunctionComponent<CollapseProps> = ({
     <div
       onClick={onClick}
       className="collapse max"
-      style={{ maxHeight: isOpen ? childHeight : "0" }}
+      style={{
+        maxHeight: isOpen ? childHeight : "0",
+        transition: "0.7s ease-in-out",
+      }}
     >
       <div ref={contentRef}>
         <div className="sample-content max">{children}</div>

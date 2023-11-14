@@ -1,0 +1,12 @@
+.topics {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.title {
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+}
