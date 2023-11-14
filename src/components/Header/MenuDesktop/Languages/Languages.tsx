@@ -12,7 +12,6 @@ export const Languages = () => {
       className="circle transparent"
       onClick={() => setIsMenuOpen(!isMenuOpen)}
     >
-      {/* <i>translate</i> */}
       <Image
         className="circle"
         src={"/white-globe.svg"}
