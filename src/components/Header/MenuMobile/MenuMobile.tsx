@@ -96,15 +96,14 @@ export const MenuMobile = () => {
 
         {/* Menu tópicos e subtópicos */}
         <div>
-          <div className={styles.wrapper}>
+          <div className={`${styles.wrapper} topicsScroll`}>
             {Object.keys(categories).map((categoryKey) => {
               const key = categoryKey as keyof typeof categories;
               const category = categories[key];
               return (
                 <button
-
                   key={categoryKey}
-                  className={ styles.buttons}
+                  className={styles.buttons}
                   onClick={() => {
                     if (selectedTopic === categoryKey) {
                       setSelectedTopic("NULL");
@@ -115,15 +114,13 @@ export const MenuMobile = () => {
                 >
                   <div>
                     <Image
-                        className="img"
-                        src={category.icon}
-                        alt={`${categoryKey} icon`}
-                        width={13}
-                        height={13}
+                      className="img"
+                      src={category.icon}
+                      alt={`${categoryKey} icon`}
+                      width={18}
+                      height={18}
                     />
                   </div>
-
-
 
                   <p>{t(categoryKey)}</p>
                 </button>
