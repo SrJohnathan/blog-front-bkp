@@ -7,6 +7,12 @@ import { Header } from "@/components/Header/Header";
 import { Footer } from "@/components/Footer/Footer";
 import { notFound } from "next/navigation";
 
+
+export const fetchCache = 'force-no-store'
+export const revalidate = 0 // seconds
+export const dynamic = 'force-dynamic'
+
+
 export function generateStaticParams() {
   return [
     { locale: "pt" },
