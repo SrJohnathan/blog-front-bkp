@@ -78,9 +78,11 @@ export const PodCasts = () => {
       </div>
       <div className="small-space"></div>
       <>
-        {Object.keys(categories).map((categoryKey) =>
-          renderVerMais(categoryKey as CategoryKey)
-        )}
+        {Object.keys(categories).map((categoryKey) => (
+          <div key={categoryKey}>
+            {renderVerMais(categoryKey as CategoryKey)}
+          </div>
+        ))}
       </>
     </div>
   );

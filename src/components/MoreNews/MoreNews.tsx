@@ -72,15 +72,15 @@ export default function MoreNews() {
             ? Array(9)
                 .fill(0)
                 .map((_, index) => <MedSqCardSkeleton key={index} />)
-            : news.map((value, index) => (
-                <MedSqCard value={value} key={index} />
-              ))}
+            : news.map((value) => <MedSqCard value={value} key={value.id} />)}
         </div>
         <>
           <div className="medium-space"></div>
-          {Object.keys(categories).map((categoryKey) =>
-            renderVerMais(categoryKey as CategoryKey)
-          )}
+          {Object.keys(categories).map((categoryKey) => (
+            <div key={categoryKey}>
+              {renderVerMais(categoryKey as CategoryKey)}
+            </div>
+          ))}
         </>
       </article>
     </div>
