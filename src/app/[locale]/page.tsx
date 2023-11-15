@@ -40,7 +40,7 @@ export default async function Home() {
         </div>
         <div className="space"></div>
 
-        <div className={"grid small-space"}>
+        <div className={"grid"}>
           {/* Coluna principal */}
           <div className={"s12 m8"}>
             <Suspense fallback={<MoreNewsSkeleton />}>
@@ -51,6 +51,10 @@ export default async function Home() {
             <div className={"space"}></div>
             {/* <MainAdsContainer /> */}
             <div className={"space"}></div>
+            <div className="extra-space"></div>
+            <div className="extra-space"></div>
+            <div className="extra-space"></div>
+            <div className="extra-space"></div>
             <PodCasts />
             <div className={"space"}></div>
             {/* <MainAdsContainer /> */}
@@ -75,6 +79,11 @@ export default async function Home() {
           </div>
         </div>
       </main>
+
+      <div className="s extra-space"></div>
+      <div className="s extra-space"></div>
+      <div className="s extra-space"></div>
+      <div className="s extra-space"></div>
     </>
   );
 }

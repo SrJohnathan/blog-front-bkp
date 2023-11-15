@@ -8,11 +8,15 @@ import Image from "next/image";
 export const FooterMobile = () => {
   const t = useTranslations("Footer");
 
+  const footerStyle: React.CSSProperties = {
+    position: "fixed",
+    bottom: 0,
+    width: "100%",
+    boxShadow: "10px 10px 20px 0px",
+  };
+
   return (
-    <div
-      className="grid s s12 small-padding"
-      style={{ boxShadow: "10px 10px 20px 0px" }}
-    >
+    <div className="grid s s12 small-padding background" style={footerStyle}>
       <div className="s3 center-align small-round">
         <Link href={"#"} className="vertical">
           <Image src={"/search.svg"} alt="" width={22} height={22} />
