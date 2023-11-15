@@ -3,7 +3,7 @@
 import { divider } from "@/styles/styles";
 import { PodcastCard } from "../Cards/PodcastCard/PodcastCard";
 import { useLocale, useTranslations } from "next-intl";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { GetNews } from "@/dtos/News";
 import { Ex } from "@/extension/ex";
 import { Category } from "@/dtos/Category";
@@ -66,10 +66,13 @@ export const PodCasts = () => {
         <h4 className="small bold primary-title">Podcasts</h4>
         <div className={"primary-title-container"} style={divider}></div>
       </div>
+
       <div className={"small-padding"}>
         <div className={"grid s12 m12"}>
           {news.map((value, index) => (
-            <PodcastCard key={index} value={value} />
+            <React.Fragment key={index}>
+              <PodcastCard value={value} />
+            </React.Fragment>
           ))}
         </div>
       </div>
