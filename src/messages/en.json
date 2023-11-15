@@ -16,7 +16,11 @@
   },
   "Footer": {
     "copyrightText": "All rights reserved © Since January 2022 Study Travel Work – STW | NIPC 516747428",
-    "info": "Madalena Street, No. 51, 4750-315, Union of Parishes of Barcelos, Vila Boa and Vila Frescainha, Barcelos Municipality."
+    "info": "Madalena Street, No. 51, 4750-315, Union of Parishes of Barcelos, Vila Boa and Vila Frescainha, Barcelos Municipality.",
+    "Buscar": "Search",
+    "Favorito": "Favorite",
+    "Notificacoes": "Notifications",
+    "Perfil": "Profile"
   },
   "NavLinkDesktopFooter": {
     "STW": "STW",

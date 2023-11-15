@@ -16,7 +16,11 @@
   },
   "Footer": {
     "copyrightText": "Tous droits réservés © Depuis janvier 2022 Study Travel Work – STW | NIPC 516747428",
-    "info": "Rue de la Madeleine, nº 51, 4750-315, Union des Paroisses de Barcelos, Vila Boa et Vila Frescainha, Municipalité de Barcelos."
+    "info": "Rue de la Madeleine, nº 51, 4750-315, Union des Paroisses de Barcelos, Vila Boa et Vila Frescainha, Municipalité de Barcelos.",
+    "Buscar": "Chercher",
+    "Favorito": "Favori",
+    "Notificacoes": "Notifications",
+    "Perfil": "Profil"
   },
   "NavLinkDesktopFooter": {
     "STW": "STW",

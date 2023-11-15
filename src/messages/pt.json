@@ -16,7 +16,11 @@
   },
   "Footer": {
     "copyrightText": "Todos os direitos reservados © Desde Janeiro de 2022 Study Travel Work – STW | NIPC 516747428",
-    "info": "Rua da Madalena, nº 51, 4750-315, União de Freguesias de Barcelos, Vila Boa e Vila Frescainha, Concelho Barcelos."
+    "info": "Rua da Madalena, nº 51, 4750-315, União de Freguesias de Barcelos, Vila Boa e Vila Frescainha, Concelho Barcelos.",
+    "Buscar": "Buscar",
+    "Favorito": "Favorito",
+    "Notificacoes": "Notificações",
+    "Perfil": "Perfil"
   },
   "NavLinkDesktopFooter": {
     "STW": "STW",

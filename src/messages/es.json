@@ -16,7 +16,11 @@
   },
   "Footer": {
     "copyrightText": "Todos los derechos reservados © Desde enero de 2022 Study Travel Work – STW | NIPC 516747428",
-    "info": "Calle de la Magdalena, nº 51, 4750-315, Unión de Parroquias de Barcelos, Vila Boa y Vila Frescainha, Municipio de Barcelos."
+    "info": "Calle de la Magdalena, nº 51, 4750-315, Unión de Parroquias de Barcelos, Vila Boa y Vila Frescainha, Municipio de Barcelos.",
+    "Buscar": "Buscar",
+    "Favorito": "Favorito",
+    "Notificacoes": "Notificaciones",
+    "Perfil": "Perfil"
   },
   "NavLinkDesktopFooter": {
     "STW": "STW",
