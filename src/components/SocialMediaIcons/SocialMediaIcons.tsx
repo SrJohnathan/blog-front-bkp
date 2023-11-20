@@ -1,7 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ShareIcon } from "./ShareIcon";
 
-export const SocialMediaIcons = () => {
+interface SocialMediaIconsProps {
+  showShare: boolean;
+}
+
+export const SocialMediaIcons = ({ showShare }: SocialMediaIconsProps) => {
   return (
     <nav>
       <Link target="_blank" href={"https://www.facebook.com/tamba.ventura"}>
@@ -24,6 +29,7 @@ export const SocialMediaIcons = () => {
           <Image src={"/color-in.svg"} width={26} height={26} alt="" />
         </i>
       </Link>
+      <ShareIcon active={showShare} />
     </nav>
   );
 };

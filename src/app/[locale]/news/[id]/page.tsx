@@ -160,8 +160,8 @@ const Page = async ({ params }: { params: { id: string } }) => {
           </h3>
           <h6 className="small left-align large-margin">{news.description}</h6>
           <div className="medium-space"></div>
-          <div className="primary small-width padding large-margin">
-            <SocialMediaIcons />
+          <div className="large-margin" style={{ cursor: "pointer" }}>
+            <SocialMediaIcons showShare={true} />
           </div>
           <div className="medium-space"></div>
         </div>

@@ -33,6 +33,8 @@ export default async function Home() {
 
           {/* *******MOBILE******* */}
           <div className={"s s12"}>
+            <TopAdsContainer />
+            <div className="small-space"></div>
             <TopMedRectCard id={postMain?.data.ids?.card2} />
             <div className="small-space"></div>
             <TopMedRectCard id={postMain?.data.ids?.card3} />
