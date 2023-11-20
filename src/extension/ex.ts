@@ -4,10 +4,10 @@ export namespace Ex {
   export function api() {
     return axios.create({
       baseURL: process.env.API,
-     // baseURL: "https://stw-blog-backend.herokuapp.com",
+      // baseURL: "https://stw-blog-backend.herokuapp.com",
       headers: {
         "Content-Type": "application/json",
-        'Cache-Control': 'no-store',
+        "Cache-Control": "no-store",
       },
     });
   }
@@ -16,7 +16,7 @@ export namespace Ex {
     return axios.create({
       headers: {
         "Content-Type": "application/json",
-        'Cache-Control': 'no-store',
+        "Cache-Control": "no-store",
       },
     });
   }
