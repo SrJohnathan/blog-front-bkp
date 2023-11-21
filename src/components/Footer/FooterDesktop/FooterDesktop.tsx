@@ -26,7 +26,7 @@ export const FooterDesktop = () => {
           <small className="m6">{t("info")}</small>
         </div>
         <div className="row right-align">
-          <SocialMediaIcons />
+          <SocialMediaIcons showShare={false} />
         </div>
       </div>
     </footer>

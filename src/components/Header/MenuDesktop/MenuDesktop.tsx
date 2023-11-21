@@ -8,19 +8,55 @@ import Image from "next/image";
 import { NavLinkDesktop } from "../NavLinkDesktop/NavLinkDesktop";
 import Link from "next/link";
 import themeIcon from "../../../../public/theme-icon.svg";
+import SearchModal from "./SearchModal";
 
-// const example = ["x", "y", "z"]; Search - buscar API e array de posts
+const news = [
+  {
+    title: "Novidade em Tecnologia",
+    paragraph:
+      "Descubra as últimas tendências em desenvolvimento de software e como elas podem impactar o futuro.",
+  },
+  {
+    title: "Economia Global",
+    paragraph:
+      "Análise do crescimento econômico em diferentes regiões e seus potenciais efeitos no mercado mundial.",
+  },
+  {
+    title: "Saúde e Bem-estar",
+    paragraph:
+      "Explorando novas técnicas de bem-estar e saúde mental para um estilo de vida mais saudável.",
+  },
+  {
+    title: "Educação e Aprendizado",
+    paragraph:
+      "As melhores práticas para potencializar o aprendizado e desenvolvimento pessoal em qualquer idade.",
+  },
+  {
+    title: "Sustentabilidade e Meio Ambiente",
+    paragraph:
+      "Iniciativas sustentáveis que estão fazendo a diferença no planeta e como você pode contribuir.",
+  },
+];
 
 export const MenuDesktop = () => {
   const { toggleTheme, isDark } = useContext(ThemeModeContext);
-  // const [search, setSearch] = useState("");
+  const [search, setSearch] = useState("");
 
-  // const filteredPosts = useMemo(() => {
-  //   const lowerSearch = search.toLowerCase();
-  //   return example.filter((postInfo) =>
-  //     postInfo.toLowerCase().includes(lowerSearch)
-  //   );
-  // }, [search]); Search - por nas dependências o array dinâmico de posts
+  const filteredNews = useMemo(() => {
+    const lowerSearch = search.toLowerCase();
+    return news.filter(
+      (newsItem) =>
+        newsItem.title.toLowerCase().includes(lowerSearch) ||
+        newsItem.paragraph.toLowerCase().includes(lowerSearch)
+    );
+  }, [search]);
+
+  const [showModal, setShowModal] = useState(false);
+
+  const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSearch(event.target.value);
+    setShowModal(event.target.value.length > 0);
+  };
 
   return (
     <header
@@ -37,19 +73,14 @@ export const MenuDesktop = () => {
         <div className="m11 no-padding row">
           <div className={"small-space"}></div>
           <NavLinkDesktop />
-          <SocialMediaIcons />
+          <SocialMediaIcons showShare={false} />
           <div></div>
           <div></div>
-          {/* Omitido temporariamente botão Search */}
-          {/* <div className="field label prefix small fill small-round">
-            <input
-              type="text"
-              value={search}
-              onChange={(event) => setSearch(event.target.value)}
-            />
-            {filteredPosts.length > 0 && filteredPosts.map((postInfo) => <></>)}
+
+          <div className="field label prefix small fill small-round">
+            <input type="text" value={search} onChange={handleSearchChange} />
             <i>search</i>
-          </div> */}
+          </div>
 
           <Languages />
 
@@ -61,12 +92,11 @@ export const MenuDesktop = () => {
               height={24}
             />
           </button>
-          {/* <button className="circle transparent" onClick={() => toggleTheme()}>
-            {isDark ? <i>dark_mode</i> : <i>light_mode</i>}
-          </button> */}
+
           <div className={"small-space"}></div>
         </div>
       </div>
+      {showModal && <SearchModal posts={filteredNews} />}
     </header>
   );
 };
