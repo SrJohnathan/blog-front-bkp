@@ -4,14 +4,8 @@ import React, { useEffect, useRef, useState } from "react";
 import styles from "./SearchModal.module.css";
 import { Ex } from "@/extension/ex";
 import { useLocale } from "next-intl";
-import { GetNews } from "@/dtos/News";
 import Link from "next/link";
-
-interface NewsItem {
-  id: number;
-  titulo: string;
-  description: string;
-}
+import { GetNews } from "@/dtos/News";
 
 interface SearchModalProps {
   onClose: () => void;
@@ -23,12 +17,6 @@ const SearchModal: React.FC<SearchModalProps> = ({ onClose, search }) => {
   const locale = useLocale();
   const [news, setNews] = useState<GetNews[]>([]);
 
-  const limitTextLength = (text: string, maxLength = 100) => {
-    return text.length > maxLength
-      ? text.substring(0, maxLength) + "..."
-      : text;
-  };
-
   useEffect(() => {
     Ex.apiClient()
       .get(`/api/${locale}/post/list/0/8/desc/all`)
@@ -39,15 +27,15 @@ const SearchModal: React.FC<SearchModalProps> = ({ onClose, search }) => {
               post.titulo.toLowerCase().includes(search.toLowerCase()) ||
               post.description.toLowerCase().includes(search.toLowerCase())
           )
-          .map((post: { titulo: string; description: string }) => ({
-            ...post,
+          .map((post: { id: number; titulo: string; description: string }) => ({
+            id: post.id,
             titulo: post.titulo,
-            description: limitTextLength(post.description),
+            description: post.description,
           }));
         setNews(filteredData);
       })
       .catch(() => {});
-  }, [locale, setNews, search]);
+  }, [locale, search]);
 
   useEffect(() => {
     const handleClickOutside = (event: { target: any }) => {
@@ -62,19 +50,27 @@ const SearchModal: React.FC<SearchModalProps> = ({ onClose, search }) => {
     };
   }, [onClose]);
 
+  const handleCloseClick = (event: React.MouseEvent) => {
+    event.stopPropagation();
+    onClose();
+  };
+
   return (
     <div className={styles.modal} ref={modalRef}>
+      <i className={styles.closeIcon} onClick={handleCloseClick}>
+        close
+      </i>
       <ul>
         {news.map((post, index) => (
           <li key={post.id || index}>
-            <div className="small-space"></div>
-            <Link href={""}>
+            <Link href={`/news/${post.id}`}>
               <div className="posts">
                 <h6 className="small bold">{post.titulo}</h6>
                 <p>{post.description}</p>
               </div>
             </Link>
-            <div className="small-divider"></div>
+            <div className="divider"></div>
+            <div className="tiny-space"></div>
           </li>
         ))}
       </ul>
