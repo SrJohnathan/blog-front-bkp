@@ -7,8 +7,8 @@ import { SocialMediaIcons } from "../../SocialMediaIcons/SocialMediaIcons";
 import Image from "next/image";
 import { NavLinkDesktop } from "../NavLinkDesktop/NavLinkDesktop";
 import Link from "next/link";
-import SearchModal from "./SearchModal";
-import styles from "./SearchModal.module.css";
+import SearchModal from "./SearchModal/SearchModal";
+import styles from "./SearchModal/SearchModal.module.css";
 
 export const MenuDesktop = () => {
   const { toggleTheme, isDark } = useContext(ThemeModeContext);
