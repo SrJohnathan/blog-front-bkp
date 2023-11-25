@@ -7,10 +7,17 @@ import { Ex } from "@/extension/ex";
 export const TopMedRectCard = async ({ id }: { id?: number }) => {
 
 
+  let response: GetNews | undefined
+  try {
+    response  = (await Ex.api().get(`/post/first/${id}`)).data;
+  }catch (e) {
+    console.log(e)
+  }
 
-  const response: GetNews = (await Ex.api().get(`/post/first/${id}`)).data;
 
-  return (
+
+
+  return  response !== undefined ? (
     <div>
       <article className="no-padding small-round">
         <FallbackImage
@@ -41,5 +48,5 @@ export const TopMedRectCard = async ({ id }: { id?: number }) => {
         </div>
       </article>
     </div>
-  );
+  ) : null;
 };

@@ -5,9 +5,14 @@ import { FallbackImage } from "@/components/Cards/MedSqCard/FallbackImage";
 import { GetNews } from "@/dtos/News";
 
 export const VertRectTopCard = async ({ id }: { id?: number }) => {
-  const response: GetNews = (await Ex.api().get(`/post/first/${id}`)).data;
 
-  return (
+  let response: GetNews | undefined
+  try {
+    response  = (await Ex.api().get(`/post/first/${id}`)).data;
+  }catch (e) {
+    console.log(e)
+  }
+  return response !== undefined ? (
     <div className={"s12 m6"}>
       <article className="no-padding small-round">
         <FallbackImage
@@ -41,5 +46,5 @@ export const VertRectTopCard = async ({ id }: { id?: number }) => {
         </div>
       </article>
     </div>
-  );
+  ) : null ;
 };
