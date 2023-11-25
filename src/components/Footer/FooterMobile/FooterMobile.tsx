@@ -1,12 +1,19 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
-import Link from "next-intl/link";
 import Image from "next/image";
+import FooterSearchModal from "./FooterSearchModal/FooterSearchModal";
 
 export const FooterMobile = () => {
   const t = useTranslations("Footer");
+  const [isModalOpen, setModalOpen] = useState(false);
+
+  const toggleModal = () => {
+    setModalOpen(!isModalOpen);
+  };
+
+  useEffect(() => {}, [isModalOpen]);
 
   const footerStyle: React.CSSProperties = {
     position: "fixed",
@@ -16,32 +23,45 @@ export const FooterMobile = () => {
   };
 
   return (
-    <div className="grid s s12 small-padding background" style={footerStyle}>
-      <div className="s3 center-align small-round">
-        <Link href={"#"} className="vertical">
-          <Image src={"/search.svg"} alt="" width={22} height={22} />
+    <>
+      <div className="grid s s12 small-padding background" style={footerStyle}>
+        <button
+          className="s3 small-round vertical transparent"
+          onClick={toggleModal}
+        >
+          <Image
+            src={"/search.svg"}
+            alt="botão de busca"
+            width={22}
+            height={22}
+          />
           <span style={{ color: "#767680" }}>{t("Buscar")}</span>
-        </Link>
-      </div>
-      <div className="s3 center-align">
-        <Link href={"#"} className="vertical">
-          <Image src={"/heart.svg"} alt="" width={22} height={22} />
+        </button>
+        <button className="s3 small-round vertical transparent">
+          <Image src={"/heart.svg"} alt="favoritar" width={22} height={22} />
           <span style={{ color: "#767680" }}>{t("Favorito")}</span>
-        </Link>
-      </div>
-      <div className="s3 center-align">
-        <Link href={"#"} className="vertical">
-          <Image src={"/bell.svg"} alt="" width={22} height={22} />
+        </button>
+        <button className="s3 small-round vertical transparent">
+          <Image
+            src={"/bell.svg"}
+            alt="ativar notificações"
+            width={22}
+            height={22}
+          />
           <span style={{ color: "#767680" }}>{t("Notificacoes")}</span>
-        </Link>
-      </div>
-      <div className="s3 center-align small-round">
-        <Link href={"#"} className="vertical">
-          <Image src={"/profile.svg"} alt="" width={22} height={22} />
+        </button>
+        <button className="s3 small-round vertical transparent">
+          <Image
+            src={"/profile.svg"}
+            alt="acessar perfil"
+            width={22}
+            height={22}
+          />
           <span style={{ color: "#767680" }}>{t("Perfil")}</span>
-        </Link>
+        </button>
       </div>
-    </div>
+      {isModalOpen && <FooterSearchModal onClose={toggleModal} />}
+    </>
   );
 };
 
