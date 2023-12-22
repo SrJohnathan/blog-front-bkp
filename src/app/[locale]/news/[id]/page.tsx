@@ -33,7 +33,7 @@ const Page = async ({ params }: { params: { id: string } }) => {
 
         <div className="medium-space"></div>
 
-        <h3 className="small bold primary-title center-align ">
+        <h3 className="bold primary-title center-align ">
           {news?.titulo}
         </h3>
 
@@ -52,7 +52,7 @@ const Page = async ({ params }: { params: { id: string } }) => {
           </h6>
 
           <div className="s12 m8">
-            <p className="left-align">{news.description}</p>
+            <h5 className="left-align bold">{(news as any).descripton}</h5>
             <div className="medium-space"></div>
 
             {news.tipo === "Texto" && <PostText news={news} />}
@@ -63,7 +63,7 @@ const Page = async ({ params }: { params: { id: string } }) => {
         </div>
 
         <div className="medium-space"></div>
-        <div className="large-divider"></div>
+       {/* <div className="large-divider"></div>*/}
 
         <div className="grid">
           <div className="m1"></div>
@@ -71,9 +71,9 @@ const Page = async ({ params }: { params: { id: string } }) => {
             style={{ flexDirection: "column", justifyContent: "start" }}
             className="small no-margin bold m1 left-align"
           >
-            Vídeos
+          {/*  Vídeos*/}
           </h6>
-          <div className="s12 m8">
+          {/*<div className="s12 m8">
             <div className={"grid medium-space"}>
               {Array(3)
                 .fill(null)
@@ -81,7 +81,7 @@ const Page = async ({ params }: { params: { id: string } }) => {
                   <RectVideoCard key={index} />
                 ))}
             </div>
-          </div>
+          </div>*/}
           <div className="m1"></div>
         </div>
 
